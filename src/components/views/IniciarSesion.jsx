@@ -10,19 +10,19 @@ const IniciarSesion = () => {
         INICIA SESIÓN
       </Card.Title>
       </Card.Header>
-      <Card.Body>
+      <Card.Body className='mt-4'>
         <Form>
           <Form.Group  className='mt-4'>
-            <Form.Label>Correo electronico*</Form.Label>
+            <Form.Label className='textForm'>Correo electronico*</Form.Label>
             <Form.Control>
             </Form.Control>
           </Form.Group>
           <Form.Group  className='mt-4 mb-2'>
-            <Form.Label>Contraseña*</Form.Label>
+            <Form.Label className='textForm'>Contraseña*</Form.Label>
             <Form.Control className='p-2'>
             </Form.Control>
           </Form.Group>
-          <Button className='botonesLogin mt-4'>
+          <Button className='mt-4 btnEntrar' variant='none'>
             Entrar
           </Button>
         </Form>

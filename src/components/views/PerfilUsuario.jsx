@@ -15,10 +15,12 @@ const PerfilUsuario = () => {
         </Card.Title>
       </Card.Header>
       <Card.Body  className='user'>
-        <ListGroup className='text-start mt-4' variant="flush">
-            <ListGroupItem className='m-3'><Button variant='none'>Iniciar sesion</Button></ListGroupItem>
-            <ListGroupItem className='m-3'><Button variant='none'>Registrarse</Button></ListGroupItem>
-            <ListGroupItem className='m-3'><Button variant='none'>Mis pedidos</Button></ListGroupItem>
+        <ListGroup className='text-start mt-4 borderNone' variant="none">
+            <ListGroupItem className='m-3 borderNone'><Button variant='none' className='textFuncionesLogin'>Iniciar sesion</Button></ListGroupItem>
+            <hr className='hrUser'></hr>
+            <ListGroupItem className='m-3 borderNone'><Button variant='none' className='textFuncionesLogin'>Registrarse</Button></ListGroupItem>
+            <hr className='hrUser'></hr>
+            <ListGroupItem className='m-3 borderNone'><Button variant='none' className='textFuncionesLogin'>Mis pedidos</Button></ListGroupItem>
         </ListGroup>
       </Card.Body>
     </Card>

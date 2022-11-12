@@ -10,15 +10,11 @@
     background-color: #EF931E;
     font-family: 'Oswald', sans-serif;
 }
-.user{
-    min-height: 100vh;
-}
-
-.botonesLogin{
-    background-color: #EF931E;
-}
 .mainSection{
     flex-grow: 1;
+}
+.user{
+    min-height: 80vh;
 }
 
 .bgColor{
@@ -34,9 +30,15 @@
 }
 .textUser{
     color: #EF931E;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 2rem;
     letter-spacing: 1px;
+}
+.textFuncionesLogin{
+    color: #EF931E;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 1.4rem;
 }
 .bgRayas {
     background: -moz-repeating-linear-gradient(135deg, #ffffff, #EF931E 0.5px);
@@ -44,3 +46,27 @@
     border: none;
     }
 
+.rayasUser{
+    border: 0 1px 0 0 solid #EF931E
+}
+.borderNone{
+    border: none;
+}
+
+.hrUser{
+    color: #EF931E ;
+    border: 1px solid #EF931E ;
+}
+
+.btnEntrar{
+    color: white;
+    background-color: #EF931E;
+    padding: 10px;
+    border: 3px solid white;
+    outline: 3px solid #EF931E;
+    width: 9rem;
+    height: 3rem;
+}
+.textForm{
+    font-weight: 300;
+}
