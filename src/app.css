@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #EF931E;
+    font-family: 'Oswald', sans-serif;
+}
+.user{
+    min-height: 100vh;
+}
+
+.botonesLogin{
+    background-color: #EF931E;
+}
+.mainSection{
+    flex-grow: 1;
+}
+
+.bgColor{
+    background-color: #EF931E;  
+    border: none;
+}
+
+.textLogin{
+    color: white;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+.textUser{
+    color: #EF931E;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+.bgRayas {
+    background: -moz-repeating-linear-gradient(135deg, #ffffff, #EF931E 0.5px);
+    background: -webkit-repeating-linear-gradient(135deg, #ffffff, #EF931E 0.5px);
+    border: none;
+    }
+
