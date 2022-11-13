@@ -27,7 +27,7 @@ const IniciarSesion = () => {
           </Button>
         </Form>
       </Card.Body>
-        <Button className='float-end' variant='none'>No recuerdo mi contraseña</Button>
+        <Button className='textPass' variant='none'>No recuerdo mi contraseña</Button>
     </Card>
 
   )
