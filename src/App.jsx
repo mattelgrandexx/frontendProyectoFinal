@@ -10,6 +10,7 @@ import CrearMenu from './components/views/menus/CrearMenu';
 import EditarMenu from './components/views/menus/EditarMenu';
 import PaginaPrincipal from './components/views/PaginaPrincipal';
 import Registrarse from './components/views/Registrarse';
+import "./App.css"
 
 function App() {
   return (
