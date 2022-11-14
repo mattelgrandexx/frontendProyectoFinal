@@ -1,11 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/common/Footer";
+
 import { Header } from "./components/common/Header";
 import AcercaDeNos from "./components/views/AcercaDeNos";
 import Administrador from "./components/views/Administrador";
 import DetalleMenu from "./components/views/DetalleMenu";
 import Error404 from "./components/views/Error404";
+import IniciarSesion from "./components/views/IniciarSesion";
 import CrearMenu from "./components/views/menus/CrearMenu";
 import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
@@ -26,11 +28,12 @@ function App() {
           element={<EditarMenu />}
         ></Route>
         <Route exact path="/detalle/:id" element={<DetalleMenu />}></Route>
+        <Route exact path="/login" element={<IniciarSesion />}></Route>
         <Route exact path="/registro" element={<Registrarse />}></Route>
         <Route exact path="/acerca" element={<AcercaDeNos />}></Route>
         <Route exact path="*" element={<Error404 />}></Route>
       </Routes>
-      <Footer></Footer>
+     <Footer/>
     </BrowserRouter>
   );
 }

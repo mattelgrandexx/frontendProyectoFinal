@@ -65,22 +65,7 @@ ul{
 	color: #ffffff;
 	padding-left: 8px;
 }
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
+
 
 /*responsive*/
 @media(max-width: 767px){
@@ -101,50 +86,16 @@ ul{
 nav{
   width: 100%;
   display: flex;
-  background: #000;
+  background: #c0050b;
 }
-nav ul{
-   display: flex;
-   list-style:none;
-   margin: 0 auto;
-   padding: 0;
-}
+
 
 nav li{
   text-transform: uppercase;
 }
 
-nav a{
-  text-decoration: none;
-  color: #fff;
-}
 
-nav ul li a{
-  display: block;
-  padding: 20px 20px;
-  position: relative;
-  transition: color .30s;
-}
 
-nav ul li a:before{
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  left: 0;
-  bottom: 0;
-  background: #e74c3c;
-  transition: width .30s;
-} 
-
-nav ul li a:hover{
-   color: #e74c3c;
-}
-
-nav ul li a:hover:before{
-  content: '';
-  width: 100%;
-}
 
 @media (max-width: 768px){
   nav ul{
@@ -170,4 +121,38 @@ nav ul li a:hover:before{
   width: 100px;
   top: 20px;
   
+}
+
+.logoLenoRojo{
+  object-fit: cover;
+  width: 100px;
+  top: 20px;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+}
+
+.bg-footer{
+  background-color: #000;
+}
+
+.text-footer{
+  color: gray;
+}
+
+.social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
 }

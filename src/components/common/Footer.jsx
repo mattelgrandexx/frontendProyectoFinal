@@ -1,48 +1,31 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>company</h4>
-          <ul>
-            <li><a href="#">about us</a></li>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
-          </ul>
+    <footer className="p-5 bg-footer">
+      <div className="row">
+        <div className="col-12 col-lg-12 d-flex justify-content-center">
+          <NavLink to={'/'}>
+            <img
+              src="https://trello.com/1/cards/636afa161043510112cf6151/attachments/636ef449b07b4100170437c7/previews/636ef44ab07b4100170437d0/download/LENOLOGO4.png"
+              className="logoLeno"
+              alt="logoNegro"
+            />
+          </NavLink>
         </div>
-        <div class="footer-col">
-          <h4>get help</h4>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">shipping</a></li>
-            <li><a href="#">returns</a></li>
-            <li><a href="#">order status</a></li>
-            <li><a href="#">payment options</a></li>
-          </ul>
+        <div className="mt-4">
+          <h6 className="text-center text-footer">☎️ <strong>VIRGEN DE LA MERCED 885: </strong> 3815695788-3812365094-3815970694</h6>
+          <h6 className="text-center text-footer">☎️ <strong>ACONQUIJA 1219: </strong> 3814480036-381 3816309296</h6>
+          <h6 className="text-center text-footer">☎️ <strong>AV CONST.2400 (Tafi Viejo): </strong> 3815498608</h6>
         </div>
-        <div class="footer-col">
-          <h4>online shop</h4>
-          <ul>
-            <li><a href="#">watch</a></li>
-            <li><a href="#">bag</a></li>
-            <li><a href="#">shoes</a></li>
-            <li><a href="#">dress</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>follow us</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <h5 className="mt-2 text-footer text-center">Nuestras redes:</h5>
+        <div className="social-links justify-content-center d-flex">
+           <a href="https://www.instagram.com/lenoargentina/" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+           <a href="https://www.facebook.com/ExperienciaLeno" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f"></i></a>
+           <a href="https://twitter.com/LenoArgentina" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a>
           </div>
-        </div>
       </div>
-    </div>
- </footer>
+    </footer>
   );
 };
