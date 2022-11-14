@@ -1,3 +1,4 @@
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/common/Footer";
@@ -34,6 +35,8 @@ function App() {
         <Route exact path="*" element={<Error404 />}></Route>
       </Routes>
      <Footer/>
+
+
     </BrowserRouter>
   );
 }
