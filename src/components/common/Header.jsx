@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <Navbar bg="danger" variant="dark" expand="lg">
+    <Navbar className="bgNeg" variant="dark" expand="lg">
     <Container>
      <Navbar.Brand as={Link} to="/">
         Cafeteria

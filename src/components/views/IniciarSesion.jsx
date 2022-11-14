@@ -14,12 +14,12 @@ const IniciarSesion = () => {
         <Form>
           <Form.Group  className='mt-4'>
             <Form.Label className='textForm'>Correo electronico*</Form.Label>
-            <Form.Control>
+            <Form.Control className='p-2 borderInput'>
             </Form.Control>
           </Form.Group>
           <Form.Group  className='mt-4 mb-2'>
             <Form.Label className='textForm'>Contraseña*</Form.Label>
-            <Form.Control className='p-2'>
+            <Form.Control className='p-2 borderInput'>
             </Form.Control>
           </Form.Group>
           <Button className='mt-4 btnEntrar' variant='none'>
