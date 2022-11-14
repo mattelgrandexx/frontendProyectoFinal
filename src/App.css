@@ -58,42 +58,75 @@ main {
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
+  border: 1.5px solid #c0050b;
 }
 .cardProducto {
   display: flex;
   justify-content: space-between;
   width: calc(100% / 3);
   padding-left: 1.5em;
-  border: 2px solid #c0050b;
+  border: 1.5px solid #c0050b;
 }
 .cardProducto__desc {
-    width: 40%;
+  width: 40%;
 }
 .cardProducto__categoria {
-    margin-top: 20%;
-    margin-bottom: 0;
-    font-size: 0.9rem;
+  margin-top: 20%;
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }
 .cardProducto__nombre {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 .cardProducto__precio {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 .cardProducto__btn {
-    font-size: .9rem;
-    width: 100%;
-    background: #ef9b16;
-    border: 1px solid white;
-    padding: 5px 2px;
-    margin: 20% 0;
-    --bs-btn-hover-bg: #ed8b00;
-    --bs-btn-active-bg: #ed8b00;
-    --bs-btn-hover-border-color:#c0050b;
-    --bs-btn-active-border-color: #c0050b;
+  font-size: 0.9rem;
+  width: 100%;
+  background: #ef9b16;
+  border: 1px solid white;
+  padding: 5px 2px;
+  margin: 20% 0;
+  --bs-btn-hover-bg: #ed8b00;
+  --bs-btn-active-bg: #ed8b00;
+  --bs-btn-hover-border-color: #c0050b;
+  --bs-btn-active-border-color: #c0050b;
 }
 
 .cardProducto__imgContainer {
-    align-self: center;
+  align-self: center;
   width: 65%;
+}
+
+/* Responsive para dispositivos md */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Pagina principal */
+  #bannerImg {
+    height: 70vh;
+  }
+  #bannerText {
+    bottom: 50vh;
+  }
+  
+  /*Seccion de productos*/
+  .cardProducto {
+    width: 50%;
+  }
+}
+
+/* Responsive para dispositivos sm */
+@media only screen and (max-width: 767px) {
+  /* Pagina principal */
+  #bannerImg {
+    height: 65vh;
+  }
+  #bannerText {
+    bottom: 50vh;
+  }
+
+  /*Seccion de productos*/
+  .cardProducto {
+    width: 100%;
+  }
 }
