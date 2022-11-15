@@ -67,7 +67,7 @@ const Registrarse = () => {
         <Card.Title className="textLogin">CREA UNA CUENTA</Card.Title>
       </Card.Header>
       <Card.Body className="mt-4">
-        {/* <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mt-4">
             <Form.Label className="textForm">Nombres*</Form.Label>
             <Form.Control
@@ -87,7 +87,7 @@ const Registrarse = () => {
               onChange={(e) => setNombreUsuario(e.target.value)}
               value={nombreUsuario}
             ></Form.Control>
-            <Form.Text className="text-danger">
+             <Form.Text className="text-danger">
               {errors.nombreUsuario?.message}
             </Form.Text>
           </Form.Group>
@@ -110,7 +110,7 @@ const Registrarse = () => {
               onChange={(e) => setApellidoUsuario(e.target.value)}
               value={apellidoUsuario}
             ></Form.Control>
-            <Form.Text className="text-danger">
+             <Form.Text className="text-danger">
               {errors.apellidoUsuario?.message}
             </Form.Text>
           </Form.Group>
@@ -149,15 +149,14 @@ const Registrarse = () => {
                   value: 30,
                   message:
                     "Su contraseña debe tener como 30 caracteres como maximo",
-                },
+                }
               })}
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-            >
-              <Form.Text className="text-danger mb-2">
+            ></Form.Control>
+             <Form.Text className="text-danger mb-2">
                 {errors.password?.message}
               </Form.Text>
-            </Form.Control>
           </Form.Group>
           <Form.Group>
             <Card.Subtitle className="mt-3 mb-3 textForm">
@@ -173,9 +172,9 @@ const Registrarse = () => {
             <Row>
               <Col xs={1}>
                 <Form.Check
-                  {...register("check", {
-                    required: "Debe aceptar los terminos",
-                  })}
+                {...register("check", {
+                  required: "Debe aceptar los terminos",
+                })}
                 ></Form.Check>
               </Col>
               <Col xs={11}>
@@ -184,61 +183,9 @@ const Registrarse = () => {
                 </p>
               </Col>
             </Row>
-          </Form.Group>
-          <Button className="mt-4 btnEntrar" variant="none" type="submit">
-            Crear cuenta
-          </Button>
-        </Form> */}
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group className="mt-4">
-            <Form.Label className="textForm">Nombres*</Form.Label>
-            <Form.Control
-              className="p-2 borderInput"
-              type="text"
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className="mt-4 mb-2">
-            <Form.Label className="textForm">Apellidos*</Form.Label>
-            <Form.Control
-              className="p-2 borderInput"
-              type="text"
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className="mt-4 mb-2">
-            <Form.Label className="textForm">Correo electronico*</Form.Label>
-            <Form.Control
-              className="p-2 borderInput"
-              type="email"
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className="mt-4 mb-2">
-            <Form.Label className="textForm">Contraseña*</Form.Label>
-            <Form.Control
-              className="p-2 borderInput"
-              type="password"
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Card.Subtitle className="mt-3 mb-3 textForm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              deleniti sapiente alias nesciunt accusamus laborum doloribus
-              facere culpa. Quidem omnis velit necessitatibus. Commodi, animi
-              nesciunt. Illum consectetur amet placeat commodi. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit. Excepturi esse
-              maxime aspernatur libero, fuga explicabo molestias possimus
-              consequatur enim architecto voluptates hic sequi vitae, dicta at
-              consectetur officiis earum tenetur.
-            </Card.Subtitle>
-            <Row>
-              <Col xs={1}>
-                <Form.Check></Form.Check>
-              </Col>
-              <Col xs={11}>
-                <p className="textForm">
-                  <strong>Acepto terminos y condiciones.</strong>
-                </p>
-              </Col>
-            </Row>
+            <Form.Text className="text-danger mb-2">
+                {errors.check?.message}
+              </Form.Text>
           </Form.Group>
           <Button className="mt-4 btnEntrar" variant="none" type="submit">
             Crear cuenta
