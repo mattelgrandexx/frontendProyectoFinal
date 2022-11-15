@@ -19,7 +19,7 @@ const Registrarse = () => {
   const [apellidoUsuario, setApellidoUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const onSubmit = (datos) => {
     const verificacionEmail = usuarios.find(
       (usuario) => usuario.email === datos.email
