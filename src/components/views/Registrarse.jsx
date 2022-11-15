@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Card, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { crearUserApi } from "../helpers/queriesLogin";
+import { consultarUserApi, crearUserApi } from "../helpers/queriesLogin";
 
 const Registrarse = () => {
   const navigate = useNavigate();
@@ -19,8 +19,18 @@ const Registrarse = () => {
   const [apellidoUsuario, setApellidoUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
+
+  useEffect(() => {
+    consultarUserApi().then((respuesta) => {
+      setUsuarios(respuesta)
+    })
+    
+  }, [usuarios, setUsuarios])
+
+
   const onSubmit = (datos) => {
+
     const verificacionEmail = usuarios.find(
       (usuario) => usuario.email === datos.email
     );
@@ -35,21 +45,22 @@ const Registrarse = () => {
     } else {
       crearUserApi(datos).then((respuesta) => {
         if (respuesta.status === 201) {
-          setUsuarios([
-            ...usuarios,
-            {
-              nombreUsuario: datos.nombreUsuario,
-              apellidoUsuario: datos.apellidoUsuario,
-              email: datos.email,
-              pass: datos.pass,
-            },
-          ]);
+          // setUsuarios([
+          //   ...usuarios,
+          //   {
+          //     nombreUsuario: datos.nombreUsuario,
+          //     apellidoUsuario: datos.apellidoUsuario,
+          //     email: datos.email,
+          //     pass: datos.pass,
+          //   },
+          // ]);
           Swal.fire(
             `Te registraste correctamente, ${nombreUsuario}, ${apellidoUsuario}`,
-            "Inicia sesion con tu nueva cuenta.",
+            "Disfruta de nuestro contenido.",
             "success"
           );
-          navigate("/");
+          localStorage.setItem("usuarioActivo", JSON.stringify(datos.nombreUsuario, datos.apellidoUsuario));
+          navigate("/"); 
         } else {
           Swal.fire(
             `Hubo un error inesperado`,
@@ -126,6 +137,7 @@ const Registrarse = () => {
                     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
                   message: "Debe ingresar un formato valido",
                 },
+                unique: "Este email ya esta registrado"
               })}
               onChange={(e) => setEmail(e.target.value)}
               value={email}

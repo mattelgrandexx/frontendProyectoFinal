@@ -37,6 +37,30 @@
       "password": "12345678",
       "check": true,
       "id": "0a4ixNw"
+    },
+    {
+      "nombreUsuario": "Nico",
+      "apellidoUsuario": "Elias",
+      "email": "lalala@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "tKPxJ_B"
+    },
+    {
+      "nombreUsuario": "nico",
+      "apellidoUsuario": "elias",
+      "email": "nicoelias997@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "ZtEzoGG"
+    },
+    {
+      "nombreUsuario": "aaa",
+      "apellidoUsuario": "aaa",
+      "email": "nicoelias997@gmail.com",
+      "password": "aaaaaaaaa",
+      "check": true,
+      "id": "ex6cB4l"
     }
   ],
   "pedidos": [

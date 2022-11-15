@@ -31,6 +31,7 @@ const IniciarSesion = () => {
             `Gracias por contar con nosotros, ${encontrarEmail.nombreUsuario}`,
             "success"
           );
+          localStorage.setItem("usuarioActivo", JSON.stringify(encontrarEmail.nombreUsuario));
           navigate("/");
         } else {
           Swal.fire(

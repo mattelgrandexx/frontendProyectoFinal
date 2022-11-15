@@ -1,8 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+
+  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo"));
+  const [userActive,  setUserActive] = useState(false)
+
+  useEffect(() => {
+    if((storageUser)){
+      setUserActive(true)
+    }
+  }, [setUserActive, storageUser])
+
+  const navigate = useNavigate()
+
+  const cerrarSesion = () => {
+    Swal.fire({
+      title: 'Estas seguro que deseas cerrar sesion?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setUserActive(false)
+        localStorage.removeItem("usuarioActivo");
+        navigate("/login")
+      }
+    })
+  }
+
   return (
     <>
       <Navbar className="bgNavbar" variant="dark" expand="lg">
@@ -33,9 +64,18 @@ export const Header = () => {
             <NavLink to="/administrador" className="nav-item nav-link">
               Admin
             </NavLink>
+            
+            { 
+            userActive ? 
+            <NavLink end to="/login" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
+              LogOut
+            </NavLink>
+             : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
               Login
             </NavLink>
+            }
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
