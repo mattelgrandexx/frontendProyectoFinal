@@ -1,33 +1,39 @@
 import React, {  useState } from 'react'
 import IniciarSesion from './IniciarSesion'
 import Registrarse from './Registrarse'
-import {  Row, Col, Container } from 'react-bootstrap'
+import {  Row, Col } from 'react-bootstrap'
 import User from './User'
+import MisPedidos from './MisPedidos'
 
 const PerfilUsuario = () => {
 
 const [login, setLogin] = useState(false)
 
   const iniciarSesion = () => {
-    console.log("inicio")
     setLogin(false)
-    console.log(login)
   }
 
   const crearCuenta = () => {
     setLogin(true)
-    console.log(login)
-    console.log("registro")
+  }
+  const misPedidos = () => {
+    setLogin(null)
   }
 
   return (
-    <Container className='mt-3 mb-3 mainSection '>
-    <Row className='gridLogin'>
+    <Row className='m-5 mainSection d-flex'>
     <Col xs={4}>
-    <User iniciarSesion={iniciarSesion} crearCuenta={crearCuenta}></User>
+    <User iniciarSesion={iniciarSesion} crearCuenta={crearCuenta} misPedidos={misPedidos}></User>
     </Col>
-    <Col xs={8}>
+    <Col xs={8}> 
       {
+      login === null ? 
+      <>
+      <MisPedidos></MisPedidos>
+      </>
+       :
+        <>
+        {
         login ? 
         <>
     <Registrarse></Registrarse> 
@@ -35,10 +41,12 @@ const [login, setLogin] = useState(false)
         <>
     <IniciarSesion></IniciarSesion>
         </>
+        }
+        </>
       }
+    
     </Col>
     </Row>
-    </Container>
   )
 }
 

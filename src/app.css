@@ -33,11 +33,32 @@
     font-size: 2rem;
     letter-spacing: 1px;
 }
+
 .textFuncionesLogin{
     color:  #c0050b;
     font-weight: 600;
     letter-spacing: 1.5px;
     font-size: 1.4rem;
+    transition: 0.05s;
+    border: none;
+    outline:none;
+}
+.textFuncionesLogin:hover{
+    color:  #c0050b;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    border: none;
+    outline:none;
+}
+
+.textFuncionesLogin:focus{
+    color:  #000;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 1.4rem;
+    border: none;
+    outline:none;
 }
 .bgRayas {
     background: -moz-repeating-linear-gradient(135deg, #ffffff,  #c0050b 0.5px);
@@ -50,6 +71,7 @@
 }
 .borderNone{
     border: none;
+    outline:none;
 }
 
 .hrUser{
@@ -65,6 +87,23 @@
     outline: 3px solid  #c0050b;
     width: 9rem;
     height: 3rem;
+}
+.btnEntrar:hover{
+    color: #c0050b;
+    background-color:  #fff;
+    padding: 10px;
+    border: 3px solid #c0050b   ;
+    outline: 3px solid  #fff;
+    width: 9rem;
+    height: 3rem;
+}
+
+
+.textPedidos{
+    color:  #c0050b;
+    letter-spacing: 1.8px;
+    font-weight: 300;
+    font-size: 1.6rem;
 }
 .textForm{
     color:  #c0050b;
@@ -88,21 +127,6 @@
 }
 
 .borderInput:focus{
-    zoom: 1px;
     box-shadow: none;
     border-color: #000;
 }
-/* .user{
-    align-self: stretch;
-}
-.FormIniciar{   
-   align-self: stretch;
-} */
-.gridLogin{
-    display: -moz-grid-line;
-    grid-auto-rows: max-content 1fr
-}
-/* borrar despues */
-.bgNeg{
-        background-color: #000;
-    }

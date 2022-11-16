@@ -4,7 +4,6 @@ export const consultarUserApi = async () => {
     try{
         const respuesta = await fetch(URL)
         const listaUsuarios = await respuesta.json()
-        console.log(listaUsuarios)
         return listaUsuarios
     } catch(e){
         console.log(e)
@@ -20,7 +19,6 @@ export const crearUserApi = async (datos) => {
             },
             body: JSON.stringify(datos)
         })
-        console.log(respuesta)
         return respuesta
     } catch(e){
         console.log(e)

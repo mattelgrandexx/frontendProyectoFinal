@@ -25,8 +25,7 @@ const Registrarse = () => {
     consultarUserApi().then((respuesta) => {
       setUsuarios(respuesta)
     })
-    
-  }, [usuarios, setUsuarios])
+  }, [])
 
 
   const onSubmit = (datos) => {
@@ -45,15 +44,6 @@ const Registrarse = () => {
     } else {
       crearUserApi(datos).then((respuesta) => {
         if (respuesta.status === 201) {
-          // setUsuarios([
-          //   ...usuarios,
-          //   {
-          //     nombreUsuario: datos.nombreUsuario,
-          //     apellidoUsuario: datos.apellidoUsuario,
-          //     email: datos.email,
-          //     pass: datos.pass,
-          //   },
-          // ]);
           Swal.fire(
             `Te registraste correctamente, ${nombreUsuario}, ${apellidoUsuario}`,
             "Disfruta de nuestro contenido.",

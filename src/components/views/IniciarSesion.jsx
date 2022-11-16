@@ -18,7 +18,6 @@ const IniciarSesion = () => {
   } = useForm();
 
   const onSubmit = (datos) => {
-    console.log(datos)
     consultarUserApi().then((respuesta) => {
     
       const encontrarEmail = respuesta.find(
@@ -49,6 +48,10 @@ const IniciarSesion = () => {
       }
     });
   };
+
+  const recuperarPassword = () => {
+      console.log("aqui deberia recuperar mi contraseña")
+  }
 
 
   return (
@@ -105,7 +108,7 @@ const IniciarSesion = () => {
           </Button>
         </Form>
       </Card.Body>
-      <Button className="textPass" variant="none" type="submit">
+      <Button className="textPass" variant="none" type="button" onClick={() => recuperarPassword()}>
         No recuerdo mi contraseña
       </Button>
     </Card>
