@@ -67,9 +67,9 @@ export const Header = () => {
             
             { 
             userActive ? 
-            <NavLink end to="/login" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
+            <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
               LogOut
-            </NavLink>
+            </Link>
              : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
               Login
