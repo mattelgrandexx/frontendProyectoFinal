@@ -9,12 +9,12 @@
       "id": "1"
     },
     {
-      "nombreMenu": "Animal Style",
-      "precioMenu": 800,
-      "imagen": "https://i.postimg.cc/k42gfdYH/animal-style.png",
-      "categoria": "hamburguesas",
-      "descripcion": "Hamburguesa de tipo animal",
-      "id": "2"
+      "nombreMenu": "Estrella Galicia gluten free",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
+      "categoria": "bebidas",
+      "descripcion": "Cerveza libre de gluten",
+      "id": "oEwQbgA"
     }
   ],
   "usuarios": [

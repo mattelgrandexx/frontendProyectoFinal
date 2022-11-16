@@ -36,14 +36,14 @@ const CrearMenu = () => {
       <hr />
       </div>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formNombreProdcuto">
+        <Form.Group className="mb-3" controlId="formNombreProducto">
           <Form.Label className='oswald400 textoRojo'>Nombre producto</Form.Label>
           <Form.Control 
           type="text" 
           placeholder="Ej: Hamburguesa triple"
           minLength={10}
           maxLength={50}
-          {...register('nombreProducto', {
+          {...register('nombreMenu', {
             required:'El nombre del producto es obligatorio',
             minLength:{
               value:10,
@@ -62,7 +62,7 @@ const CrearMenu = () => {
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label className='oswald400 textoRojo'>Precio</Form.Label>
           <Form.Control type="number" placeholder="Ej: 100" 
-          {...register('precio',{
+          {...register('precioMenu',{
             required:'El precio del producto es un dato obligatorio',
             min:{
               value:100,
@@ -95,7 +95,7 @@ const CrearMenu = () => {
             {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label className='oswald400 textoRojo'>Categoria</Form.Label>
           <Form.Select {
             ...register('categoria',{
@@ -109,6 +109,29 @@ const CrearMenu = () => {
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formDescripcion">
+          <Form.Label className='oswald400 textoRojo'>Descripcion del Producto</Form.Label>
+          <Form.Control 
+          type="text" 
+          placeholder="Ej: Ingredientes"
+          minLength={10}
+          maxLength={50}
+          {...register('descripcion', {
+            required:'La descripcion del producto es obligatoria',
+            minLength:{
+              value:10,
+              message: 'La cantidad de caracteres es 10 como minimo'
+            },
+            maxLength:{
+              value:50,
+              message:'La cantidad maxima de caracteres es de 50'
+            }
+          })}
+          />
+          <Form.Text className="text-danger">
+            {errors.descripcion?.message}
           </Form.Text>
         </Form.Group>
        <button className='boton oswald400' type='submit'>Guardar</button>

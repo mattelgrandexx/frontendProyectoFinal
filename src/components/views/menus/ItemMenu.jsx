@@ -6,9 +6,8 @@ import Swal from 'sweetalert2';
 const ItemMenu = ({menu, setMenus}) => {
   const {id, nombreMenu, precioMenu, descripcion, imagen, categoria} = {...menu}
 
-  const borrarPMenu = ()=>{
-    const token = JSON.parse(localStorage.getItem('tokenLeno')).token|| null
-  borrarMenuApi(id,token).then((respuesta)=>{ 
+  const borrarMenu = ()=>{
+  borrarMenuApi(id).then((respuesta)=>{ 
     if(respuesta.status === 200){   
       Swal.fire("Producto eliminado","El producto fue eliminado exitosamente","success");
       consultarAPI().then((respuesta)=>{
@@ -32,7 +31,7 @@ const ItemMenu = ({menu, setMenus}) => {
         <Link className="boton" to={`/administrar/editar/${id}`}>
           Editar
         </Link>
-        <button className='boton' onClick={borrarMenuApi}>
+        <button className='boton' onClick={borrarMenu}>
           Borrar
         </button>
       </td>
