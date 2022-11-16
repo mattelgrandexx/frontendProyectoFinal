@@ -63,7 +63,7 @@ const Registrarse = () => {
   };
 
   return (
-    <Card>
+    <Card className="asd">
       <Card.Header className="bgColor p-4 m-1 text-center text-white">
         <Card.Title className="textLogin">CREA UNA CUENTA</Card.Title>
       </Card.Header>

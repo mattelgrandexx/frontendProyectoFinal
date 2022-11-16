@@ -55,7 +55,7 @@ const IniciarSesion = () => {
 
 
   return (
-    <Card>
+    <Card className="asd">
       <Card.Header className="bgColor p-4 m-1 text-center text-white">
         <Card.Title className="textLogin">INICIA SESIÓN</Card.Title>
       </Card.Header>
