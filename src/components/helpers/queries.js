@@ -1,3 +1,5 @@
+const URL = process.env.REACT_APP_API_BAR_MENU;
+
 
 export const consultarAPI = async()=>{
     try {
@@ -38,6 +40,7 @@ export const crearMenuApi = async(menu)=>{
         return false;
     }
 }
+
 export const borrarMenuApi = async(id)=>{
     try {
         const respuesta = await fetch(URL+'/'+id,{
