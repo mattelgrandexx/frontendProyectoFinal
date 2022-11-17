@@ -3,7 +3,7 @@ import { Card, ListGroup, ListGroupItem, Button, Container } from 'react-bootstr
 
 const User = (props) => {
   return (
-    <Card className="asd">
+    <Card className="gridLogin">
     <Card.Header className='bgRayas p-4 m-1 text-center text-white'>
       <Card.Title className='textUser'>
           USUARIO
