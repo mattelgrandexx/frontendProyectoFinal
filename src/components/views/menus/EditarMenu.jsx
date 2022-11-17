@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -9,26 +9,26 @@ const EditarMenu = () => {
   const{
     register,
     handleSubmit,
-    formstate: {errors},
+    formstate: { errors },
     setValue,
   } = useForm();
   const {id} = useParams();
   const navegacion = useNavigate();
+
   useEffect(()=>{
     obtenerMenuApi(id).then((respuesta)=>{
       if(respuesta.status === 200){
         console.log(respuesta);
-        setValue("nombreProducto", respuesta.dato.nombreProducto);
-        setValue("precio", respuesta.dato.precio);
+        setValue("nombreMenu", respuesta.dato.nombreMenu);
+        setValue("precioMenu", respuesta.dato.precioMenu);
         setValue("imagen", respuesta.dato.imagen);
         setValue("categoria", respuesta.dato.categoria);
+        setValue("descripcion", respuesta.dato.descripcion);
       }
     })
   },[])
 
   const onSubmit = (datos) => {
-    console.log(datos);
-    console.log("desde editar producto");
     editarMenuApi(id, datos).then((respuesta) => {
       if (respuesta.status === 200) {
         Swal.fire(
@@ -45,19 +45,18 @@ const EditarMenu = () => {
   };
 
   return (
-    <section className="container">
+    <section>
       <h1 className="display-4 mt-5">Editar producto</h1>
       <hr />
-      {/* <Form onSubmit={handleSubmit}> */}
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formNombreProdcuto">
+        <Form.Group className="mb-3" controlId="formNombreProducto">
           <Form.Label>Nombre producto*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Hamburguesa triple"
             minLength={10}
             maxLength={50}
-            {...register("nombreProducto", {
+            {...register("nombreMenu", {
               required: "El nombre del producto es obligatorio",
               minLength: {
                 value: 10,
@@ -78,7 +77,7 @@ const EditarMenu = () => {
           <Form.Control
             type="number"
             placeholder="Ej: 100"
-            {...register("precio", {
+            {...register("precioMenu", {
               required: "El precio del producto es un dato obligatorio",
               min: {
                 value: 100,

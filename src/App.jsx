@@ -9,6 +9,7 @@ import Registrarse from "./components/views/Registrarse"
 import AcercaDeNos from "./components/views/AcercaDeNos"
 import Error404 from "./components/views/Error404"
 import {Footer} from "./components/common/Footer"
+import EditarPedido from "./components/views/AdminComponents/EditarPedido";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route exact path='/' element={<PaginaPrincipal/>}></Route>
         <Route exact path='/administrar' element={<Administrador/>}></Route>
         <Route exact path='/administrar/crear' element={<CrearMenu/>}></Route>
-        <Route exact path='/administrar/editar/:id' element={<EditarMenu/>}></Route>
+        <Route exact path='/administrar/editar' element={<EditarMenu/>}></Route>
+        <Route exact path='/administrar/editarPedido' element={<EditarPedido/>}></Route>
         <Route exact path='/detalle/:id' element={<DetalleMenu/>}></Route>
         <Route exact path='/registro' element={<Registrarse/>}></Route>
         <Route exact path='/acerca' element={<AcercaDeNos/>}></Route>

@@ -3,8 +3,10 @@ import "./admin.css";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import ItemMenu from "./menus/ItemMenu";
-import { consultarAPI } from "../helpers/queries";
+import { consultarAPI, consultarPedidosAPI, consultarUserAPI } from "../helpers/queries";
 import Swal from "sweetalert2";
+import ItemUsuario from "./AdminComponents/ItemUsuario";
+import ItemPedido from "./AdminComponents/ItemPedido";
 
 const Administrador = () => {
   const [menus, setMenus] = useState([]);
@@ -23,6 +25,39 @@ const Administrador = () => {
       }
     )
   },[]);
+
+  const[usuarios, setUsuarios] = useState([]);
+  useEffect(()=>{
+    consultarUserAPI().then((respuesta)=>{
+      setUsuarios(respuesta);
+    },
+    (reason)=>{
+      console.log(reason);
+      Swal.fire(
+        'Ocurrio un error',
+        'Intentelo nuevamente en unos minutos',
+        'error'
+      )
+    }
+    )
+  },[]);
+
+  const[pedidos, setPedidos] = useState([]);
+  useEffect(()=>{
+    consultarPedidosAPI().then((respuesta)=>{
+      setPedidos(respuesta);
+    },
+    (reason)=>{
+      console.log(reason);
+      Swal.fire(
+        'Ocurrio un error',
+        'Intentelo nuevamente en unos minutos',
+        'error'
+      )
+    }
+    )
+  },[])
+
   return (
     <>
     <section className=""> 
@@ -56,13 +91,47 @@ const Administrador = () => {
       </section>
       <section className="container">
         <div className="d-flex justify-content-between align-items-center mt-5">
-          <h1 className="oswald500 textoBlanco">Pedidos disponibles</h1>
+          <h1 className="oswald500 textoRojo">Pedidos disponibles</h1>
+          <hr />
         </div>
+        <Table responsive striped bordered hover className="bordeCajaRojo">
+          <thead>
+            <tr className="oswald400 textoRojo">
+              <th>Cod</th>
+              <th>Pedido</th>
+              <th>Estado</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody className="oswald400">
+            {
+              pedidos.map((pedido)=><ItemPedido key={pedido.id} pedido={pedido} setPedidos={setPedidos}></ItemPedido>)
+            }
+          </tbody>
+        </Table>
       </section>
       <section className="container">
         <div>
-          <h1 className="oswald500 textoBlanco">Lista de usuarios disponibles</h1>
-        </div>
+          <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
+          <hr />
+          </div>
+          <Table responsive striped bordered hover className="bordeCajaRojo">
+          <thead>
+            <tr className="oswald400 textoRojo">
+              <th>Cod</th>
+              <th>Nombre Usuario</th>
+              <th>Email</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody className="oswald400">
+          
+             {
+              usuarios.map((usuario)=><ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
+             }
+          
+          </tbody>
+        </Table>
       </section>
     </section>
     </>

@@ -1,4 +1,6 @@
 const URL = process.env.REACT_APP_API_BAR_MENU;
+const URLPEDIDOS = process.env.REACT_APP_API_BAR_MENU_PEDIDOS;
+const URLUSUARIOS = process.env.REACT_APP_API_BAR_MENU_USUARIOS
 
 
 export const consultarAPI = async()=>{
@@ -68,3 +70,23 @@ export const editarMenuApi = async(id, menu)=>{
         return false;
     }
 }
+
+export const consultarUserAPI = async () => {
+    try {
+      const respuesta = await fetch(URLUSUARIOS);
+      const listaUsuarios = await respuesta.json();
+      return listaUsuarios;
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  export const consultarPedidosAPI = async ()=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS);
+        const listaPedidos = await respuesta.json();
+        return listaPedidos;
+    } catch (e) {
+        console.log(e);
+    }
+  };

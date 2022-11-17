@@ -14,24 +14,33 @@
       "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
       "categoria": "bebidas",
       "descripcion": "Cerveza libre de gluten",
-      "id": "oEwQbgA"
+      "id": "2"
     }
   ],
   "usuarios": [
     {
       "nombreUsuario": "nicoelias997",
       "email": "nicoelias997@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "id": "201"
+    },
+    {
+      "nombreUsuario": "matias123",
+      "email": "matias123@gmail.com",
+      "password": "12345678",
+      "id": "200"
     }
   ],
   "pedidos": [
     {
       "estado": "En preparacion",
-      "pedido": [
-        "hamburguesa",
-        "papas",
-        "bebida"
-      ]
+      "id": "100",
+      "nombrePedido": "Singular"  
+    },
+    {
+      "estado": "En preparacion",
+      "id": "100",
+      "nombrePedido": "Nuggets"
     }
-  ]
+]
 }
