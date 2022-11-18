@@ -76,7 +76,7 @@ const IniciarSesion = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             ></Form.Control>
-             <Form.Text className="text-danger mb-2">
+             <Form.Text className="text-danger mb-2 mt-1">
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
@@ -99,7 +99,7 @@ const IniciarSesion = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             ></Form.Control>
-            <Form.Text className="text-danger mb-2">
+            <Form.Text className="text-danger mb-2 mt-1">
                 {errors.password?.message}
               </Form.Text>
           </Form.Group>

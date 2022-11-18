@@ -61,6 +61,14 @@
       "password": "aaaaaaaaa",
       "check": true,
       "id": "ex6cB4l"
+    },
+    {
+      "nombreUsuario": "aaa",
+      "apellidoUsuario": "bb",
+      "email": "niconico@gmail.com",
+      "password": "holahola",
+      "check": true,
+      "id": "MktpAdS"
     }
   ],
   "pedidos": [

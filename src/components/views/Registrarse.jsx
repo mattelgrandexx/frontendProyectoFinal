@@ -172,7 +172,7 @@ const Registrarse = () => {
               consectetur officiis earum tenetur.
             </Card.Subtitle>
             <Row>
-              <Col xs={1}>
+              <Col xs={1} className="mb-2">
                 <Form.Check
                 {...register("check", {
                   required: "Debe aceptar los terminos",
