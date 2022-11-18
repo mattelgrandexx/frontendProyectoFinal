@@ -14,6 +14,7 @@ import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import Registrarse from "./components/views/Registrarse";
 import './style.css'
+import './App.css'
 
 function App() {
   return (

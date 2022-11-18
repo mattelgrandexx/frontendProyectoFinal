@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+main {
+  background: #fafafa;
+}
+
+/* Pagina principal */
+#bannerImg {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  object-position:  0 100%;
+  margin-bottom: 2.5vh;
+}
+#bannerText {
+  position: absolute;
+  bottom: 35vh;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: whitesmoke;
+  text-shadow: black -1px 0, black 0 -1px, black 1px 0, black 0 1px,
+    black -1px -1px, black 1px 1px;
+  text-align: center;
+  margin: 0 20%;
+}
+
+/* Titulo para categoria */
+.pagPrincipal__titulo {
+  margin-bottom: 7.5vh;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 4rem;
+}
+.pagPrincipal__titulo:before,
+.pagPrincipal__titulo:after {
+  background-color: #c0050b;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  vertical-align: middle;
+  width: 10%;
+}
+.pagPrincipal__titulo:before {
+  right: .5em;
+  margin-left: -50%;
+}
+.pagPrincipal__titulo:after {
+  left: .5em;
+  margin-right: -50%;
+}
+
+/* Seccion de productos */
+.cardContainer {
+  margin-bottom: 7.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1.5px solid #c0050b;
+  -webkit-box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.57);
+  box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.57);
+}
+.cardProducto {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% / 3);
+  padding-left: 1.5em;
+  border: 1.5px solid #c0050b;
+}
+.cardProducto__desc {
+  width: 40%;
+}
+.cardProducto__categoria {
+  margin-top: 20%;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+.cardProducto__nombre {
+  font-weight: bolder;
+}
+.cardProducto__precio {
+  font-size: 1.1rem;
+}
+
+.cardProducto__btn {
+  font-size: 0.9rem;
+  color: white;
+  background-color: #ef9b16;
+  width: 100%;
+  padding: 5px 2px;
+  margin: 20% 0;
+  border: 3px solid white;
+  outline: 3px solid #ef9b16;
+}
+.cardProducto__btn:hover {
+  color: #ef9b16;
+  background-color: #fff;
+  border: 3px solid #ef9b16;
+  outline: 3px solid #fff;
+}
+
+.cardProducto__imgContainer {
+  align-self: center;
+  width: 65%;
+}
+
+/* Responsive para dispositivos md */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Pagina principal */
+  #bannerImg {
+    height: 65vh;
+    object-position: 50% 50%;
+  }
+  #bannerText {
+    bottom: 40vh;
+    margin: 0 20vw;
+    font-size: 1.2rem;
+  }
+
+  /*Seccion de productos*/
+  .cardProducto {
+    width: 50%;
+  }
+}
+
+/* Responsive para dispositivos sm */
+@media only screen and (max-width: 767px) {
+  /* Pagina principal */
+  #bannerImg {
+    height: 55vh;
+    object-position: 50% 50%;
+  }
+  #bannerText {
+    bottom: 50vh;
+    margin: 0 5vw;
+    font-size: .9rem;
+  }
+
+  .pagPrincipal__titulo {
+    font-size: 2.5rem;
+  }
+
+  /*Seccion de productos*/
+  .cardProducto {
+    width: 100%;
+  }
+}
