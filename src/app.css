@@ -158,8 +158,11 @@
          width: 50%;
          position: relative;
         left: 25%;
-
      }
+     .borderNone{
+        display: flex;
+        justify-content: center;
+       }
 }
 @media (max-width: 591px){
     .textPass{
@@ -173,6 +176,10 @@
     .btnEntrar:hover{
         width: 100%;
     }
+    .borderNone{
+        display: flex;
+        justify-content: center;
+       }
 }
 
 @media (max-width: 300px) {
@@ -186,6 +193,11 @@
     font-size: 1.1rem;
     font-weight: 900;
    }
+   .borderNone{
+    display: flex;
+    justify-content: center;
+   }
+   
 }
 
 @media (min-width: 768px) {
