@@ -1,5 +1,7 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import CardMenu from './menus/CardMenu'
+
 
 const PaginaPrincipal = () => {
   return (
@@ -10,8 +12,9 @@ const PaginaPrincipal = () => {
           <p id='bannerText'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eaque sapiente, eum consequuntur porro, amet modi explicabo doloremque, excepturi deserunt sit architecto? Magni nemo necessitatibus nesciunt laboriosam libero voluptate blanditiis.</p>
         </div>
       </section>
+      <Container>
       <h2 className='pagPrincipal__titulo'>Hamburguesas</h2>
-      <section className='container p-0 cardContainer'>
+      <section className='p-0 cardContainer'>
         <CardMenu></CardMenu>
         <CardMenu></CardMenu>
         <CardMenu></CardMenu>
@@ -19,7 +22,17 @@ const PaginaPrincipal = () => {
         <CardMenu></CardMenu>
         <CardMenu></CardMenu>
       </section>
-      <section></section>
+       
+      <h2 className='pagPrincipal__titulo'>Extras</h2>
+      <section className='p-0 cardContainer'>
+        <CardMenu></CardMenu>
+        <CardMenu></CardMenu>
+        <CardMenu></CardMenu>
+        <CardMenu></CardMenu>
+        <CardMenu></CardMenu>
+        <CardMenu></CardMenu>
+      </section>
+      </Container>
     </main>
   )
 }
