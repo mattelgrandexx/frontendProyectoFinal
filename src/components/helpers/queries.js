@@ -90,3 +90,27 @@ export const consultarUserAPI = async () => {
         console.log(e);
     }
   };
+
+  export const borrarPedidoApi = async(id)=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS+'/'+id,{
+            method: "DELETE"          
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
+export const borrarUsuarioAPI = async(id)=>{
+    try {
+        const respuesta = await fetch(URLUSUARIOS+'/'+id,{
+            method: "DELETE"          
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};

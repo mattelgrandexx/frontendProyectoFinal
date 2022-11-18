@@ -23,24 +23,24 @@
       "email": "nicoelias997@gmail.com",
       "password": "12345678",
       "id": "201"
-    },
-    {
-      "nombreUsuario": "matias123",
-      "email": "matias123@gmail.com",
-      "password": "12345678",
-      "id": "200"
     }
   ],
   "pedidos": [
     {
       "estado": "En preparacion",
       "id": "100",
-      "nombrePedido": "Singular"  
+      "nombrePedido": [
+        "Singular",
+        "Estrella galicia"
+      ]
     },
     {
       "estado": "En preparacion",
-      "id": "100",
-      "nombrePedido": "Nuggets"
+      "id": "101",
+      "nombrePedido": [
+        "Kids Burger",
+        "Cerveza Camioneta"
+      ]
     }
-]
+  ]
 }
