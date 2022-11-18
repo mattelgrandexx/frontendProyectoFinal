@@ -12,7 +12,7 @@ const CardMenu = () => {
             <Button className='cardProducto__btn' type='button'>Agregar a mi pedido</Button>
           </div>
           <div className='cardProducto__imgContainer'>
-            <img className='w-100' src={require("../../../img/burger/superiority.png")} alt=""/>
+            <img className='w-100' src="https://i.postimg.cc/T1rG42Vt/superiority.png" alt="Hamburgesa Superiority"/>
           </div>
         </article>
   )
