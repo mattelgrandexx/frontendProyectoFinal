@@ -173,6 +173,25 @@
     .btnEntrar:hover{
         width: 100%;
     }
-
 }
 
+@media (max-width: 300px) {
+   .textPedidos{
+    font-size: 1.4rem;
+   }
+   .textLogin{
+    font-size: 1.1rem;
+   }
+   .textUser{
+    font-size: 1.1rem;
+    font-weight: 900;
+   }
+}
+
+@media (min-width: 768px) {
+    .textPedidos{
+        font-size: 3rem;
+        position: relative;
+        top: 25%;
+    }
+ }
