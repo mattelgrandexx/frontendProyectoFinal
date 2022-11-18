@@ -23,7 +23,7 @@ const ItemPedido = ({pedido, setPedidos}) => {
       <td>{nombrePedido}</td>
       <td>{estado}</td>
       <td>
-        <Link className="boton" to={`/administrar/editarPedido/${id}`}>
+        <Link className="boton" to={`/administrar/editarPedido/:${id}`}>
           Editar
         </Link>
         <button className='boton' onClick={borrarPedido}>

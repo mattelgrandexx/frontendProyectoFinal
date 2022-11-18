@@ -28,7 +28,7 @@ const ItemMenu = ({menu, setMenus}) => {
       <td>{categoria}</td>
       <td>{descripcion}</td>
       <td>
-        <Link className="boton" to={`/administrar/editar/${id}`}>
+        <Link className="boton" to={`/administrar/editarMenu/:${id}`}>
           Editar
         </Link>
         <button className='boton' onClick={borrarMenu}>
