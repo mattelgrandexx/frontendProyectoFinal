@@ -22,10 +22,10 @@ const [login, setLogin] = useState(false)
 
   return (
     <Row className='m-5 mainSection d-flex'>
-    <Col xs={4}>
+    <Col xs={12} lg={4}>
     <User iniciarSesion={iniciarSesion} crearCuenta={crearCuenta} misPedidos={misPedidos}></User>
     </Col>
-    <Col xs={8}> 
+    <Col xs={12} lg={8}> 
       {
       login === null ? 
       <>

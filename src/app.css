@@ -120,6 +120,7 @@
     font-weight: 600;
     position: relative;
     left: 70%;
+    margin-bottom: 1rem;
 }
 
 .borderInput{
@@ -132,3 +133,46 @@
     box-shadow: none;
     border-color: #000;
 }
+
+@media (min-width: 1024px) {
+    .textPass{
+        width: 100%;
+        position: relative;
+        left: 0%;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+}
+@media (min-width: 592px) {
+    .textPass{
+        width: 100%;
+        position: relative;
+        left: 0%;
+    }
+    .btnEntrar{
+        width: 50%;
+        position: relative;
+        left: 25%;
+     }
+     .btnEntrar:hover{
+         width: 50%;
+         position: relative;
+        left: 25%;
+
+     }
+}
+@media (max-width: 591px){
+    .textPass{
+        width: 100%;
+        position: relative;
+        left: 0%;
+    }
+    .btnEntrar{
+       width: 100%;
+    }
+    .btnEntrar:hover{
+        width: 100%;
+    }
+
+}
+
