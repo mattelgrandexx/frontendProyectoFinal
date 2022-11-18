@@ -24,7 +24,7 @@ const IniciarSesion = () => {
         (user) => user.email === datos.email
       );
       if (encontrarEmail) {
-        if (encontrarEmail.pass === datos.pass) {
+        if (encontrarEmail.password === datos.password) {
           Swal.fire(
             "Bienvenido",
             `Gracias por contar con nosotros, ${encontrarEmail.nombreUsuario}`,
