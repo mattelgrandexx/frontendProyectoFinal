@@ -47,22 +47,6 @@
       "id": "tKPxJ_B"
     },
     {
-      "nombreUsuario": "nico",
-      "apellidoUsuario": "elias",
-      "email": "nicoelias997@gmail.com",
-      "password": "12345678",
-      "check": true,
-      "id": "ZtEzoGG"
-    },
-    {
-      "nombreUsuario": "aaa",
-      "apellidoUsuario": "aaa",
-      "email": "nicoelias997@gmail.com",
-      "password": "aaaaaaaaa",
-      "check": true,
-      "id": "ex6cB4l"
-    },
-    {
       "nombreUsuario": "aaa",
       "apellidoUsuario": "bb",
       "email": "niconico@gmail.com",
