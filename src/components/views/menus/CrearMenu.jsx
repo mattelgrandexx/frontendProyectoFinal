@@ -36,7 +36,7 @@ const CrearMenu = () => {
       <hr />
       </div>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formNombreProducto">
+        <Form.Group className="mb-3" controlId="forNombreProducto">
           <Form.Label className='oswald400 textoRojo'>Nombre producto</Form.Label>
           <Form.Control 
           type="text" 
@@ -59,7 +59,7 @@ const CrearMenu = () => {
             {errors.nombreProducto?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="forPrecio">
           <Form.Label className='oswald400 textoRojo'>Precio</Form.Label>
           <Form.Control type="number" placeholder="Ej: 100" 
           {...register('precioMenu',{
@@ -78,7 +78,7 @@ const CrearMenu = () => {
             {errors.precio?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formImagen">
+        <Form.Group className="mb-3" controlId="forImagen">
           <Form.Label className='oswald400 textoRojo'>Imagen URL</Form.Label>
           <Form.Control
             type="text"
@@ -95,7 +95,7 @@ const CrearMenu = () => {
             {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formCategoria">
+        <Form.Group className="mb-3" controlId="forCategoria">
           <Form.Label className='oswald400 textoRojo'>Categoria</Form.Label>
           <Form.Select {
             ...register('categoria',{
@@ -111,7 +111,7 @@ const CrearMenu = () => {
             {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formDescripcion">
+        <Form.Group className="mb-3" controlId="forDescripcion">
           <Form.Label className='oswald400 textoRojo'>Descripcion del Producto</Form.Label>
           <Form.Control 
           type="text" 

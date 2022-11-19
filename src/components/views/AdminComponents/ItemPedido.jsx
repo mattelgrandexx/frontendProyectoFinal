@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import { borrarPedidoApi, consultarPedidosAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
@@ -23,11 +23,11 @@ const ItemPedido = ({pedido, setPedidos}) => {
       <td>{nombrePedido}</td>
       <td>{estado}</td>
       <td>
-        <Link className="boton" to={`/administrar/editarPedido/:${id}`}>
-          Editar
+       <Link className="boton" to={`/administrar/editarPedido/${id}`}>
+          Cambiar estado
         </Link>
-        <button className='boton' onClick={borrarPedido}>
-          Borrar
+        <button className='botonBorrar' onClick={borrarPedido}>
+          Anular pedido
         </button>
       </td>
     </tr>

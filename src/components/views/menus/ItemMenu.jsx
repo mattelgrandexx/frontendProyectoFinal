@@ -28,10 +28,10 @@ const ItemMenu = ({menu, setMenus}) => {
       <td>{categoria}</td>
       <td>{descripcion}</td>
       <td>
-        <Link className="boton" to={`/administrar/editarMenu/:${id}`}>
+        <Link className="boton" to={`/administrar/editarMenu/${id}`}>
           Editar
         </Link>
-        <button className='boton' onClick={borrarMenu}>
+        <button className='botonBorrar' onClick={borrarMenu}>
           Borrar
         </button>
       </td>

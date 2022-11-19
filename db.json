@@ -15,6 +15,22 @@
       "categoria": "bebidas",
       "descripcion": "Cerveza libre de gluten",
       "id": "2"
+    },
+    {
+      "nombreMenu": "Burger del mes",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Hamburguesa ganadora del concurso \"Burger del mes\"",
+      "id": "iAxiyQN"
+    },
+    {
+      "nombreMenu": "Bacon cheese",
+      "precioMenu": "700",
+      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
+      "categoria": "extras",
+      "descripcion": "Papas con agregado de cheddar, bacon y verdeo.",
+      "id": "q44aDjs"
     }
   ],
   "usuarios": [
@@ -26,14 +42,6 @@
     }
   ],
   "pedidos": [
-    {
-      "estado": "En preparacion",
-      "id": "100",
-      "nombrePedido": [
-        "Singular",
-        "Estrella galicia"
-      ]
-    },
     {
       "estado": "En preparacion",
       "id": "101",

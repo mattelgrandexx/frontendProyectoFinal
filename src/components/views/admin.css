@@ -9,9 +9,20 @@
  font-size: 1cm;
 }
 .boton{
-background-color:#f2efe8 ;
+background-color:#EF9B16 ;
 text-decoration: none;
 padding: 0.5rem;
+color: white;
+border: 1px solid black;
+margin: 20px 10px 2px 0px;
+}
+.botonBorrar{
+  background-color: #c0050b;
+text-decoration: none;
+padding: 0.5rem;
+color: white;
+border: 1px solid black;
+margin: 20px 0px 2px 0px;
 }
 
 * {
@@ -37,3 +48,14 @@ padding: 0.5rem;
   border: 2px solid #c0050b;
   padding: 5px;
 }
+
+.fondoNaranja{
+  background-color: #EF9B16;
+}
+
+.columna{
+  flex-direction: column;
+}
+
+/* media queries admin */
+@media all 

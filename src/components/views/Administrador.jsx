@@ -59,18 +59,21 @@ const Administrador = () => {
   },[])
 
   return (
-    <>
-    <section className=""> 
+  
+    <section className="fondoBlanco"> 
 
-      <section className="container mt-5">
+      <section className="container mt-5 bordeCajaRojo">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="oswald500 textoRojo">Productos disponibles</h1>
-          <Link className="oswald400 boton textoRojo" to="/administrar/crear">
+          <div>
+            <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" alt="" />
+          </div>
+          <Link className="oswald400 boton" to="/administrar/crear">
             Agregar un producto
           </Link>
         </div>
         <hr />
-        <Table responsive striped bordered hover className="bordeCajaRojo">
+        <Table responsive bordered>
           <thead>
             <tr className="oswald400 textoRojo">
               <th>Cod</th>
@@ -89,14 +92,14 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <section className="container">
+      <section className="container bordeCajaRojo mt-5">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="oswald500 textoRojo">Pedidos disponibles</h1>
           <hr />
         </div>
-        <Table responsive striped bordered hover className="bordeCajaRojo">
+        <Table responsive bordered className="bordeCajaRojo">
           <thead>
-            <tr className="oswald400 textoRojo">
+            <tr className="oswald400 textoRojo flex">
               <th>Cod</th>
               <th>Pedido</th>
               <th>Estado</th>
@@ -110,12 +113,12 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <section className="container">
+      <section className="container my-5 bordeCajaRojo">
         <div>
           <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
           <hr />
           </div>
-          <Table responsive striped bordered hover className="bordeCajaRojo">
+          <Table responsive bordered className="bordeCajaRojo">
           <thead>
             <tr className="oswald400 textoRojo">
               <th>Cod</th>
@@ -134,7 +137,7 @@ const Administrador = () => {
         </Table>
       </section>
     </section>
-    </>
+
   );
 };
 
