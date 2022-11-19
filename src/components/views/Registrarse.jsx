@@ -101,11 +101,11 @@ const Registrarse = () => {
                 required: "Debe ingresar su apellido.",
                 minLength: {
                   value: 2,
-                  message: "El nombre debe tener al menos 2 caracteres",
+                  message: "El apellido debe tener al menos 2 caracteres",
                 },
                 maxLength: {
                   value: 30,
-                  message: "El nombre no debe tener mas de 30 caracteres",
+                  message: "El apellido no debe tener mas de 30 caracteres",
                 },
               })}
               onChange={(e) => setApellidoUsuario(e.target.value)}
