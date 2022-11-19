@@ -57,5 +57,6 @@ margin: 20px 0px 2px 0px;
   flex-direction: column;
 }
 
-/* media queries admin */
-@media all 
+.tamañoBandera{
+  width: 25%;
+}

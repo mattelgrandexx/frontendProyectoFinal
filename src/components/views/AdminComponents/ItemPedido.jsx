@@ -24,10 +24,10 @@ const ItemPedido = ({pedido, setPedidos}) => {
       <td>{estado}</td>
       <td>
        <Link className="boton" to={`/administrar/editarPedido/${id}`}>
-          Cambiar estado
+          Editar
         </Link>
         <button className='botonBorrar' onClick={borrarPedido}>
-          Anular pedido
+          Borrar
         </button>
       </td>
     </tr>

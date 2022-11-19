@@ -60,14 +60,16 @@ const Administrador = () => {
 
   return (
   
-    <section className="fondoBlanco"> 
-
-      <section className="container mt-5 bordeCajaRojo">
+    <section className="fondoNegro"> 
+<div>
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+</div>
+      <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="oswald500 textoRojo">Productos disponibles</h1>
-          <div>
-            <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" alt="" />
-          </div>
           <Link className="oswald400 boton" to="/administrar/crear">
             Agregar un producto
           </Link>
@@ -92,7 +94,13 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <section className="container bordeCajaRojo mt-5">
+      <div>
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+</div>
+      <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="oswald500 textoRojo">Pedidos disponibles</h1>
           <hr />
@@ -113,7 +121,13 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <section className="container my-5 bordeCajaRojo">
+      <div>
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+</div>
+      <section className="container bordeCajaRojo fondoBlanco">
         <div>
           <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
           <hr />
@@ -136,6 +150,12 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
+      <div>
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+</div>
     </section>
 
   );
