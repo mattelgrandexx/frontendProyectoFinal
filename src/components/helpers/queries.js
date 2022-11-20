@@ -103,6 +103,22 @@ export const consultarUserAPI = async () => {
     }
 };
 
+export const editarPedidoAPI = async(id, pedido)=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS+'/'+id,{
+            method: "PUT",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pedido)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+}
+
 export const borrarUsuarioAPI = async(id)=>{
     try {
         const respuesta = await fetch(URLUSUARIOS+'/'+id,{

@@ -121,9 +121,9 @@ const EditarMenu = () => {
               })}
             >
               <option value="">Seleccione una opcion</option>
-              <option value="Hamburguesas">Hamburguesas</option>
-              <option value="Bebidas">Bebidas</option>
-              <option value="Extras">Extras</option>
+              <option value="hamburguesas">Hamburguesas</option>
+              <option value="hebidas">Bebidas</option>
+              <option value="extras">Extras</option>
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.categoria?.message}

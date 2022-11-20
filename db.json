@@ -1,22 +1,6 @@
 {
   "menus": [
     {
-      "nombreMenu": "Singular",
-      "precioMenu": 1400,
-      "imagen": "https://i.postimg.cc/Y0cMRLW4/singular.png",
-      "categoria": "hamburguesas",
-      "descripcion": "Hamburguesa clasica",
-      "id": "1"
-    },
-    {
-      "nombreMenu": "Estrella Galicia gluten free",
-      "precioMenu": "350",
-      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
-      "categoria": "bebidas",
-      "descripcion": "Cerveza libre de gluten",
-      "id": "2"
-    },
-    {
       "nombreMenu": "Burger del mes",
       "precioMenu": "800",
       "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
@@ -43,7 +27,6 @@
   ],
   "pedidos": [
     {
-      "estado": "En preparacion",
       "id": "101",
       "nombrePedido": [
         "Kids Burger",

@@ -1,9 +1,10 @@
 import { Form, Link } from "react-router-dom";
-import { borrarPedidoApi, consultarPedidosAPI } from "../../helpers/queries";
+import { borrarPedidoApi, consultarPedidosAPI, editarPedidoAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const ItemPedido = ({pedido, setPedidos}) => {
-    const {estado, nombrePedido, id} = {...pedido}
+    const {nombrePedido, id} = {...pedido}
 
     const borrarPedido = ()=>{
         borrarPedidoApi(id).then((respuesta)=>{ 
@@ -17,15 +18,47 @@ const ItemPedido = ({pedido, setPedidos}) => {
           }
         })
       }
+
+      const realizarPedido=()=>{
+        editarPedidoAPI(id)
+      }
+
+      const [pedestado,setPedEstado] = useState(false)
+
+       let estado = "";
+      const input1=(e)=>{
+        e.preventDefault()
+        setPedEstado(true)
+        if(pedestado){
+          estado = "Realizado"
+        }else{
+          estado = "En preparacion"
+        }
+
+      }
+
     return (
         <tr>
         <td>{id}</td>
-      <td>{nombrePedido}</td>
+      <td>{
+    nombrePedido.map( item => ( " - " +
+      item + " "
+    ))
+  }</td>
       <td>{estado}</td>
       <td>
-       <Link className="boton" to={`/administrar/editarPedido/${id}`}>
-          Editar
-        </Link>
+      <div>
+            <input onChange={input1} name="input1" type="checkbox" id="switch"
+                    class="checkbox" />
+        <label for="switch" class="toggle">
+          {/* {console.log(e.target.input1.value)} */}
+             
+ 
+<p>    </p>
+ 
+ 
+        </label>
+        </div>
         <button className='botonBorrar' onClick={borrarPedido}>
           Borrar
         </button>

@@ -61,11 +61,11 @@ const Administrador = () => {
   return (
   
     <section className="fondoNegro"> 
-<div>
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+<div className="mb-2">
+<img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
 </div>
       <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center">
@@ -94,11 +94,11 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <div>
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+      <div className="my-2">
+      <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
 </div>
       <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center mt-5">
@@ -121,11 +121,11 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <div>
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+      <div className="my-2">
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
 </div>
       <section className="container bordeCajaRojo fondoBlanco">
         <div>
@@ -150,11 +150,11 @@ const Administrador = () => {
           </tbody>
         </Table>
       </section>
-      <div>
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
-  <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className="tamañoBandera" alt="" />
+      <div className="my-2">
+      <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
 </div>
     </section>
 
