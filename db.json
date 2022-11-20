@@ -1,28 +1,37 @@
 {
-    "menus": [
-      {
-        "nombreMenu": "Hamburguesa rustica",
-        "precioMenu": 1400,
-        "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-        "imagen": "https://st2.depositphotos.com/1020618/8867/i/450/depositphotos_88671760-stock-photo-close-up-of-home-made.jpg",
-        "categoria": "hamburguesa"
-      }
-    ], 
-    "usuarios": [
-      {
-          "nombreUsuario": "nicoelias997",
-          "email": "nicoelias997@gmail.com",
-          "password": "12345678"
-      }
-    ],
-    "pedidos": [
-      {
-          "estado": "En preparacion",
-          "pedido": [
-              "hamburguesa",
-              "papas",
-              "bebida"
-          ]
-      }
+  "menus": [
+    {
+      "nombreMenu": "Burger del mes",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Hamburguesa ganadora del concurso \"Burger del mes\"",
+      "id": "iAxiyQN"
+    },
+    {
+      "nombreMenu": "Bacon cheese",
+      "precioMenu": "700",
+      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
+      "categoria": "extras",
+      "descripcion": "Papas con agregado de cheddar, bacon y verdeo.",
+      "id": "q44aDjs"
+    }
+  ],
+  "usuarios": [
+    {
+      "nombreUsuario": "nicoelias997",
+      "email": "nicoelias997@gmail.com",
+      "password": "12345678",
+      "id": "201"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "101",
+      "nombrePedido": [
+        "Kids Burger",
+        "Cerveza Camioneta"
+      ]
+    }
   ]
-  }
+}
