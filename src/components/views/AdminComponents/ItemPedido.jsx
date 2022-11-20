@@ -39,8 +39,8 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     editarPedidoAPI(id);
   };
 
-  const cambiarInput = (e) => {
-      e.preventDefault();
+  const cambiarInput = () => {
+    
       
       setEstado(!estado);
 
@@ -52,11 +52,11 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     <tr>
       <td>{id}</td>
       <td>{nombrePedido.map((item) => " - " + item + " ")}</td>
-      <td>{(estado)?'En preparacion' : 'Listo'}</td>
+      <td>{(estado)?'Listo' : 'En preparacion'}</td>
       <td>
        <div>
-       <label className="switch">
-          <input type="checkbox" name="check"/>
+       <label className="switch" onChange={cambiarInput}>
+          <input type="checkbox" name="check" />
           <span className="slider"></span>
         </label>
 
