@@ -28,7 +28,8 @@ export const crearMenuApi = async(menu)=>{
         const respuesta = await fetch(URL,{
             method: "POST",
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                // "x-token":"..."
             },
             body: JSON.stringify(menu)
         });
@@ -55,7 +56,9 @@ export const editarMenuApi = async(id, menu)=>{
         const respuesta = await fetch(URL+'/'+id,{
             method: "PUT",
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                // "x-token":"..."
+
             },
             body: JSON.stringify(menu)
         });
