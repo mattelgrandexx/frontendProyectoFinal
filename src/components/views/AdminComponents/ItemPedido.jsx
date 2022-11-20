@@ -1,4 +1,3 @@
-
 import {
   borrarPedidoApi,
   consultarPedidosAPI,
@@ -7,12 +6,9 @@ import {
 import Swal from "sweetalert2";
 import { useState } from "react";
 
-
 const ItemPedido = ({ pedido, setPedidos }) => {
   const { nombrePedido, id } = { ...pedido };
   const [estado, setEstado] = useState(false);
-
-
 
   const borrarPedido = () => {
     borrarPedidoApi(id).then((respuesta) => {
@@ -40,30 +36,21 @@ const ItemPedido = ({ pedido, setPedidos }) => {
   };
 
   const cambiarInput = () => {
-    
-      
-      setEstado(!estado);
-
+    setEstado(!estado);
   };
-
-
 
   return (
     <tr>
       <td>{id}</td>
       <td>{nombrePedido.map((item) => " - " + item + " ")}</td>
-      <td>{(estado)?'Listo' : 'En preparacion'}</td>
+      <td>{estado ? "Listo" : "En preparacion"}</td>
       <td>
-       <div>
-       <label className="switch" onChange={cambiarInput}>
-          <input type="checkbox" name="check" />
-          <span className="slider"></span>
-        </label>
-
-       </div>
-        
-       
-     
+        <div>
+          <label className="switch" onChange={cambiarInput}>
+            <input type="checkbox" name="check" />
+            <span className="slider"></span>
+          </label>
+        </div>
         <button className="botonBorrar" onClick={borrarPedido}>
           Borrar
         </button>
