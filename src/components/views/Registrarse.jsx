@@ -20,16 +20,13 @@ const Registrarse = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   useEffect(() => {
     consultarUserApi().then((respuesta) => {
-      setUsuarios(respuesta)
-    })
-  }, [])
-
+      setUsuarios(respuesta);
+    });
+  }, []);
 
   const onSubmit = (datos) => {
-
     const verificacionEmail = usuarios.find(
       (usuario) => usuario.email === datos.email
     );
@@ -49,8 +46,11 @@ const Registrarse = () => {
             "Disfruta de nuestro contenido.",
             "success"
           );
-          localStorage.setItem("usuarioActivo", JSON.stringify(datos.nombreUsuario, datos.apellidoUsuario));
-          navigate("/"); 
+          localStorage.setItem(
+            "usuarioActivo",
+            JSON.stringify(datos.nombreUsuario, datos.apellidoUsuario)
+          );
+          navigate("/");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,
@@ -88,7 +88,7 @@ const Registrarse = () => {
               onChange={(e) => setNombreUsuario(e.target.value)}
               value={nombreUsuario}
             ></Form.Control>
-             <Form.Text className="text-danger">
+            <Form.Text className="text-danger">
               {errors.nombreUsuario?.message}
             </Form.Text>
           </Form.Group>
@@ -111,7 +111,7 @@ const Registrarse = () => {
               onChange={(e) => setApellidoUsuario(e.target.value)}
               value={apellidoUsuario}
             ></Form.Control>
-             <Form.Text className="text-danger">
+            <Form.Text className="text-danger">
               {errors.apellidoUsuario?.message}
             </Form.Text>
           </Form.Group>
@@ -127,7 +127,7 @@ const Registrarse = () => {
                     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
                   message: "Debe ingresar un formato valido",
                 },
-                unique: "Este email ya esta registrado"
+                unique: "Este email ya esta registrado",
               })}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -151,32 +151,37 @@ const Registrarse = () => {
                   value: 30,
                   message:
                     "Su contraseña debe tener como 30 caracteres como maximo",
-                }
+                },
               })}
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             ></Form.Control>
-             <Form.Text className="text-danger mb-2">
-                {errors.password?.message}
-              </Form.Text>
+            <Form.Text className="text-danger mb-2">
+              {errors.password?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group>
             <Card.Subtitle className="mt-3 mb-3 textForm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              deleniti sapiente alias nesciunt accusamus laborum doloribus
-              facere culpa. Quidem omnis velit necessitatibus. Commodi, animi
-              nesciunt. Illum consectetur amet placeat commodi. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit. Excepturi esse
-              maxime aspernatur libero, fuga explicabo molestias possimus
-              consequatur enim architecto voluptates hic sequi vitae, dicta at
-              consectetur officiis earum tenetur.
+              Los presentes Términos y Condiciones de uso (en adelante,
+              “Términos y Condiciones”) establecen las condiciones bajo las
+              cuales se ofrece a los usuarios el acceso a los sitios web,
+              servicios y aplicaciones LENO-ARGENTINA (en adelante, “el
+              Servicio”) , que es una plataforma que permite a los usuarios
+              visualizar y comprar productos que esta empresa ofrece en el
+              sector gastronomico.
+              <br></br>
+              El uso del Servicio atribuye a quien lo realiza la condición de
+              usuario del mismo (en adelante, “el Usuario”) e implica la
+              aceptación íntegra de estos Términos y Condiciones. En caso de no
+              estar de acuerdo con todo o parte de estos Términos y Condiciones,
+              el Usuario debe abstenerse de instalar y utilizar el Servicio.
             </Card.Subtitle>
             <Row>
               <Col xs={1} className="mb-2">
                 <Form.Check
-                {...register("check", {
-                  required: "Debe aceptar los terminos",
-                })}
+                  {...register("check", {
+                    required: "Debe aceptar los terminos",
+                  })}
                 ></Form.Check>
               </Col>
               <Col xs={11}>
@@ -186,8 +191,8 @@ const Registrarse = () => {
               </Col>
             </Row>
             <Form.Text className="text-danger mb-2">
-                {errors.check?.message}
-              </Form.Text>
+              {errors.check?.message}
+            </Form.Text>
           </Form.Group>
           <Button className="mt-4 btnEntrar" variant="none" type="submit">
             Crear cuenta
