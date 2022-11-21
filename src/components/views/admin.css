@@ -89,13 +89,14 @@ padding: 0.5rem;
 .ocultarTexto{
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   line-clamp: 2;
   overflow: hidden;
 }
 .divAltura{
   align-items: center;
 }
+
 
 /*  */
 

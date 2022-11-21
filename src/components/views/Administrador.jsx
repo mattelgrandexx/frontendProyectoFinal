@@ -128,10 +128,13 @@ const Administrador = () => {
   <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
 </div>
       <section className="container bordeCajaRojo fondoBlanco">
-        <div>
+        <div className="d-flex justify-content-between align-items-center">
           <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
-          <hr />
+          <Link className="oswald400 boton justificarFinal" to="/registro">
+            Agregar un usuario
+          </Link>
           </div>
+          <hr />
           <Table responsive bordered className="bordeCajaRojo">
           <thead>
             <tr className="oswald400 textoRojo">

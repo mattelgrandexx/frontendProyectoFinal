@@ -105,12 +105,108 @@
       "id": 13
     },
     {
-      "nombreMenu": "alacazam",
-      "precioMenu": "898",
-      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
+      "nombreMenu": "BBQ ribs",
+      "precioMenu": "899",
+      "imagen": "https://i.postimg.cc/KvJCvg8n/bbq-ribs.png",
       "categoria": "extras",
-      "descripcion": "Dry aged burger, cheddar, ceberg, tomate, cebolla relish, Dickles y Leno secret mayo.",
+      "descripcion": "Costillas a baja temperatura cortadas individualmente y cocinadas a la parrilla. Decoradas con BBQ.",
       "id": 14
+    },
+    {
+      "nombreMenu": "Kids nuggets",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/sxJqWM9C/kid-nuggets.png",
+      "categoria": "extras",
+      "descripcion": "Cornflake chicken nuggets, ketchup y papas fritas.",
+      "id": 15
+    },
+    {
+      "nombreMenu": "Croquetas",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/SKXBPNqc/croquetas.png",
+      "categoria": "extras",
+      "descripcion": "Croquetas de pollo.",
+      "id": 16
+    },
+    {
+      "nombreMenu": "Hummus",
+      "precioMenu": "399",
+      "imagen": "https://i.postimg.cc/4dVrJLYd/hummus.png",
+      "categoria": "extras",
+      "descripcion": "Hummus casero, con un toque de miel, pimentón y aceite de oliva, acompañado de veggie.",
+      "id": 17
+    },
+    {
+      "nombreMenu": "Cerveza 1906",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/CxCYNKh5/1906.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de un lindo color ámbar. Limpia, brillante y de abundante espuma blanca.",
+      "id": 18
+    },
+    {
+      "nombreMenu": "Cerveza 1925",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/bwfpknj4/1925.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza Pilsner de carácter intenso y con mucho cuerpo, reinterpretación del estilo Amber Lager.",
+      "id": 19
+    },
+    {
+      "nombreMenu": "Alhambra roja",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/8crgrpX1/alhambra-roja.png",
+      "categoria": "bebidas",
+      "descripcion": "Cerveza de un color cobrizo excepcional y único, aspecto brillante y una espuma densa.",
+      "id": 20
+    },
+    {
+      "nombreMenu": "Vino La camioneta",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/Kzj2xrn3/camioneta.png",
+      "categoria": "hebidas",
+      "descripcion": "Vino tinto deliciosamente fresco y afrutado con verdadero carácter y personalidad.",
+      "id": 21
+    },
+    {
+      "nombreMenu": "Estrella Galicia (sin alcohol)",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/Bvq3wGbg/cerveza-sin-alcohol.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de aspecto brillante que refleja el color típico de las cervezas tipo Pilsen.",
+      "id": 22
+    },
+    {
+      "nombreMenu": "Estrella Galicia (gluten free)",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza libre de gluten.",
+      "id": 23
+    },
+    {
+      "nombreMenu": "Estrella Galicia (lata)",
+      "precioMenu": "200",
+      "imagen": "https://i.postimg.cc/QVGGQ2vc/estrella-galicia-lata.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de color dorado brillante que parte de una selección de maltas y lúpulo especialmente amargo",
+      "id": 24
+    },
+    {
+      "nombreMenu": "Cerveza Franziskaner",
+      "precioMenu": "400",
+      "imagen": "https://i.postimg.cc/4d0Td75L/franziskaner.png",
+      "categoria": "hebidas",
+      "descripcion": "Es un Weissbier natural y elegante de Baviera con una espuma blanca exuberante.",
+      "id": 25
+    },
+    {
+      "nombreMenu": "Cerveza Hundred pale ale",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/BZdX7X0B/hundred-pale-ale.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza artesanal pale ale suave, y de bajo perfil maltoso, por lo que resulta menos amarga.",
+      "id": 26
     }
   ],
   "usuarios": [
