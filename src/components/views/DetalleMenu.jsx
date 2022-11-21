@@ -37,7 +37,7 @@ const DetalleMenu = () => {
       <div className="col-4">
         <img
           src={producto.imagen}
-          alt={producto.superhero}
+          alt={producto.nombreMenu}
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
       </div>
