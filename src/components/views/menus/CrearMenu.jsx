@@ -15,13 +15,9 @@ const CrearMenu = () => {
     
 
     crearMenuApi(datos).then((respuesta)=>{
-      console.log(respuesta)
       if(respuesta.status === 201){
-        //si la respuesta es correcta indicarle al usuario
         Swal.fire("Producto creado","El producto fue creado exitosamente","success");
-        //resetear el formulario
         reset();
-        //redireccionar
         navegacion('/administrar');
       }else{
         Swal.fire("Ocurrio un error","El producto no pudo ser creado","error")

@@ -16,8 +16,8 @@ const EditarMenu = () => {
   const { id } = useParams();
   const navegacion = useNavigate();
 
-  const onSubmit = () => {
-    editarMenuApi(id).then((respuesta)=>{
+  const onSubmit = (datos) => {
+    editarMenuApi(id, datos).then((respuesta)=>{
         if(respuesta.status === 200){
             Swal.fire(
                 "Producto editado",

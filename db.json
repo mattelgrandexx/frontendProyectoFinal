@@ -15,14 +15,110 @@
       "categoria": "hamburguesas",
       "descripcion": "2 x 110g dry aged burger, doble cheddar ahumado en dos texturas (fat y thin), pickles caseros y bbq de mamá.",
       "id": 2
+    },
+    {
+      "nombreMenu": "Ari Gold",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/2586LWQr/ari-gold.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, ceberg, tomate, cebolla relish, Dickles y Leno secret mayo.",
+      "id": 3
+    },
+    {
+      "nombreMenu": "Satisfaction",
+      "precioMenu": "1100",
+      "imagen": "https://i.postimg.cc/Gp2LmCRp/satisfaction.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2 x 110gr dry aged burger, doble cheddar, smokey mayo.",
+      "id": 4
+    },
+    {
+      "nombreMenu": "Animal Style",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/k42gfdYH/animal-style.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, pulled pork, bbq de mamá, cebolla rosa.",
+      "id": 5
+    },
+    {
+      "nombreMenu": "Loser",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/9QcXs9NZ/loser.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, cebolla caramelizada y salsa coreana gochujang...",
+      "id": 6
+    },
+    {
+      "nombreMenu": "Mc Lovin",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2x110gr dry aged burger, doble bacon, cebolla caramelizada, salsa de queso cheddar y salsa de manteq",
+      "id": 7
+    },
+    {
+      "nombreMenu": "Carlton Banks",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/xCBTZFW1/caritonbanks.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Crispy chicken burger, cheddar, iceberg, bacon y smokey mayo, cebollino decorativo.",
+      "id": 8
+    },
+    {
+      "nombreMenu": "Papas Fritas",
+      "precioMenu": "600",
+      "imagen": "https://i.postimg.cc/WzVxtGZ7/papas.png",
+      "categoria": "extras",
+      "descripcion": "Papas fritas semi rusticas, condimentadas con sal y pimienta.",
+      "id": 9
+    },
+    {
+      "nombreMenu": "Bacon cheese papas fritas",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
+      "categoria": "extras",
+      "descripcion": "Papas fritas con queso fundido, salsa de bacon, bacon jam y cebollino decorativo.",
+      "id": 10
+    },
+    {
+      "nombreMenu": "Vegan nachos",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/2SyMq81g/vegan-nachos.png",
+      "categoria": "extras",
+      "descripcion": "Doritos, palta y pico de gallo.",
+      "id": 11
+    },
+    {
+      "nombreMenu": "Nuggets",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/1R0L2dx7/nuggets.png",
+      "categoria": "extras",
+      "descripcion": "Carne picada de pollo, rebosada con agregado de salsa bbq y cebollino decorativo.",
+      "id": 12
+    },
+    {
+      "nombreMenu": "Nachos all in",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/8P1qSbNp/nachos-all-in.png",
+      "categoria": "extras",
+      "descripcion": "Doritos, queso fundido, palta, pico de gallo, cochinita pibil, olivas negras y sweet chilli.",
+      "id": 13
+    },
+    {
+      "nombreMenu": "alacazam",
+      "precioMenu": "898",
+      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
+      "categoria": "extras",
+      "descripcion": "Dry aged burger, cheddar, ceberg, tomate, cebolla relish, Dickles y Leno secret mayo.",
+      "id": 14
     }
   ],
   "usuarios": [
     {
-      "nombreUsuario": "nicoelias997",
-      "email": "nicoelias997@gmail.com",
+      "nombreUsuario": "matias358",
+      "email": "matias358@gmail.com",
       "password": "12345678",
-      "id": "201"
+      "id": "202"
     }
   ],
   "pedidos": [

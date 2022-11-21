@@ -6,15 +6,27 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
     const {nombreUsuario, email, id} = {...usuario}
 
     const borrarUsuario = ()=>{
-      borrarUsuarioAPI(id).then((respuesta)=>{ 
-        if(respuesta.status === 200){   
-          Swal.fire("Usuario eliminado","El usuario fue eliminado exitosamente","success");
-          consultarUserAPI().then((respuesta)=>{
-            setUsuarios(respuesta);
+      Swal.fire({
+        title: 'Esta seguro?',
+        text: "No podra revertir este cambio!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          borrarUsuarioAPI(id).then((respuesta)=>{ 
+            if(respuesta.status === 200){   
+              Swal.fire("Usuario eliminado","El usuario fue eliminado exitosamente","success");
+              consultarUserAPI().then((respuesta)=>{
+                setUsuarios(respuesta);
+              })
+            }else{
+              Swal.fire("Ocurrio un error","Vuelva a intentar esta operación en unos minutos","error");
+            }
           })
-        }else{
-          Swal.fire("Ocurrio un error","Vuelva a intentar esta operación en unos minutos","error");
-        }
+           }
       })
     }
     return (
