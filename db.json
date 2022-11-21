@@ -1,20 +1,20 @@
 {
   "menus": [
     {
-      "nombreMenu": "Burger del mes",
-      "precioMenu": "800",
-      "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
+      "nombreMenu": "Singular",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/Y0cMRLW4/singular.png",
       "categoria": "hamburguesas",
-      "descripcion": "Hamburguesa ganadora del concurso \"Burger del mes\"",
-      "id": "iAxiyQN"
+      "descripcion": "Dry aged burger, cheddar, BBQ de mamá, bacon, cebolla caramelizada y crema camembert.",
+      "id": 1
     },
     {
-      "nombreMenu": "Bacon cheese",
-      "precioMenu": "700",
-      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
-      "categoria": "extras",
-      "descripcion": "Papas con agregado de cheddar, bacon y verdeo.",
-      "id": "q44aDjs"
+      "nombreMenu": "Stifler",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/7PTLzw2G/la-mama-de-stifler.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2 x 110g dry aged burger, doble cheddar ahumado en dos texturas (fat y thin), pickles caseros y bbq de mamá.",
+      "id": 2
     }
   ],
   "usuarios": [
@@ -27,11 +27,27 @@
   ],
   "pedidos": [
     {
-      "id": "101",
       "nombrePedido": [
         "Kids Burger",
         "Cerveza Camioneta"
-      ]
+      ],
+      "id": "CirA2-1"
+    },
+    {
+      "nombrePedido": [
+        "Veggie",
+        "Bacon Cheese",
+        "Hundred IPA"
+      ],
+      "id": "ced0J8C"
+    },
+    {
+      "nombrePedido": [
+        "Stifler",
+        "Bacon Cheese",
+        "Hundred IPA"
+      ],
+      "id": "Wa4koEj"
     }
   ]
 }

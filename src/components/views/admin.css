@@ -23,6 +23,23 @@ padding: 0.5rem;
 color: white;
 border: 1px solid black;
 margin: 20px 0px 2px 0px;
+height: 60px;
+}
+.botonBorrarPedidos{
+  background-color: #c0050b;
+text-decoration: none;
+padding: 0.5rem;
+color: white;
+border: 1px solid black;
+height: 60px;
+}
+.botonBorrarUsuarios{
+  background-color: #c0050b;
+text-decoration: none;
+color: white;
+border: 1px solid black;
+height: 60px;
+padding: 0.5rem;
 }
 
 * {
@@ -48,6 +65,10 @@ margin: 20px 0px 2px 0px;
   border: 2px solid #c0050b;
   padding: 5px;
 }
+.bordeCajaNegro{
+  border: 2px solid #24262B;
+  padding: 5px;
+}
 
 .fondoNaranja{
   background-color: #EF9B16;
@@ -59,6 +80,21 @@ margin: 20px 0px 2px 0px;
 
 .tamañoBandera{
   width: 25%;
+}
+
+.tamañoDivEstado{
+  width: 200px;
+  height: 60px;
+}
+.ocultarTexto{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.divAltura{
+  align-items: center;
 }
 
 /*  */

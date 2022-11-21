@@ -60,7 +60,7 @@ const Administrador = () => {
 
   return (
   
-    <section className="fondoNegro"> 
+    <section className="fondoBlanco"> 
 <div className="mb-2">
 <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
   <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />

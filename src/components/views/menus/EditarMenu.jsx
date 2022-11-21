@@ -55,13 +55,13 @@ const EditarMenu = () => {
             <Form.Control
               type="text"
               placeholder="Ej: Singular"
-              minLength={10}
+              minLength={4}
               maxLength={60}
               {...register("nombreMenu", {
                 required: "El nombre del producto es obligatorio",
                 minLength: {
-                  value: 10,
-                  message: "La cantidad minima de caracteres es de 10",
+                  value: 4,
+                  message: "La cantidad minima de caracteres es de 4",
                 },
                 maxLength: {
                   value: 60,

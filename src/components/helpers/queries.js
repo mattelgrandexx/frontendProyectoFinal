@@ -130,3 +130,19 @@ export const borrarUsuarioAPI = async(id)=>{
         return false;
     }
 };
+
+export const añadirPedidoCarrito = async(pedido)=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS,{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pedido)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+}

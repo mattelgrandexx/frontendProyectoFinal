@@ -23,7 +23,7 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
         <td>{nombreUsuario}</td>
         <td>{email}</td>
         <td>
-        <button className='botonBorrar' onClick={borrarUsuario}>
+        <button className='botonBorrarUsuarios' onClick={borrarUsuario}>
           Borrar
         </button>
         </td>

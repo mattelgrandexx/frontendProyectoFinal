@@ -4,6 +4,7 @@ import {useForm} from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { crearMenuApi } from '../../helpers/queries';
 import Swal from 'sweetalert2';
+import { v4 } from 'uuid';
 
 
 const CrearMenu = () => {
@@ -41,13 +42,13 @@ const CrearMenu = () => {
           <Form.Control 
           type="text" 
           placeholder="Ej: Hamburguesa triple"
-          minLength={10}
+          minLength={4}
           maxLength={50}
           {...register('nombreMenu', {
             required:'El nombre del producto es obligatorio',
             minLength:{
-              value:10,
-              message: 'La cantidad de caracteres es 10 como minimo'
+              value:4,
+              message: 'La cantidad de caracteres es 4 como minimo'
             },
             maxLength:{
               value:50,
@@ -117,7 +118,7 @@ const CrearMenu = () => {
           type="text" 
           placeholder="Ej: Ingredientes"
           minLength={10}
-          maxLength={50}
+          maxLength={100}
           {...register('descripcion', {
             required:'La descripcion del producto es obligatoria',
             minLength:{
@@ -125,8 +126,8 @@ const CrearMenu = () => {
               message: 'La cantidad de caracteres es 10 como minimo'
             },
             maxLength:{
-              value:50,
-              message:'La cantidad maxima de caracteres es de 50'
+              value:100,
+              message:'La cantidad maxima de caracteres es de 100'
             }
           })}
           />
