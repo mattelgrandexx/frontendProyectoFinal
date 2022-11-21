@@ -35,7 +35,7 @@ export const login = async (usuario) => {
         body: JSON.stringify(usuario),
       });
       const datos = await respuesta.json();
-      return {
+          return {
         status: respuesta.status,
         mensaje: datos.mensaje,
         email: datos.email,

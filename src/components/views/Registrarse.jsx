@@ -13,36 +13,18 @@ const Registrarse = () => {
     formState: { errors },
   } = useForm();
 
-  // const [usuarios, setUsuarios] = useState([]);
-
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [apellidoUsuario, setApellidoUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // useEffect(() => {
-  //   consultarUserApi().then((respuesta) => {
-  //     setUsuarios(respuesta);
-  //   });
-  // }, []);
+
 
   const onSubmit = (datos) => {
-    // const verificacionEmail = usuarios.find(
-    //   (usuario) => usuario.email === datos.email
-    // );
-
-    // if (verificacionEmail) {
-    //   Swal.fire(
-    //     "Este email es existente",
-    //     "Prueba registrarte con otro email",
-    //     "error"
-    //   );
-    //   return;
-    // } else {
       crearUserApi(datos).then((respuesta) => {
         if (respuesta.status === 201) {
           Swal.fire(
-            `Te registraste correctamente, ${nombreUsuario}, ${apellidoUsuario}`,
+            `Te registraste correctamente, ${datos.nombreUsuario}, ${datos.apellidoUsuario}`,
             "Disfruta de nuestro contenido.",
             "success"
           );
@@ -50,7 +32,7 @@ const Registrarse = () => {
             "usuarioActivo",
             JSON.stringify(datos.nombreUsuario, datos.apellidoUsuario)
           );
-          navigate("/");
+          navigate("/inicio");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,
@@ -59,7 +41,6 @@ const Registrarse = () => {
           );
         }
       });
-    // }
   };
 
   return (

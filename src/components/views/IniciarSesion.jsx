@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { login } from "../helpers/queriesLogin";
-// import { consultarUserApi } from "../helpers/queriesLogin";
+import ResetPassword from "./ResetPassword";
 
 const IniciarSesion = () => {
 
@@ -20,7 +20,6 @@ const IniciarSesion = () => {
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      console.log(respuesta)
     if(respuesta.status === 200){
 
           Swal.fire(
@@ -33,8 +32,8 @@ const IniciarSesion = () => {
     
       } else {
         Swal.fire(
-          "Usuario o email incorrecto",
-          `No encontramos un usuario o email con ese nombre, vuelve a intentarlo`,
+          "Email o contraseña incorrecta",
+          `No pudimos loguearte, vuelve a intentarlo`,
           "error"
         );
       }
@@ -42,7 +41,7 @@ const IniciarSesion = () => {
   };
 
   const recuperarPassword = () => {
-      console.log("aqui deberia recuperar mi contraseña")
+    console.log("Aqui deberia recuperar la pass")
   }
 
 
