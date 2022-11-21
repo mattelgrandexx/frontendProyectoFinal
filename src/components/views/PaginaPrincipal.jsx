@@ -10,8 +10,7 @@ const PaginaPrincipal = () => {
   let [hamburguesas, setHamburgesas] = useState([]);
   let [extras, setExtras] = useState([]);
   let [mostrarPopUp, setMostrarPopUp] = useState(false);
-  const [pedido, setPedido] = useState([]);
-
+  let [pedido, setPedido] = useState([]);
 
   useEffect(() => {
     consultarAPI().then(
@@ -60,16 +59,16 @@ const PaginaPrincipal = () => {
 
       const popUp = mostrarPopUp ? (
         <section id='popUp'>
-          <div id='popUp__Cerrar' onClick={cerrarPopUp}>X</div>
+          <i class="fa-solid fa-xmark" id='popUp__cerrar' onClick={cerrarPopUp}></i>
         <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className='w-100' alt="" />
-        <div className='px-3 py-2 text-center'>
+        <div className='px-2 py-2 text-center'>
           <div >
           <img src="https://i.postimg.cc/FFnKd1zQ/LENOLOGO3.png" className='w-25' alt="" />
           </div>
         <h4>Suscríbete!</h4>
-        <p className='mb-1'>Registrate y enterate de todas nuestras novedades </p>
+        <p className='mb-1 mb-lg-2'>Registrate y enterate de todas nuestras novedades </p>
         <Form>
-          <FormControl type='text' placeholder='Ingreas tu Email'></FormControl>
+          <FormControl id='popUp__input' type='text' placeholder='Ingreas tu Email'></FormControl>
         </Form>
         <Button className='cardMenu__btn m-0 mt-3' type='button'>Suscribirse ahora</Button>
         </div>
