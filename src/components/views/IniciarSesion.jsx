@@ -3,7 +3,8 @@ import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { consultarUserApi } from "../helpers/queriesLogin";
+import { login } from "../helpers/queriesLogin";
+// import { consultarUserApi } from "../helpers/queriesLogin";
 
 const IniciarSesion = () => {
 
@@ -18,27 +19,18 @@ const IniciarSesion = () => {
   } = useForm();
 
   const onSubmit = (datos) => {
-    consultarUserApi().then((respuesta) => {
-    
-      const encontrarEmail = respuesta.find(
-        (user) => user.email === datos.email
-      );
-      if (encontrarEmail) {
-        if (encontrarEmail.password === datos.password) {
+    login(datos).then((respuesta) => {
+      console.log(respuesta)
+    if(respuesta.status === 200){
+
           Swal.fire(
             "Bienvenido",
-            `Gracias por contar con nosotros, ${encontrarEmail.nombreUsuario}`,
+            `Gracias por contar con nosotros, ${respuesta.email}`,
             "success"
           );
-          localStorage.setItem("usuarioActivo", JSON.stringify(encontrarEmail.nombreUsuario));
-          navigate("/");
-        } else {
-          Swal.fire(
-            "Error",
-            `Contraseña incorrecta, vuelva a intentarlo`,
-            "error"
-          );
-        }
+          localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email));
+          navigate("/inicio");
+    
       } else {
         Swal.fire(
           "Usuario o email incorrecto",

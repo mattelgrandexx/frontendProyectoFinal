@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Form, Card, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { consultarUserApi, crearUserApi } from "../helpers/queriesLogin";
+import { crearUserApi } from "../helpers/queriesLogin";
 
 const Registrarse = () => {
   const navigate = useNavigate();
@@ -13,32 +13,32 @@ const Registrarse = () => {
     formState: { errors },
   } = useForm();
 
-  const [usuarios, setUsuarios] = useState([]);
+  // const [usuarios, setUsuarios] = useState([]);
 
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [apellidoUsuario, setApellidoUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    consultarUserApi().then((respuesta) => {
-      setUsuarios(respuesta);
-    });
-  }, []);
+  // useEffect(() => {
+  //   consultarUserApi().then((respuesta) => {
+  //     setUsuarios(respuesta);
+  //   });
+  // }, []);
 
   const onSubmit = (datos) => {
-    const verificacionEmail = usuarios.find(
-      (usuario) => usuario.email === datos.email
-    );
+    // const verificacionEmail = usuarios.find(
+    //   (usuario) => usuario.email === datos.email
+    // );
 
-    if (verificacionEmail) {
-      Swal.fire(
-        "Este email es existente",
-        "Prueba registrarte con otro email",
-        "error"
-      );
-      return;
-    } else {
+    // if (verificacionEmail) {
+    //   Swal.fire(
+    //     "Este email es existente",
+    //     "Prueba registrarte con otro email",
+    //     "error"
+    //   );
+    //   return;
+    // } else {
       crearUserApi(datos).then((respuesta) => {
         if (respuesta.status === 201) {
           Swal.fire(
@@ -59,7 +59,7 @@ const Registrarse = () => {
           );
         }
       });
-    }
+    // }
   };
 
   return (
