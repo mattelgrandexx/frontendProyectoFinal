@@ -81,7 +81,6 @@ export const crearPedidoApi = async (menu) => {
       },
       body: JSON.stringify(menu),
     });
-    console.log(respuesta)
     return respuesta;
   } catch (error) {
     console.log(error);

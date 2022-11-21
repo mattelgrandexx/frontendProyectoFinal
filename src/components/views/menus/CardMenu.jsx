@@ -68,6 +68,7 @@ const CardMenu = ({ menu, pedido, setPedido }) => {
         )
       } else {
         //Agrega el producto al pedido en caso de que el pedido ya exista   
+        pedidoAgregado.pedido.push(producto)
         editarPedidoApi(pedidoAgregado.id, pedidoAgregado).then((respuesta)=> {
           if(respuesta.status===200) {
             Swal.fire('Pruducto editado', 'El producto fue actualizado correctamente', 'success')
