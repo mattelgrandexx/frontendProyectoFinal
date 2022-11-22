@@ -11,6 +11,15 @@ body{
 	padding:0;
 	box-sizing: border-box;
 }
+
+
+.nav {
+	width: 50%;
+}
+
+.navDivisor {
+	width: calc(100% / 3);
+}
 .container{
 	max-width: 1170px;
 	margin:auto;
@@ -69,12 +78,18 @@ ul{
 
 /*responsive*/
 @media(max-width: 767px){
+	.nav {
+		width: 100%;
+	}
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
 }
 }
 @media(max-width: 574px){
+	.nav {
+		width: 100%;
+	}
   .footer-col{
     width: 100%;
 }
@@ -155,4 +170,9 @@ nav li{
 .social-links a:hover{
 	color: #24262b;
 	background-color: #ffffff;
+}
+
+.errorImagen{
+	object-fit: cover;
+	height: 300px;
 }

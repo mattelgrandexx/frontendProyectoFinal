@@ -1,6 +1,7 @@
 {
   "menus": [
     {
+
       "nombreMenu": "Hamburguesa rustica",
       "precioMenu": 1400,
       "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
@@ -9,27 +10,6 @@
     }
   ],
   "usuarios": [
-    {
-      "id": "1",
-      "nombreUsuario": "nicolas",
-      "apellidoUsuario": "elias",
-      "email": "nicoelias997@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "2",
-      "nombreUsuario": "nicolas",
-      "apellidoUsuario": "elias",
-      "email": "nicoelias9aa97@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "nombreUsuario": "asda",
-      "apellidoUsuario": "ads",
-      "email": "nicoelasdsaias@gmail.com",
-      "password": "12345678910",
-      "id": "t3PPXo1"
-    },
     {
       "nombreUsuario": "Nicolas",
       "apellidoUsuario": "Elias",
@@ -56,13 +36,6 @@
     }
   ],
   "pedidos": [
-    {
-      "estado": "En preparacion",
-      "pedido": [
-        "hamburguesa",
-        "papas",
-        "bebida"
-      ]
-    }
+    
   ]
 }

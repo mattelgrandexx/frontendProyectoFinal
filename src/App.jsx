@@ -15,6 +15,7 @@ import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import PerfilUsuario from "./components/views/PerfilUsuario";
 import Registrarse from "./components/views/Registrarse";
 import './style.css'
+import './App.css'
 
 function App() {
   return (
