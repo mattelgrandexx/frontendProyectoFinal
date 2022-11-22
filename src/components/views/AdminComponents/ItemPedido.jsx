@@ -1,6 +1,7 @@
 import {
   borrarPedidoApi,
   consultarPedidosAPI,
+  editarPedidoAPI,
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useState } from "react";
@@ -47,6 +48,8 @@ const ItemPedido = ({ pedido, setPedidos }) => {
     setEstado(!estado);
   };
 
+  
+ 
   return (
     <tr>
       <td>{id}</td>
