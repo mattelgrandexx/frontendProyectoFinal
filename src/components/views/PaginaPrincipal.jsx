@@ -6,13 +6,18 @@ import CardMenu from './menus/CardMenu'
 
 
 const PaginaPrincipal = () => {
+  let usuario = JSON.parse(localStorage.getItem("tokenLeno")) || {};
+  let [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  let [pedidoCreado, setPedidoCreado] = useState(false);
+  let [pedido, setPedido] = useState([]);
+
   let [menus, setMenus] = useState([]);
   let [hamburguesas, setHamburgesas] = useState([]);
   let [extras, setExtras] = useState([]);
   let [mostrarPopUp, setMostrarPopUp] = useState(false);
-  let [pedido, setPedido] = useState([]);
 
   useEffect(() => {
+
     consultarAPI().then(
       (respuesta) => {
         setMenus(respuesta);
@@ -28,10 +33,20 @@ const PaginaPrincipal = () => {
         }
         );
 
+        
+
+        setTimeout(() => {
+          setMostrarPopUp(true)
+        }, 5000);
+      }, []);
+
+      useEffect(() => {
+        console.log(pedidoCreado)
         consultarPedidosApi().then(
           (respuesta) => {
-            setPedido(respuesta);
-            
+            //Devuelve unicamente el pedido especifico del usuario que este logueado en caso de exista
+            const pedidoDeUsuario = respuesta.find((pedido) => pedido.nombreUsuario === usuarioLogueado.nombreUsuario);
+            setPedido(pedidoDeUsuario);
           },
           (reason) => {
             console.log(reason);
@@ -42,12 +57,19 @@ const PaginaPrincipal = () => {
             );
           }
         );
+      }, [pedidoCreado])
+      
 
-        setTimeout(() => {
-          setMostrarPopUp(true)
-        }, 5000);
-      }, []);
-
+      //Comprueba si el pedido del usuario esta vacio o no y da valor al state pedidoCreado de acuerdo a eso.
+      useEffect(() => {
+        if (pedido === undefined || Object.keys(pedido).length === 0) {
+          setPedidoCreado(false)
+        } else {
+          setPedidoCreado(true)
+        }
+      }, [pedido])
+      
+      
       useEffect(() => {
         setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesa"))
         setExtras(menus.filter(menu => menu.categoria === "extra"))
@@ -59,7 +81,7 @@ const PaginaPrincipal = () => {
 
       const popUp = mostrarPopUp ? (
         <section id='popUp'>
-          <i class="fa-solid fa-xmark" id='popUp__cerrar' onClick={cerrarPopUp}></i>
+          <i className="fa-solid fa-xmark" id='popUp__cerrar' onClick={cerrarPopUp}></i>
         <img src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png" className='w-100' alt="" />
         <div className='px-2 py-2 text-center'>
           <div >
@@ -86,12 +108,12 @@ const PaginaPrincipal = () => {
       <Container>
       <h2 className='pagPrincipal__titulo'>Hamburguesas</h2>
       <section className='p-0 cardContainer'>
-      {hamburguesas.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido}></CardMenu>)}
+      {hamburguesas.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
       </section>
        
       <h2 className='pagPrincipal__titulo'>Extras</h2>
       <section className='p-0 cardContainer'>
-      {extras.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido}></CardMenu>)}
+      {extras.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
       </section>
       </Container>
       {popUp}

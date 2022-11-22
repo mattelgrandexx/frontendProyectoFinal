@@ -2,92 +2,92 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { consultarPedidosApi, crearPedidoApi, editarPedidoApi } from "../../helpers/queries";
+import {
+  crearPedidoApi,
+  editarPedidoApi,
+} from "../../helpers/queries";
 
-const CardMenu = ({ menu, pedido, setPedido }) => {
+const CardMenu = ({
+  menu,
+  pedido,
+  usuarioLogueado,
+  pedidoCreado,
+  setPedidoCreado,
+}) => {
   const { nombreMenu, precioMenu, descripcion, imagen, id } = {
     ...menu,
   };
   const [producto, setProducto] = useState({});
-  const [pedidoCreado, setPedidoCreado] = useState(false);
   const [pedidoAgregado, setPedidoAgregado] = useState({});
 
   useEffect(() => {
-    //Este state tiene el valor del unico arreglo de pedidos que se encuetra dentro del array de pedidos en la BD y es usado para agregar un producto al pedido que ya existe
-    setPedidoAgregado(pedido[0])
-
-    //Comprueba si hay algun pedido creado en la BD y da valor al state pedidoCreado de acuerdo a eso
-    if (Object.keys(pedido).length === 0) {
-      setPedidoCreado(false)
-    } else {
-      setPedidoCreado(true)
-    }
-
-    // Si el pedido no fue creado define como producto con las propiedades necesarias para crear un pedido, en cambio si ya fue creado lo defino con las propiedades necesarias para agregar el producto al pedido existente 
+    // Si el pedido no fue creado define como producto con las propiedades necesarias para crear un pedido, en cambio si ya fue creado lo defino con las propiedades necesarias para agregar el producto al pedido existente
     if (!pedidoCreado) {
       setProducto({
+        nombreUsuario: usuarioLogueado.nombreUsuario,
         estado: "En preparacion",
         pedido: [{ nombreMenu: nombreMenu, precioMenu: precioMenu }],
       });
+      console.log(pedido)
     } else {
+      console.log(pedidoCreado)
       setProducto({ nombreMenu: nombreMenu, precioMenu: precioMenu });
+      //Este state tiene el valor del unico arreglo de pedidos que se encuetra dentro del array de pedidos en la BD y es usado para agregar un producto al pedido que ya existe
+      console.log(pedido)
+      setPedidoAgregado(pedido);
     }
   }, [pedido]);
 
-
   const agregarPedido = () => {
-    //Crea el pedido en el caso de que todavia no exista y cambia el staet de pedidoCreado a true
-    if(!pedidoCreado) {
-      crearPedidoApi(producto).then((respuesta) => {
-       
-        setPedidoCreado(true);
-
-        if (respuesta.status === 201) {
-          Swal.fire(
-            "Producto agregado",
-            "El producto se agrego a su lista de pedidos",
-            "success"
+    //Comprobar que haya un ususario logueado
+    if (Object.keys(usuarioLogueado).length !== 0) {
+      //Crea el pedido en el caso de que todavia no exista y cambia el staet de pedidoCreado a true
+      if (!pedidoCreado) {        
+        crearPedidoApi(producto).then((respuesta) => {
+          if (respuesta.status === 201) {
+            Swal.fire(
+              "Producto agregado",
+              "El producto se agrego a su lista de pedidos",
+              "success"
             );
           } else {
-            Swal.fire("Ocurrio un error", "El pedido no pudo ser creado", "error");
+            Swal.fire(
+              "Ocurrio un error",
+              "El pedido no pudo ser creado",
+              "error"
+            );
           }
         });
-        // Luego de crear el pedido se hace una consulta a la BD para guardar el mismo dentro del state pedido
-        consultarPedidosApi().then(
-          (respuesta) => {
-            setPedido(respuesta);
-          },
-          (reason) => {
-            console.log(reason);
-            Swal.fire(
-              "Ocurrio un error",
-              "Intentelo nuevamente en unos minutos",
-              "errorr"
-            );
-          }
-        )
+        setPedidoCreado(true);
+        
       } else {
-        //Agrega el producto al pedido en caso de que el pedido ya exista   
-        pedidoAgregado.pedido.push(producto)
-        editarPedidoApi(pedidoAgregado.id, pedidoAgregado).then((respuesta)=> {
-          if(respuesta.status===200) {
-            Swal.fire('Pruducto editado', 'El producto fue actualizado correctamente', 'success')
-          } else{
+        //Agrega el producto al pedido en caso de que el pedido ya exista
+        console.log(pedidoAgregado);
+        pedidoAgregado.pedido.push(producto);
+        editarPedidoApi(pedidoAgregado.id, pedidoAgregado).then((respuesta) => {
+          if (respuesta.status === 200) {
+            Swal.fire(
+              "Producto agregado",
+              "El producto se agrego a su lista de pedidos",
+              "success"
+            );
+          } else {
             Swal.fire(
               "Ocurrio un error",
               "Intentelo nuevamente en unos minutos",
-              "errorr"
+              "error"
             );
           }
-        })
-
-
-
-
-
+        });
       }
-      }
-  
+    } else {
+      Swal.fire(
+        "Inicia sesion",
+        "Para agregar un pedido primero debes iniciar sesion",
+        "error"
+      );
+    }
+  };
 
   return (
     <article className="cardMenu rounded rounded-3">
