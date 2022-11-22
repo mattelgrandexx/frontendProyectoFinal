@@ -1,39 +1,66 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { obtenerMenuApi } from '../helpers/queries';
-import { Card, Badge } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { obtenerMenuApi } from "../helpers/queries";
 
 const DetalleMenu = () => {
-  const {id} = useParams();
-  const[menu, setMenu] = useState({});
-
-  useEffect(()=>{
-    obtenerMenuApi(id).then((respuesta)=>{
-      if(respuesta.status === 200){
+  const { id } = useParams();
+  const [producto, setProducto] = useState({});
+  const navigate = useNavigate();
+  useEffect(() => {
+    obtenerMenuApi(id).then((respuesta) => {
+      if (respuesta.status === 200) {
         console.log(respuesta);
-        setMenu(respuesta)
+        //cargar los datos
+        setProducto(respuesta);
       }
-    })
-  },[])
+    });
+  }, []);
+
+  
+
+  const onNavigateBack = () => {
+    navigate(-1);
+  }
+
+
+  if ( !producto ) {
+    return <Navigate to="/" />
+  }
+  
 
   return (
-   <>
-            <Card className="container border rounded my-3 flex-row">
-                    <Card.Img
-                        variant="start"
-                        src={menu.dato?.imagen}
-                    />
-                    <Card.Body>
-                        <div className="anchoDetalleProducto">
-                            <Card.Title>{menu.dato?.nombreMenu}</Card.Title>
-                            <hr />
-                            <Badge bg="success">{menu.dato?.categoria}</Badge>
-                            <Card.Text className="mt-3 fw-bold">Precio: ${menu.dato?.precio}</Card.Text>
-                        </div>
-                    </Card.Body>
-            </Card>
-        </>
-  )
-}
+    <div className="row mt-5">
+      <div className="col-4">
+        <img
+          src={producto.imagen}
+          alt={producto.nombreMenu}
+          className="img-thumbnail animate__animated animate__fadeInLeft"
+        />
+      </div>
 
-export default DetalleMenu
+      <div className="col-8">
+        <h3>{producto.nombreMenu}</h3>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            {" "}
+            <b>Alter ego:</b> {producto.pan}{" "}
+          </li>
+          <li className="list-group-item">
+            {" "}
+            <b>Publisher:</b> {producto.descripcion}{" "}
+          </li>
+        </ul>
+
+        <h5 className="mt-3"> Precio: </h5>
+        <p>${producto.precioMenu}</p>
+
+        <button className="btn btn-outline-primary" onClick={onNavigateBack}>
+          Regresar
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default DetalleMenu;
