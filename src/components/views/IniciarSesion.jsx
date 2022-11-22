@@ -3,7 +3,7 @@ import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { login } from "../helpers/queriesLogin";
+import { login, recuperarUserPassword } from "../helpers/queriesLogin";
 import ResetPassword from "./ResetPassword";
 
 const IniciarSesion = () => {
@@ -11,6 +11,12 @@ const IniciarSesion = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
   const {
     register,
@@ -40,8 +46,17 @@ const IniciarSesion = () => {
     });
   };
 
-  const recuperarPassword = () => {
-    console.log("Aqui deberia recuperar la pass")
+  const recuperarPassword = (datos) => {
+   recuperarUserPassword(datos).then(respuesta => {
+    if(respuesta.status === 200){
+      Swal.fire("Correo de recuperacion enviado.", "Hemos enviado un correo para recuperar tu contraseña.", "success")
+      setShow(false)
+      setEmail("")
+    } else {
+      Swal.fire("Hubo un problema.", "No pudimos enviar un correo de recuperacion de contraseña al email indicado, intentelo nuevamente.", "error")
+      setEmail("")
+    }
+   })
   }
 
 
@@ -99,9 +114,10 @@ const IniciarSesion = () => {
           </Button>
         </Form>
       </Card.Body>
-      <Button className="textPass" variant="none" type="button" onClick={() => recuperarPassword()}>
+      <Button className="textPass" variant="none" type="button" onClick={handleShow}>
         No recuerdo mi contraseña
       </Button>
+      <ResetPassword handleShow={handleShow} handleClose={handleClose} show={show} email={email} setEmail={setEmail} recuperarPassword={recuperarPassword}></ResetPassword>
     </Card>
   );
 };

@@ -48,4 +48,18 @@ export const login = async (usuario) => {
     }
   };
 
+  export const recuperarUserPassword = async (datos) => {
+    try{
+        const respuesta = await fetch(URL + "perfilusuarios/recuperacion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        })
+        return respuesta
+    } catch(e){
+        console.log(e)
+    }
+}
 

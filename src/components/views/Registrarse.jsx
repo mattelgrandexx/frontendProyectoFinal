@@ -30,7 +30,7 @@ const Registrarse = () => {
           );
           localStorage.setItem(
             "usuarioActivo",
-            JSON.stringify(datos.nombreUsuario, datos.apellidoUsuario)
+            JSON.stringify(datos.email)
           );
           navigate("/inicio");
         } else {
