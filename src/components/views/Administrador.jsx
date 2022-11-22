@@ -109,14 +109,15 @@ const Administrador = () => {
           <thead>
             <tr className="oswald400 textoRojo flex">
               <th>Cod</th>
+              <th>Usuario</th>
               <th>Pedido</th>
-              <th>Estado</th>
+              <th className="estadoAncho">Estado</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody className="oswald400">
             {
-              pedidos.map((pedido)=><ItemPedido key={pedido.id} pedido={pedido} setPedidos={setPedidos}></ItemPedido>)
+              pedidos.map((combo)=><ItemPedido key={combo.id} combo={combo} setPedidos={setPedidos}></ItemPedido>)
             }
           </tbody>
         </Table>

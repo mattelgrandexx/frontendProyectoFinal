@@ -96,6 +96,10 @@ padding: 0.5rem;
 .divAltura{
   align-items: center;
 }
+.estadoAncho{
+  width: 200px;
+}
+
 
 
 /*  */
@@ -139,5 +143,14 @@ input:checked + .slider{
   background-color: green;
 }
 input:checked + .slider::before{
- transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+
+/* media queries */
+@media only screen and (max-width: 767px) {
+  .estadoAncho{
+   min-width: 5vh;
+
+  }
 }

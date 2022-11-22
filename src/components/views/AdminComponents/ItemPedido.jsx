@@ -6,9 +6,10 @@ import {
 import Swal from "sweetalert2";
 import { useState } from "react";
 
-const ItemPedido = ({ pedido, setPedidos }) => {
-  const { nombrePedido, id } = { ...pedido };
+const ItemPedido = ({combo, setPedidos}) => {
+  const {pedido, id, nombreUsuario } = { ...combo };
   const [estado, setEstado] = useState(false);
+  console.log(combo.pedido)
 
   const borrarPedido = () => {
     Swal.fire({
@@ -53,7 +54,8 @@ const ItemPedido = ({ pedido, setPedidos }) => {
   return (
     <tr>
       <td>{id}</td>
-      <td>{nombrePedido.map((item) => " - " + item + " ")}</td>
+      <td>{nombreUsuario}</td>
+      <td>{pedido.map((item) => " - " + item.nombreMenu + " $" + item.precioMenu + " ")}</td>
       <td>{estado ? "Listo" : "En preparacion"}</td>
       <td>
         <div className="d-flex divAltura">

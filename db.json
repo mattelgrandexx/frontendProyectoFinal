@@ -219,27 +219,23 @@
   ],
   "pedidos": [
     {
-      "nombrePedido": [
-        "Kids Burger",
-        "Cerveza Camioneta"
+      "nombreUsuario": "Nico",
+      "pedido": [
+        {
+          "nombreMenu": "Hamburguesa rustica",
+          "precioMenu": 1400
+        },
+        {
+          "nombreMenu": "Hamburguesa asd",
+          "precioMenu": 1400
+        },
+        {
+          "nombreMenu": "Hamburguesa zxc",
+          "precioMenu": 1400
+        }
       ],
-      "id": "CirA2-1"
-    },
-    {
-      "nombrePedido": [
-        "Veggie",
-        "Bacon Cheese",
-        "Hundred IPA"
-      ],
-      "id": "ced0J8C"
-    },
-    {
-      "nombrePedido": [
-        "Stifler",
-        "Bacon Cheese",
-        "Hundred IPA"
-      ],
-      "id": "Wa4koEj"
+      "id": 1
     }
+
   ]
 }
