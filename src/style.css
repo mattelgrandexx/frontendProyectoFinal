@@ -176,3 +176,22 @@ nav li{
 	object-fit: cover;
 	height: 300px;
 }
+
+.card-leno{
+  height: 400px;
+}
+@media(max-width: 767px){
+
+  .card-leno{
+    height: 210px;
+  }
+
+}
+@media(max-width: 574px){
+	.nav {
+		width: 100%;
+	}
+  .footer-col{
+    width: 100%;
+}
+}
