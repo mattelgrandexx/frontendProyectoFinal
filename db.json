@@ -1,43 +1,38 @@
 {
   "menus": [
     {
-      "nombreMenu": "Singular",
+
+      "nombreMenu": "Hamburguesa rustica",
       "precioMenu": 1400,
       "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-      "imagen": "https://i.postimg.cc/2586LWQr/ari-gold.png",
-      "categoria": "hamburguesa",
-      "id": 1
-    },
-    {
-      "nombreMenu": "Superiority",
-      "precioMenu": 1400,
-      "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-      "imagen": "https://i.postimg.cc/T1rG42Vt/superiority.png",
-      "categoria": "hamburguesa",
-      "id": 2
-    },
-    {
-      "nombreMenu": "Royale con queso",
-      "precioMenu": 1400,
-      "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-      "imagen": "https://i.postimg.cc/Dw5fhztD/royale-con-queso.png",
-      "categoria": "hamburguesa",
-      "id": 3
-    },
-    {
-      "nombreMenu": "Bacon & cheese",
-      "precioMenu": 1000,
-      "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
-      "categoria": "extra",
-      "id": 4
+      "imagen": "https://st2.depositphotos.com/1020618/8867/i/450/depositphotos_88671760-stock-photo-close-up-of-home-made.jpg",
+      "categoria": "hamburguesa"
     }
   ],
   "usuarios": [
     {
-      "nombreUsuario": "nicoelias997",
-      "email": "nicoelias997@gmail.com",
-      "password": "12345678"
+      "nombreUsuario": "Nicolas",
+      "apellidoUsuario": "Elias",
+      "email": "nico@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "0a4ixNw"
+    },
+    {
+      "nombreUsuario": "Nico",
+      "apellidoUsuario": "Elias",
+      "email": "lalala@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "tKPxJ_B"
+    },
+    {
+      "nombreUsuario": "aaa",
+      "apellidoUsuario": "bb",
+      "email": "niconico@gmail.com",
+      "password": "holahola",
+      "check": true,
+      "id": "MktpAdS"
     }
   ],
   "pedidos": [

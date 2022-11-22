@@ -8,13 +8,13 @@ import AcercaDeNos from "./components/views/AcercaDeNos";
 import Administrador from "./components/views/Administrador";
 import DetalleMenu from "./components/views/DetalleMenu";
 import Error404 from "./components/views/Error404";
-import IniciarSesion from "./components/views/IniciarSesion";
 import CrearMenu from "./components/views/menus/CrearMenu";
 import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
+import PerfilUsuario from "./components/views/PerfilUsuario";
 import Registrarse from "./components/views/Registrarse";
 import './style.css'
-import './App.css'
+import './app.css'
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           element={<EditarMenu />}
         ></Route>
         <Route exact path="/detalle/:id" element={<DetalleMenu />}></Route>
-        <Route exact path="/login" element={<IniciarSesion />}></Route>
+        <Route exact path="/login" element={<PerfilUsuario />}></Route>
         <Route exact path="/registro" element={<Registrarse />}></Route>
         <Route exact path="/acerca" element={<AcercaDeNos />}></Route>
         <Route exact path="*" element={<Error404 />}></Route>

@@ -1,8 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+
+  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo"));
+  const [userActive,  setUserActive] = useState(false)
+
+  useEffect(() => {
+    if((storageUser)){
+      setUserActive(true)
+    }
+  }, [setUserActive, storageUser])
+
+  const navigate = useNavigate()
+
+  const cerrarSesion = () => {
+    Swal.fire({
+      title: 'Estas seguro que deseas cerrar sesion?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setUserActive(false)
+        localStorage.removeItem("usuarioActivo");
+        navigate("/login")
+      }
+    })
+  }
+
   return (
     <>
       <Navbar className="bgNavbar" variant="dark" expand="lg">
@@ -16,7 +47,7 @@ export const Header = () => {
               <NavLink to="/" className="nav-item nav-link">
                 Inicio
               </NavLink>
-              <NavLink to="/" className="nav-item nav-link">
+              <NavLink to="/acerca" className="nav-item nav-link">
                 Nosotros
               </NavLink>
             </div>
@@ -29,14 +60,22 @@ export const Header = () => {
                 />
               </Navbar.Brand>
             </div>
+            {/* componente condicional (admin) */}
             <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
-              {/* componente condicional (admin) */}
-              <NavLink to="/administrador" className="nav-item nav-link">
-                Admin
-              </NavLink>
-              <NavLink end to="/login" className="nav-item nav-link">
-                Login
-              </NavLink>
+            <NavLink to="/administrador" className="nav-item nav-link">
+              Admin
+            </NavLink>
+            
+            { 
+            userActive ? 
+            <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
+              LogOut
+            </Link>
+             : 
+            <NavLink end to="/login" className="nav-item nav-link d-flex">
+              Login
+            </NavLink>
+            }
             </div>
           </Nav>
         </Navbar.Collapse>

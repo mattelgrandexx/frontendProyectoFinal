@@ -171,3 +171,8 @@ nav li{
 	color: #24262b;
 	background-color: #ffffff;
 }
+
+.errorImagen{
+	object-fit: cover;
+	height: 300px;
+}

@@ -1,246 +1,454 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
-* {
-  font-family: "Oswald", sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-color:  #c0050b; */
+  background-color: #E9E4DE;
+  font-family: 'Oswald', sans-serif;
 }
 
 main {
-  background: #fafafa;
+background: #fafafa;
 }
 
 /* Pagina principal */
 #bannerImg {
-  width: 100%;
-  height: 75vh;
-  object-fit: cover;
-  object-position: 0 100%;
-  margin-bottom: 2.5vh;
+width: 100%;
+height: 75vh;
+object-fit: cover;
+object-position: 0 100%;
+margin-bottom: 2.5vh;
 }
 #bannerText {
-  position: absolute;
-  bottom: 30vh;
-  font-size: 3rem;
-  font-style: italic;
-  color: whitesmoke;
-  text-shadow: black -1px 0, black 0 -1px, black 1px 0, black 0 1px,
-    black -1px -1px, black 1px 1px;
-  text-align: center;
-  right: 25%;
-  left: 25%;
+position: absolute;
+bottom: 30vh;
+font-size: 3rem;
+font-style: italic;
+color: whitesmoke;
+text-shadow: black -1px 0, black 0 -1px, black 1px 0, black 0 1px,
+  black -1px -1px, black 1px 1px;
+text-align: center;
+right: 25%;
+left: 25%;
 }
 
 /* Titulo para categoria */
 .pagPrincipal__titulo {
-  margin-bottom: 5vh;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 4rem;
+margin-bottom: 5vh;
+text-align: center;
+font-weight: bolder;
+font-size: 4rem;
 }
 .pagPrincipal__titulo:before,
 .pagPrincipal__titulo:after {
-  background-color: #c0050b;
-  content: "";
-  display: inline-block;
-  height: 2px;
-  position: relative;
-  vertical-align: middle;
-  width: 10%;
+background-color: #c0050b;
+content: "";
+display: inline-block;
+height: 2px;
+position: relative;
+vertical-align: middle;
+width: 10%;
 }
 .pagPrincipal__titulo:before {
-  right: 0.5em;
-  margin-left: -50%;
+right: 0.5em;
+margin-left: -50%;
 }
 .pagPrincipal__titulo:after {
-  left: 0.5em;
-  margin-right: -50%;
+left: 0.5em;
+margin-right: -50%;
 }
 
 /* Seccion del menu */
 .cardContainer {
-  margin-bottom: 2.5vh;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+margin-bottom: 2.5vh;
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
 }
 .cardMenu {
-  width: calc(97% / 3);
-  margin-bottom: 2vh;
-  border: 1.5px solid #c0050b;
+width: calc(97% / 3);
+margin-bottom: 2vh;
+border: 1.5px solid #c0050b;
 }
 .cardMenu__nombre {
-  background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
-  background: -webkit-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
-  display: block;
-  border: none;
-  font-size: 2rem;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  color: #c0050b;
-  text-shadow: #f2f2f2 2px 0px 0px, #f2f2f2 1.75517px 0.958851px 0px, #f2f2f2 1.0806px 1.68294px 0px, #f2f2f2 0.141474px 1.99499px 0px, #f2f2f2 -0.832294px 1.81859px 0px, #f2f2f2 -1.60229px 1.19694px 0px, #f2f2f2 -1.97999px 0.28224px 0px, #f2f2f2 -1.87291px -0.701566px 0px, #f2f2f2 -1.30729px -1.51361px 0px, #f2f2f2 -0.421592px -1.95506px 0px, #f2f2f2 0.567324px -1.91785px 0px, #f2f2f2 1.41734px -1.41108px 0px, #f2f2f2 1.92034px -0.558831px 0px;
+background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+background: -webkit-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+display: block;
+border: none;
+font-size: 2rem;
+font-weight: bolder;
+letter-spacing: 2px;
+color: #c0050b;
+text-shadow: #f2f2f2 2px 0px 0px, #f2f2f2 1.75517px 0.958851px 0px, #f2f2f2 1.0806px 1.68294px 0px, #f2f2f2 0.141474px 1.99499px 0px, #f2f2f2 -0.832294px 1.81859px 0px, #f2f2f2 -1.60229px 1.19694px 0px, #f2f2f2 -1.97999px 0.28224px 0px, #f2f2f2 -1.87291px -0.701566px 0px, #f2f2f2 -1.30729px -1.51361px 0px, #f2f2f2 -0.421592px -1.95506px 0px, #f2f2f2 0.567324px -1.91785px 0px, #f2f2f2 1.41734px -1.41108px 0px, #f2f2f2 1.92034px -0.558831px 0px;
 }
 .cardMenu__nombre:hover {
-  color: #c0050b;
-  background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
-  background: -webkit-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
-  animation-name: movimiento;
-  animation-duration: 6s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+color: #c0050b;
+background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+background: -webkit-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+animation-name: movimiento;
+animation-duration: 6s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
 }
 /* Animacion que posee el nombre de cada producto */
 @keyframes movimiento   {
-  0% {
-    background-position: 0rem -3.5rem;
-  }
-  100% {
-    background-position: 10rem -3.5rem;
-  }
+0% {
+  background-position: 0rem -3.5rem;
+}
+100% {
+  background-position: 10rem -3.5rem;
+}
 }
 
 .cardMenu__descContainer {
-  display: flex;
-  justify-content: space-between;
-  padding-left: .7em;
+display: flex;
+justify-content: space-between;
+padding-left: .7em;
 }
 
 .cardMenu__desc {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+width: 40%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .cardMenu__categoria {
-  margin-top: 15%;
-  margin-bottom: 0;
-  font-size: 1.4rem;
+margin-top: 15%;
+margin-bottom: 0;
+font-size: 1.4rem;
 }
 .cardMenu__precio {
-  font-size: 2rem;
-  font-weight: bolder;
-  color:#444;
+font-size: 2rem;
+font-weight: bolder;
+color:#444;
 }
 
 .cardMenu__btn {
-  font-size: 0.9rem;
-  color: white;
-  background-color: #ef9b16;
-  width: 100%;
-  padding: 5px 2px;
-  margin: 20% 0;
-  border: 3px solid white;
-  outline: 3px solid #ef9b16;
-  --bs-btn-active-bg: #ef9b16;
+font-size: 0.9rem;
+color: white;
+background-color: #ef9b16;
+width: 100%;
+padding: 5px 2px;
+margin: 20% 0;
+border: 3px solid white;
+outline: 3px solid #ef9b16;
+--bs-btn-active-bg: #ef9b16;
 --bs-btn-active-border-color: #ef9b16;
 }
 .cardMenu__btn:hover {
-  color: #ef9b16;
-  background-color: #fff;
-  border: 3px solid #ef9b16;
-  outline: 3px solid #fff;
+color: #ef9b16;
+background-color: #fff;
+border: 3px solid #ef9b16;
+outline: 3px solid #fff;
 }
 .cardMenu__imgContainer {
-  align-self: center;
-  width: 65%;
+align-self: center;
+width: 65%;
 }
 
 /* Pop up */
 #popUp {
-  width: 30vw;
-  position: fixed;
-  bottom: 0;
-  right: 2vw;
-  border: 1px #c0050b solid;
-  background: #f2f2f2;
+width: 30vw;
+position: fixed;
+bottom: 0;
+right: 2vw;
+border: 1px #c0050b solid;
+background: #f2f2f2;
 }
 #popUp p {
-  font-size: 1.2rem;
+font-size: 1.2rem;
 } 
 #popUp__cerrar {
-  display: inline;
-  position: absolute;
-  right: 1%;
-  top: 0;
-  text-align: center;
-  color: #000;
-  font-size: 2.0rem;
+display: inline;
+position: absolute;
+right: 1%;
+top: 0;
+text-align: center;
+color: #000;
+font-size: 2.0rem;
 }
 #popUp__cerrar:hover {
-  cursor: pointer;
+cursor: pointer;
+}
+
+
+.mainSection{
+  flex-grow: 1;
+}
+
+.gridLogin {
+  height: 100%;
+}
+.bgColor{
+  background-color:  #c0050b;  
+  border: none;
+}
+
+.textLogin{
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.textUser{
+  color:  #c0050b;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.textFuncionesLogin{
+  color:  #c0050b;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 1.4rem;
+  transition: 0.05s;
+  border: none;
+  outline:none;
+}
+.textFuncionesLogin:hover{
+  color:  #c0050b;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1.5rem;
+  border: none;
+  outline:none;
+}
+
+.textFuncionesLogin:focus{
+  color:  #000;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1.4rem;
+  border: none;
+  outline:none;
+}
+.bgRayas {
+  background: -moz-repeating-linear-gradient(135deg, #ffffff,  #c0050b 0.5px);
+  background: -webkit-repeating-linear-gradient(135deg, #ffffff,  #c0050b 0.5px);
+  border: none;
+  }
+
+.rayasUser{
+  border: 0 1px 0 0 solid  #c0050b
+}
+.borderNone{
+  border: none;
+  outline:none;
+}
+
+.hrUser{
+  color:  #c0050b ;
+  border: 1px solid  #c0050b ;
+}
+
+.btnEntrar{
+  color: white;
+  background-color:  #c0050b;
+  padding: 10px;
+  border: 3px solid white;
+  outline: 3px solid  #c0050b;
+  width: 9rem;
+  height: 3rem;
+}
+.btnEntrar:hover{
+  color: #c0050b;
+  background-color:  #fff;
+  padding: 10px;
+  border: 3px solid #c0050b   ;
+  outline: 3px solid  #fff;
+  width: 9rem;
+  height: 3rem;
+}
+
+
+.textPedidos{
+  color:  #c0050b;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.textForm{
+  color:  #c0050b;
+  letter-spacing: 1.8px;
+  font-weight: 400;
+}
+
+.textPass{
+  width: 30%;
+  color:  #c0050b;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  position: relative;
+  left: 70%;
+  margin-bottom: 1rem;
+}
+
+.borderInput{
+  border-color: #c0050b;
+  margin-top: 3px;
+  height: 3.2rem;
+}
+
+.borderInput:focus{
+  box-shadow: none;
+  border-color: #000;
+}
+
+@media (min-width: 1024px) {
+  .textPass{
+      width: 100%;
+      position: relative;
+      left: 0%;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+  }
 }
 
 /* Responsive para dispositivos md */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* Pagina principal */
-  #bannerImg {
-    height: 58  vh;
-    object-position: 50% 50%;
-  }
-  #bannerText {
-    bottom: 45vh;
-    left: 20%;
-    right: 20%;
-  }
+/* Pagina principal */
+#bannerImg {
+  height: 58  vh;
+  object-position: 50% 50%;
+}
+#bannerText {
+  bottom: 45vh;
+  left: 20%;
+  right: 20%;
+}
 
-  /*Seccion del menu*/
-  .cardMenu {
-    width: 48%;
-  }
-  .cardMenu__categoria {
-    font-size: 1.6rem;
-  }
-  .cardMenu__precio {
-    font-size: 1.7rem;
-  }
-  .cardMenu__btn {
-    font-size: 1rem;
-  }
+/*Seccion del menu*/
+.cardMenu {
+  width: 48%;
+}
+.cardMenu__categoria {
+  font-size: 1.6rem;
+}
+.cardMenu__precio {
+  font-size: 1.7rem;
+}
+.cardMenu__btn {
+  font-size: 1rem;
+}
 
-  #popUp {
-    width: 50vw;
-  }
+#popUp {
+  width: 50vw;
+}
 }
 
 /* Responsive para dispositivos sm */
 @media only screen and (max-width: 767px) {
-  /* Pagina principal */
-  #bannerImg {
-    height: 55vh;
-    object-position: 50% 50%;
-  }
-  #bannerText {
-    bottom: 50vh;
-    left: 15%;
-    right: 15%;
-    font-size: 2rem;
-  }
+/* Pagina principal */
+#bannerImg {
+  height: 55vh;
+  object-position: 50% 50%;
+}
+#bannerText {
+  bottom: 50vh;
+  left: 15%;
+  right: 15%;
+  font-size: 2rem;
+}
 
-  .pagPrincipal__titulo {
-    font-size: 2.5rem;
-  }
+.pagPrincipal__titulo {
+  font-size: 2.5rem;
+}
 
-  /*Seccion del menu*/
-  .cardMenu {
-    width: 100%;
-  }
-  .cardMenu__categoria {
-    font-size: 1.5rem;
-  }
-  .cardMenu__precio {
-    font-size: 1.7rem;
-  }
-  .cardMenu__btn {
-    font-size: .9rem;
-  }
+/*Seccion del menu*/
+.cardMenu {
+  width: 100%;
+}
+.cardMenu__categoria {
+  font-size: 1.5rem;
+}
+.cardMenu__precio {
+  font-size: 1.7rem;
+}
+.cardMenu__btn {
+  font-size: .9rem;
+}
 
-  #popUp {
-    width: 70vw;
+#popUp {
+  width: 70vw;
+}
+#popUp__cerrar {
+  font-size: 2rem;
+}
+#popUp p {
+  font-size: .8rem;
+} 
+#popUp__input {
+  font-size: .8rem;
+}
+}
+
+@media (min-width: 592px) {
+  .textPass{
+      width: 100%;
+      position: relative;
+      left: 0%;
   }
-  #popUp__cerrar {
-    font-size: 2rem;
+  .btnEntrar{
+      width: 50%;
+      position: relative;
+      left: 25%;
+   }
+   .btnEntrar:hover{
+       width: 50%;
+       position: relative;
+      left: 25%;
+   }
+   .borderNone{
+      display: flex;
+      justify-content: center;
+     }
+}
+@media (max-width: 591px){
+  .textPass{
+      width: 100%;
+      position: relative;
+      left: 0%;
   }
-  #popUp p {
-    font-size: .8rem;
-  } 
-  #popUp__input {
-    font-size: .8rem;
+  .btnEntrar{
+     width: 100%;
+  }
+  .btnEntrar:hover{
+      width: 100%;
+  }
+  .borderNone{
+      display: flex;
+      justify-content: center;
+     }
+}
+
+@media (max-width: 300px) {
+ .textPedidos{
+  font-size: 1.4rem;
+ }
+ .textLogin{
+  font-size: 1.1rem;
+ }
+ .textUser{
+  font-size: 1.1rem;
+  font-weight: 900;
+ }
+ .borderNone{
+  display: flex;
+  justify-content: center;
+ }
+ 
+}
+
+@media (min-width: 768px) {
+  .textPedidos{
+      font-size: 3rem;
+      position: relative;
+      top: 25%;
   }
 }
