@@ -71,7 +71,7 @@ const PaginaPrincipal = () => {
       
       
       useEffect(() => {
-        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesa"))
+        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesa") || [])
         setExtras(menus.filter(menu => menu.categoria === "extra"))
       }, [menus])
       

@@ -62,7 +62,7 @@ export const Header = () => {
             </div>
             {/* componente condicional (admin) */}
             <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
-            <NavLink to="/administrador" className="nav-item nav-link">
+            <NavLink to="/administrar" className="nav-item nav-link">
               Admin
             </NavLink>
             
