@@ -144,22 +144,24 @@ main {
 
 /* Pop up */
 #popUp {
-  width: 28vw;
+  width: 30vw;
   position: fixed;
   bottom: 0;
   right: 2vw;
   border: 1px #c0050b solid;
   background: #f2f2f2;
 }
+#popUp p {
+  font-size: 1.2rem;
+} 
 #popUp__cerrar {
-  /* background: #222; */
   display: inline;
   position: absolute;
   right: 1%;
   top: 0;
   text-align: center;
   color: #000;
-  font-size: 2.4rem;
+  font-size: 2.0rem;
 }
 #popUp__cerrar:hover {
   cursor: pointer;
