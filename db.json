@@ -41,31 +41,6 @@
     }
   ],
   "pedidos": [
-    {
-      "estado": "En preparacion",
-      "pedido": [
-        {
-          "nombreMenu": "Superiority",
-          "precioMenu": 1400
-        },
-        {
-          "nombreMenu": "Superiority",
-          "precioMenu": 1400
-        },
-        {
-          "nombreMenu": "Royale con queso",
-          "precioMenu": 1400
-        },
-        {
-          "nombreMenu": "Royale con queso",
-          "precioMenu": 1400
-        },
-        {
-          "nombreMenu": "Bacon & cheese",
-          "precioMenu": 1000
-        }
-      ],
-      "id": 1
-    }
+    
   ]
 }
