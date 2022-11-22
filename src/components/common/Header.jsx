@@ -35,8 +35,11 @@ export const Header = () => {
   }
 
   return (
-    <>
-      <Navbar className="bgNavbar" variant="dark" expand="lg">
+    <Navbar bg="danger" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          LENO
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
           id="basic-navbar-nav"
@@ -79,7 +82,9 @@ export const Header = () => {
             </div>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-    </>
+      </Container>
+    </Navbar>
   );
-};
+}
+
+export default Menu;

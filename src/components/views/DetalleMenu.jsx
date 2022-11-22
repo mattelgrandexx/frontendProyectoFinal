@@ -7,9 +7,6 @@ const DetalleMenu = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
   const navigate = useNavigate();
-
-
-  
   useEffect(() => {
     obtenerMenuApi(id).then((respuesta) => {
       if (respuesta.status === 200) {

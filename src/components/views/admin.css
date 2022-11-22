@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.oswald400{
+ font-family: 'Oswald', sans-serif;
+ font-size: 0.5cm;
+}
+.oswald500{
+  font-family: 'Oswald', sans-serif;
+ font-size: 1cm;
+}
+.boton{
+background-color:#EF9B16 ;
+text-decoration: none;
+padding: 0.5rem;
+color: white;
+border: 1px solid black;
+margin: 20px 10px 2px 0px;
+}
+.botonBorrar{
+  background-color: #c0050b;
+text-decoration: none;
+padding: 0.5rem;
+color: white;
+border: 1px solid black;
+margin: 20px 0px 2px 0px;
+height: 60px;
+}
+.botonBorrarPedidos{
+  background-color: #c0050b;
+text-decoration: none;
+padding: 0.5rem;
+color: white;
+border: 1px solid black;
+height: 60px;
+}
+.botonBorrarUsuarios{
+  background-color: #c0050b;
+text-decoration: none;
+color: white;
+border: 1px solid black;
+height: 60px;
+padding: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.fondoNegro{
+  background-color: #24262B;
+}
+.fondoRojo{
+  background-color: #c0050b;
+}
+.fondoBlanco{
+  background-color: #f2efe8;
+}
+.textoBlanco{
+  color: #f2efe8;
+}
+.textoRojo{
+  color: #c0050b;
+}
+.bordeCajaRojo{
+  border: 2px solid #c0050b;
+  padding: 5px;
+}
+.bordeCajaNegro{
+  border: 2px solid #24262B;
+  padding: 5px;
+}
+
+.fondoNaranja{
+  background-color: #EF9B16;
+}
+
+.columna{
+  flex-direction: column;
+}
+
+.tamañoBandera{
+  width: 25%;
+}
+
+.tamañoDivEstado{
+  width: 200px;
+  height: 60px;
+}
+.ocultarTexto{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.divAltura{
+  align-items: center;
+}
+.estadoAncho{
+  width: 200px;
+}
+
+
+
+/*  */
+
+
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  margin: 0 5px;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.switch input {display:none}
+
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: 2.5px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+input:checked + .slider{
+  background-color: green;
+}
+input:checked + .slider::before{
+  transform: translateX(25px);
+}
+
+
+/* media queries */
+@media only screen and (max-width: 767px) {
+  .estadoAncho{
+   min-width: 5vh;
+
+  }
+}
