@@ -1,7 +1,6 @@
 import {
   borrarPedidoApi,
-  consultarPedidosAPI,
-  editarPedidoAPI,
+  consultarPedidosApi
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useState } from "react";
@@ -29,7 +28,7 @@ const ItemPedido = ({combo, setPedidos}) => {
                   "El pedido fue eliminado exitosamente",
                   "success"
                 );
-                consultarPedidosAPI().then((respuesta) => {
+                consultarPedidosApi().then((respuesta) => {
                   setPedidos(respuesta);
                 });
               } else {

@@ -3,6 +3,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import {Container} from "react-bootstrap";
 
 export const Header = () => {
 
@@ -57,7 +58,7 @@ export const Header = () => {
             <div className="navDivisor d-flex justify-content-center  ">
               <Navbar.Brand className="m-0" as={Link} to="/">
                 <img
-                  src="https://trello.com/1/cards/636afa161043510112cf6151/attachments/636ef445cbe2c4032d6284cb/previews/636ef446cbe2c4032d6284d4/download/LENOLOGO2.png"
+                  src="https://i.postimg.cc/C5dLrpvt/LENOLOGO2.png"
                   alt="logo"
                   className="logoLeno"
                 />
@@ -87,4 +88,3 @@ export const Header = () => {
   );
 }
 
-export default Menu;

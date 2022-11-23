@@ -4,7 +4,6 @@ import {useForm} from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { crearMenuApi } from '../../helpers/queries';
 import Swal from 'sweetalert2';
-import { v4 } from 'uuid';
 
 
 const CrearMenu = () => {

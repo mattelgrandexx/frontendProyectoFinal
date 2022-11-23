@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="col-12 col-lg-12 d-flex justify-content-center">
           <NavLink to={'/'}>
             <img
-              src="https://trello.com/1/cards/636afa161043510112cf6151/attachments/636ef449b07b4100170437c7/previews/636ef44ab07b4100170437d0/download/LENOLOGO4.png"
+              src="https://i.postimg.cc/gkX2vdLL/LENOLOGO4.png"
               className="logoLeno"
               alt="logoNegro"
             />

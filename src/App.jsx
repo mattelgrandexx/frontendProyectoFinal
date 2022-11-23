@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./app.css"
 import './style.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/common/Footer";
@@ -13,8 +12,7 @@ import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import PerfilUsuario from "./components/views/PerfilUsuario";
 import Registrarse from "./components/views/Registrarse";
-import './style.css'
-import './app.css'
+import './App.css'
 
 function App() {
   return (

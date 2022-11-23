@@ -3,7 +3,7 @@ import "./admin.css";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import ItemMenu from "./menus/ItemMenu";
-import { consultarAPI, consultarPedidosAPI, consultarUserAPI } from "../helpers/queries";
+import { consultarAPI, consultarPedidosApi, consultarUserAPI } from "../helpers/queries";
 import Swal from "sweetalert2";
 import ItemUsuario from "./AdminComponents/ItemUsuario";
 import ItemPedido from "./AdminComponents/ItemPedido";
@@ -44,7 +44,7 @@ const Administrador = () => {
 
   const[pedidos, setPedidos] = useState([]);
   useEffect(()=>{
-    consultarPedidosAPI().then((respuesta)=>{
+    consultarPedidosApi().then((respuesta)=>{
       setPedidos(respuesta);
     },
     (reason)=>{
@@ -75,7 +75,7 @@ const Administrador = () => {
           </Link>
         </div>
         <hr />
-        <Table responsive bordered>
+        <Table responsive bordered className="bordeCajaRojo">
           <thead>
             <tr className="oswald400 textoRojo">
               <th>Cod</th>
