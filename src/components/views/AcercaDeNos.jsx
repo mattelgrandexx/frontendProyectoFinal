@@ -2,6 +2,13 @@ import React from "react";
 
 const AcercaDeNos = () => {
   return (
+    <section>
+<div>
+      <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+</div>
     <div className="container my-5">
       <h1 className="text-center">LENO ARGENTINA</h1>
       <div className="d-flex justify-content-center my-4">
@@ -17,6 +24,7 @@ const AcercaDeNos = () => {
       <h4><strong className="text-center d-flex justify-content-center">DICEN QUE HACEMOS  LAS MEJORES BURGERS. 
 ESTAMOS DE ACUERDO.</strong></h4>
     </div>
+    </section>
   );
 };
 
