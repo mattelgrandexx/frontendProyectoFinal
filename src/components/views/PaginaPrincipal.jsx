@@ -41,7 +41,6 @@ const PaginaPrincipal = () => {
       }, []);
 
       useEffect(() => {
-        console.log(pedidoCreado)
         consultarPedidosApi().then(
           (respuesta) => {
             //Devuelve unicamente el pedido especifico del usuario que este logueado en caso de exista
@@ -71,8 +70,8 @@ const PaginaPrincipal = () => {
       
       
       useEffect(() => {
-        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesa") || [])
-        setExtras(menus.filter(menu => menu.categoria === "extra"))
+        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesas") || [])
+        setExtras(menus.filter(menu => menu.categoria === "extras"))
       }, [menus])
       
       const cerrarPopUp = () => {

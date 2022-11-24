@@ -28,12 +28,9 @@ const CardMenu = ({
         estado: "En preparacion",
         pedido: [{ nombreMenu: nombreMenu, precioMenu: precioMenu }],
       });
-      console.log(pedido)
     } else {
-      console.log(pedidoCreado)
       setProducto({ nombreMenu: nombreMenu, precioMenu: precioMenu });
       //Este state tiene el valor del unico arreglo de pedidos que se encuetra dentro del array de pedidos en la BD y es usado para agregar un producto al pedido que ya existe
-      console.log(pedido)
       setPedidoAgregado(pedido);
     }
   }, [pedido]);
@@ -62,7 +59,6 @@ const CardMenu = ({
         
       } else {
         //Agrega el producto al pedido en caso de que el pedido ya exista
-        console.log(pedidoAgregado);
         pedidoAgregado.pedido.push(producto);
         editarPedidoApi(pedidoAgregado.id, pedidoAgregado).then((respuesta) => {
           if (respuesta.status === 200) {
