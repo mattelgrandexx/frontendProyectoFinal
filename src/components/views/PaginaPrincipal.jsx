@@ -100,6 +100,12 @@ const PaginaPrincipal = () => {
   return (
     <main>
       <section>
+      <div>
+      <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+</div>
         <div>
           <img id='bannerImg' src="https://www.denirohamburgueseria.com.ar/img/fondo1920x1080.png" alt="" />
           <p id='bannerText'>Viví la experiencia Leno, THE REAL AMERICAN FOOD IS HERE </p>
