@@ -66,9 +66,9 @@ export const login = async (usuario) => {
     }
 }
 
-export const obtenerUsuario = async () => {
+export const obtenerUsuario = async (token) => {
     try{
-        const respuesta = await fetch(URL + `perfilusuarios/confirm/:token`)
+        const respuesta = await fetch(URL + `perfilusuarios/confirm/` + token)
         const usuario = await respuesta.json()
         return usuario
     } catch(e){

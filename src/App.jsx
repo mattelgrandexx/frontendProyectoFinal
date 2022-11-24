@@ -15,6 +15,7 @@ import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import PerfilUsuario from "./components/views/PerfilUsuario";
 import Registrarse from "./components/views/Registrarse";
 import './style.css'
+import Confirm from "./components/views/Confirm";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route exact path="/registro" element={<Registrarse />}></Route>
         <Route exact path="/acerca" element={<AcercaDeNos />}></Route>
         <Route exact path="*" element={<Error404 />}></Route>
+        <Route exact path="/confirmar/:token" element={<Confirm></Confirm>}></Route>
       </Routes>
      <Footer/>
 
