@@ -26,6 +26,8 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
+      console.log(respuesta)
+      if(respuesta.estado === "Autenticado"){
     if(respuesta.status === 200){
 
           Swal.fire(
@@ -33,9 +35,8 @@ const handleShow = () => setShow(true);
             `Gracias por contar con nosotros, ${respuesta.email}`,
             "success"
           );
-          localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email));
-          navigate("/inicio");
-    
+          localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email, respuesta.estado));
+          navigate("/");
       } else {
         Swal.fire(
           "Email o contraseña incorrecta",
@@ -43,6 +44,13 @@ const handleShow = () => setShow(true);
           "error"
         );
       }
+    } else {
+      Swal.fire(
+        "Email no verificado.",
+        `Verifica tu email antes de iniciar sesion.`,
+        "error"
+      );
+    }
     });
   };
 

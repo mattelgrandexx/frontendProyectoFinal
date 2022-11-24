@@ -25,14 +25,14 @@ const Registrarse = () => {
         if (respuesta.status === 201) {
           Swal.fire(
             `Te registraste correctamente, ${datos.nombreUsuario}, ${datos.apellidoUsuario}`,
-            "Disfruta de nuestro contenido.",
+            "Verifica tu email para disfrutar nuestro contenido.",
             "success"
           );
-          localStorage.setItem(
-            "usuarioActivo",
-            JSON.stringify(datos.email)
-          );
-          navigate("/inicio");
+          // localStorage.setItem(
+          //   "usuarioActivo",
+          //   JSON.stringify(datos.email, datos.estado)
+          // );
+          navigate("/login");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,

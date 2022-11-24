@@ -44,6 +44,7 @@ export const login = async (usuario) => {
         email: datos.email,
         token: datos.token,
         _id: datos._id,
+        estado: datos.estado
       };
     } catch (error) {
       console.log("errores en el login");
@@ -51,7 +52,17 @@ export const login = async (usuario) => {
     }
   };
 
-  export const recuperarUserPassword = async (datos) => {
+export const obtenerUsuario = async (token) => {
+    try{
+        const respuesta = await fetch(URL + `perfilusuarios/confirm/` + token)
+        const usuario = await respuesta.json()
+        return usuario
+    } catch(e){
+        console.log(e)
+    }
+}
+
+export const recuperarUserPassword = async (datos) => {
     try{
         const respuesta = await fetch(URL + "perfilusuarios/recuperacion", {
             method: "POST",
@@ -61,16 +72,6 @@ export const login = async (usuario) => {
             body: JSON.stringify(datos)
         })
         return respuesta
-    } catch(e){
-        console.log(e)
-    }
-}
-
-export const obtenerUsuario = async (token) => {
-    try{
-        const respuesta = await fetch(URL + `perfilusuarios/confirm/` + token)
-        const usuario = await respuesta.json()
-        return usuario
     } catch(e){
         console.log(e)
     }
