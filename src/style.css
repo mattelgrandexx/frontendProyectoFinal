@@ -101,7 +101,7 @@ ul{
 nav{
   width: 100%;
   display: flex;
-  background: #c0050b;
+  background: #c0050b !important;
 }
 
 

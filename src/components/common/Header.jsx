@@ -36,17 +36,15 @@ export const Header = () => {
   }
 
   return (
-    <Navbar bg="danger" variant="dark" expand="lg">
+    <Navbar  variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          LENO
-        </Navbar.Brand>
+    
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center align-items-center"
         >
-          <Nav className="nav px-5 align-items-center">
+          <Nav className="nav align-items-center">
             <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly ">
               <NavLink to="/" className="nav-item nav-link">
                 Inicio
