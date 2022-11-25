@@ -124,7 +124,7 @@ const EditarMenu = () => {
             >
               <option value="">Seleccione una opcion</option>
               <option value="hamburguesas">Hamburguesas</option>
-              <option value="hebidas">Bebidas</option>
+              <option value="bebidas">Bebidas</option>
               <option value="extras">Extras</option>
             </Form.Select>
             <Form.Text className="text-danger">

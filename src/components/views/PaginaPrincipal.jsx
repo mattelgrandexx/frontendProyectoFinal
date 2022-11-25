@@ -20,6 +20,7 @@ const PaginaPrincipal = () => {
 
     consultarAPI().then(
       (respuesta) => {
+        console.log(respuesta)
         setMenus(respuesta);
       },
       (reason) => {
@@ -32,9 +33,6 @@ const PaginaPrincipal = () => {
           )
         }
         );
-
-        
-
         setTimeout(() => {
           setMostrarPopUp(true)
         }, 5000);
@@ -70,8 +68,8 @@ const PaginaPrincipal = () => {
       
       
       useEffect(() => {
-        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesa") || [])
-        setExtras(menus.filter(menu => menu.categoria === "extra"))
+        setHamburgesas(menus.filter(menu => menu.categoria === "hamburguesas") || [])
+        setExtras(menus.filter(menu => menu.categoria === "extras"))
       }, [menus])
       
       const cerrarPopUp = () => {
@@ -113,12 +111,12 @@ const PaginaPrincipal = () => {
       <Container>
       <h2 className='pagPrincipal__titulo'>Hamburguesas</h2>
       <section className='p-0 cardContainer'>
-      {hamburguesas.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
+      {hamburguesas.map((menu)=><CardMenu key={menu._id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
       </section>
        
       <h2 className='pagPrincipal__titulo'>Extras</h2>
       <section className='p-0 cardContainer'>
-      {extras.map((menu)=><CardMenu key={menu.id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
+      {extras.map((menu)=><CardMenu key={menu._id} menu={menu} pedido={pedido} setPedido={setPedido} usuarioLogueado={usuarioLogueado} pedidoCreado={pedidoCreado} setPedidoCreado={setPedidoCreado} ></CardMenu>)}
       </section>
       </Container>
       {popUp}

@@ -12,9 +12,11 @@ const ItemMenu = ({menu, setMenus}) => {
       text: "No podra revertir este cambio!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar!'
+      confirmButtonColor: '#c0050b',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Eliminar!',
+      cancelButtonText: 'Cancelar'
+
     }).then((result) => {
       if (result.isConfirmed) {
         borrarMenuApi(_id).then((respuesta)=>{ 

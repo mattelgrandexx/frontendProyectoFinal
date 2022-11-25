@@ -132,9 +132,6 @@ const Administrador = () => {
       <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
-          <Link className="oswald400 boton justificarFinal" to="/registro">
-            Agregar un usuario
-          </Link>
           </div>
           <hr />
           <Table responsive bordered className="bordeCajaRojo">
