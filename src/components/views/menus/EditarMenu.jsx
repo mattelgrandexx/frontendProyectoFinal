@@ -14,9 +14,7 @@ const EditarMenu = () => {
     setValue
   } = useForm();
   const { id } = useParams();
-  useEffect(() => {
-    console.log(id)
-  })
+ 
   const navegacion = useNavigate();
 
   const onSubmit = (datos) => {
