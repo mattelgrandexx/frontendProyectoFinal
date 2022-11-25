@@ -1,6 +1,6 @@
-import { borrarUsuarioAPI, consultarUserAPI } from "../../helpers/queries";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { consultarUserApi } from "../../helpers/queriesLogin";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
     const {nombreUsuario, email, id} = {...usuario}
@@ -19,7 +19,7 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
           borrarUsuarioAPI(id).then((respuesta)=>{ 
             if(respuesta.status === 200){   
               Swal.fire("Usuario eliminado","El usuario fue eliminado exitosamente","success");
-              consultarUserAPI().then((respuesta)=>{
+              consultarUserApi().then((respuesta)=>{
                 setUsuarios(respuesta);
               })
             }else{

@@ -3,10 +3,11 @@ import "./admin.css";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import ItemMenu from "./menus/ItemMenu";
-import { consultarAPI, consultarPedidosApi, consultarUserAPI } from "../helpers/queries";
+import { consultarAPI, consultarPedidosApi } from "../helpers/queries";
 import Swal from "sweetalert2";
 import ItemUsuario from "./AdminComponents/ItemUsuario";
 import ItemPedido from "./AdminComponents/ItemPedido";
+import { consultarUserApi } from "../helpers/queriesLogin";
 
 const Administrador = () => {
   const [menus, setMenus] = useState([]);
@@ -28,7 +29,7 @@ const Administrador = () => {
 
   const[usuarios, setUsuarios] = useState([]);
   useEffect(()=>{
-    consultarUserAPI().then((respuesta)=>{
+    consultarUserApi().then((respuesta)=>{
       setUsuarios(respuesta);
     },
     (reason)=>{

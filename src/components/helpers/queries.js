@@ -1,6 +1,5 @@
 const URLMENU = process.env.REACT_APP_API_BAR_MENU;
 const URLPEDIDOS = process.env.REACT_APP_API_BAR_MENU_PEDIDOS;
-const URLUSUARIOS = process.env.REACT_APP_API_BAR_MENU_USUARIOS
 
 
 // QUERIES MENU
@@ -76,29 +75,6 @@ export const editarMenuApi = async(id, menu)=>{
     }
 }
 
-// QUERIES USUARIOS
-
-export const consultarUserAPI = async () => {
-    try {
-      const respuesta = await fetch(URLUSUARIOS);
-      const listaUsuarios = await respuesta.json();
-      return listaUsuarios;
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-export const borrarUsuarioAPI = async(id)=>{
-    try {
-        const respuesta = await fetch(URLUSUARIOS+'/'+id,{
-            method: "DELETE"          
-        });
-        return respuesta;
-    } catch (error) {
-        console.log(error);
-        return false;
-    }
-};
 // QUERIES PEDIDOS
 
 
