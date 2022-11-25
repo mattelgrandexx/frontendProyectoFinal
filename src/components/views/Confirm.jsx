@@ -21,9 +21,9 @@ const Confirm = () => {
         })
     }, [token])
   return (
-    <Container className='mainSection '>
+    <Container className='mainSection text-center mt-5 mb-5'>
     <h1 className='pagPrincipal__titulo mt-5'>Te registraste correctamente.</h1>
-    <Col className='text-center'>
+    <Col className='text-center m-5'>
        <h5 className='textUser'> Bienvenido, {usuario.nombreUsuario}.<br></br>
         Podras iniciar sesion con el siguiente email: '{usuario.email}'
         </h5>

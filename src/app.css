@@ -24,9 +24,11 @@
 .colorConfirm{
     color: #c0050b;
     border: none;
-
 }
-
+.colorConfirm:hover{
+    color: #000;
+    border: none;
+}
 
 .textLogin{
     color: white;

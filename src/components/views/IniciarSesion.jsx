@@ -26,13 +26,11 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      console.log(respuesta)
       if(respuesta.estado === "Autenticado"){
     if(respuesta.status === 200){
-
           Swal.fire(
             "Bienvenido",
-            `Gracias por contar con nosotros, ${respuesta.email}`,
+            `Gracias por contar con nosotros.`,
             "success"
           );
           localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email, respuesta.estado));

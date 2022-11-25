@@ -32,7 +32,7 @@ const Registrarse = () => {
           //   "usuarioActivo",
           //   JSON.stringify(datos.email, datos.estado)
           // );
-          navigate("/login");
+         navigate("/");
         } else {
           Swal.fire(
             `Hubo un error inesperado`,

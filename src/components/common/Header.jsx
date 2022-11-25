@@ -22,9 +22,11 @@ export const Header = () => {
       title: 'Estas seguro que deseas cerrar sesion?',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: '#c0050b',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Cerrar sesion',
+      cancelButtonText: 'Cancelar'
+      
     }).then((result) => {
       if (result.isConfirmed) {
         setUserActive(false)
@@ -68,11 +70,11 @@ export const Header = () => {
             { 
             userActive ? 
             <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
-              LogOut
+              Cerrar sesion
             </Link>
              : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
-              Login
+              Iniciar sesion
             </NavLink>
             }
 
