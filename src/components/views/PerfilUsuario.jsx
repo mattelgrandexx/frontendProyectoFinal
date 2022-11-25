@@ -21,20 +21,27 @@ const [login, setLogin] = useState(false)
   }
 
   return (
+    <section>
+<div>
+      <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+  <img src="https://i.postimg.cc/BvGbSy6L/bandera.jpg" className="tamañoBandera" alt="" />
+</div>
     <Row className='m-5 mainSection d-flex'>
     <Col xs={12} md={4} >
     <User iniciarSesion={iniciarSesion} crearCuenta={crearCuenta} misPedidos={misPedidos}></User>
     </Col>
     <Col xs={12} md={8}> 
       {
-      login === null ? 
-      <>
+        login === null ? 
+        <>
       <MisPedidos></MisPedidos>
       </>
        :
         <>
         {
-        login ? 
+          login ? 
         <>
     <Registrarse></Registrarse> 
         </> : 
@@ -47,6 +54,7 @@ const [login, setLogin] = useState(false)
     
     </Col>
     </Row>
+      </section>
   )
 }
 

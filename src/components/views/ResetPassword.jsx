@@ -19,6 +19,7 @@ const ResetPassword = (props) => {
           <Modal.Title>Recuperar contraseña</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <label>Ingrese su email</label>
           <Form onSubmit={handleSubmit(props.recuperarPassword)}>
             <Form.Control className="p-2 borderInput"
             type="email"

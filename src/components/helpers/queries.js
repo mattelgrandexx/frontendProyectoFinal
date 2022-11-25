@@ -1,7 +1,13 @@
+const URLMENU = process.env.REACT_APP_API_BAR_MENU;
+const URLPEDIDOS = process.env.REACT_APP_API_BAR_MENU_PEDIDOS;
+const URLUSUARIOS = process.env.REACT_APP_API_BAR_MENU_USUARIOS
+
+
+// QUERIES MENU
 
 export const consultarAPI = async()=>{
     try {
-        const respuesta = await fetch(URL);
+        const respuesta = await fetch(URLMENU);
         const listaMenus = await respuesta.json()
         return listaMenus;
     } catch (error) {
@@ -11,7 +17,7 @@ export const consultarAPI = async()=>{
 }
 export const obtenerMenuApi = async(id)=>{
     try {
-        const respuesta = await fetch(URL+'/'+id);
+        const respuesta = await fetch(URLMENU+'/'+id);
         const menu={
             dato: await respuesta.json(),
             status: respuesta.status
@@ -25,7 +31,7 @@ export const obtenerMenuApi = async(id)=>{
 
 export const crearMenuApi = async(menu)=>{
     try {
-        const respuesta = await fetch(URL,{
+        const respuesta = await fetch(URLMENU,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -39,9 +45,10 @@ export const crearMenuApi = async(menu)=>{
         return false;
     }
 }
+
 export const borrarMenuApi = async(id)=>{
     try {
-        const respuesta = await fetch(URL+'/'+id,{
+        const respuesta = await fetch(URLMENU+'/'+id,{
             method: "DELETE"          
         });
         return respuesta;
@@ -53,7 +60,7 @@ export const borrarMenuApi = async(id)=>{
 
 export const editarMenuApi = async(id, menu)=>{
     try {
-        const respuesta = await fetch(URL+'/'+id,{
+        const respuesta = await fetch(URLMENU+'/'+id,{
             method: "PUT",
             headers:{
                 "Content-Type": "application/json",
@@ -68,3 +75,104 @@ export const editarMenuApi = async(id, menu)=>{
         return false;
     }
 }
+
+// QUERIES USUARIOS
+
+export const consultarUserAPI = async () => {
+    try {
+      const respuesta = await fetch(URLUSUARIOS);
+      const listaUsuarios = await respuesta.json();
+      return listaUsuarios;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const borrarUsuarioAPI = async(id)=>{
+    try {
+        const respuesta = await fetch(URLUSUARIOS+'/'+id,{
+            method: "DELETE"          
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+// QUERIES PEDIDOS
+
+
+
+  export const borrarPedidoApi = async(id)=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS+'/'+id,{
+            method: "DELETE"          
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
+
+export const añadirPedidoCarrito = async(pedido)=>{
+    try {
+        const respuesta = await fetch(URLPEDIDOS,{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pedido)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+}
+
+// Pedidos
+export const crearPedidoApi = async (menu) => {
+  try {
+    const respuesta = await fetch(URLPEDIDOS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(menu),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
+export const consultarPedidosApi = async () => {
+    try {
+      const respuesta = await fetch(URLPEDIDOS);
+      const listaPedidos = await respuesta.json();
+      return listaPedidos;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
+  export const editarPedidoApi = async (id, pedido) => {
+    try {
+      const respuesta = await fetch(URLPEDIDOS + "/" + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(pedido),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
