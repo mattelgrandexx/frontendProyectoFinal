@@ -14,6 +14,9 @@ const EditarMenu = () => {
     setValue
   } = useForm();
   const { id } = useParams();
+  useEffect(() => {
+    console.log(id)
+  })
   const navegacion = useNavigate();
 
   const onSubmit = (datos) => {
@@ -34,7 +37,6 @@ const EditarMenu = () => {
   useEffect(() => {
     obtenerMenuApi(id).then((respuesta) => {
       if (respuesta.status === 200) {
-        console.log(respuesta);
         setValue("nombreMenu", respuesta.dato.nombreMenu)
         setValue("precioMenu", respuesta.dato.precioMenu)
         setValue("imagen", respuesta.dato.imagen)

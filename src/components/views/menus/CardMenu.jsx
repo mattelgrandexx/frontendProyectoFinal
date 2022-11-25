@@ -14,7 +14,7 @@ const CardMenu = ({
   pedidoCreado,
   setPedidoCreado,
 }) => {
-  const { nombreMenu, precioMenu, descripcion, imagen, id } = {
+  const { nombreMenu, precioMenu, descripcion, imagen, _id } = {
     ...menu,
   };
   const [producto, setProducto] = useState({});
@@ -64,7 +64,7 @@ const CardMenu = ({
         //Agrega el producto al pedido en caso de que el pedido ya exista
         console.log(pedidoAgregado);
         pedidoAgregado.pedido.push(producto);
-        editarPedidoApi(pedidoAgregado.id, pedidoAgregado).then((respuesta) => {
+        editarPedidoApi(pedidoAgregado._id, pedidoAgregado).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire(
               "Producto agregado",
@@ -93,7 +93,7 @@ const CardMenu = ({
     <article className="cardMenu rounded rounded-3">
       <Link
         className="cardMenu__nombre pb-2 m-1 text-center"
-        to={`../DetalleMenu/${id}`}
+        to={`../DetalleMenu/${_id}`}
       >
         {nombreMenu}
       </Link>

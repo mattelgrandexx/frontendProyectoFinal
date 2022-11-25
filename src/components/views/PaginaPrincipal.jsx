@@ -41,7 +41,6 @@ const PaginaPrincipal = () => {
       }, []);
 
       useEffect(() => {
-        console.log(pedidoCreado)
         consultarPedidosApi().then(
           (respuesta) => {
             //Devuelve unicamente el pedido especifico del usuario que este logueado en caso de exista

@@ -62,6 +62,17 @@ export const obtenerUsuario = async (token) => {
     }
 }
 
+export const borrarUsuarioAPI =  async (_id) => {
+    try{
+        const respuesta = await fetch(URL+"perfilusuarios/"+_id,{
+            method: "DELETE"
+        })
+        return respuesta
+    } catch(e){
+        console.log(e)
+    }
+}
+
 export const recuperarUserPassword = async (datos) => {
     try{
         const respuesta = await fetch(URL + "perfilusuarios/recuperacion", {

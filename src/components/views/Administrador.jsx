@@ -90,7 +90,7 @@ const Administrador = () => {
           </thead>
           <tbody className="oswald400">
             {
-              menus.map((menu)=><ItemMenu key={menu.id} menu={menu} setMenus={setMenus}></ItemMenu>)
+              menus.map((menu)=><ItemMenu key={menu._id} menu={menu} setMenus={setMenus}></ItemMenu>)
             }
           </tbody>
         </Table>
@@ -118,7 +118,7 @@ const Administrador = () => {
           </thead>
           <tbody className="oswald400">
             {
-              pedidos.map((combo)=><ItemPedido key={combo.id} combo={combo} setPedidos={setPedidos}></ItemPedido>)
+              pedidos.map((combo)=><ItemPedido key={combo._id} combo={combo} setPedidos={setPedidos}></ItemPedido>)
             }
           </tbody>
         </Table>
@@ -149,7 +149,7 @@ const Administrador = () => {
           <tbody className="oswald400">
           
              {
-              usuarios.map((usuario)=><ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
+              usuarios.map((usuario)=><ItemUsuario key={usuario._id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
              }
           
           </tbody>

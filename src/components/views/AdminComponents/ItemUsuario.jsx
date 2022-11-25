@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { consultarUserApi } from "../../helpers/queriesLogin";
+import { borrarUsuarioAPI, consultarUserApi } from "../../helpers/queriesLogin";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
-    const {nombreUsuario, email, id} = {...usuario}
+    const {nombreUsuario, email, _id} = {...usuario}
 
-    const borrarUsuario = ()=>{
+
+    const borrarUsuario = (id)=>{
       Swal.fire({
         title: 'Esta seguro?',
         text: "No podra revertir este cambio!",
@@ -31,11 +32,11 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
     }
     return (
         <tr>
-          <td>{id}</td>
+          <td>{_id}</td>
         <td>{nombreUsuario}</td>
         <td>{email}</td>
         <td>
-        <button className='botonBorrarUsuarios' onClick={borrarUsuario}>
+        <button className='botonBorrarUsuarios' onClick={() => borrarUsuario(_id)}>
           Borrar
         </button>
         </td>
