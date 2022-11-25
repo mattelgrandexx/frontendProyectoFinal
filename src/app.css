@@ -186,6 +186,13 @@ main {
 }
 .bgColor{
     background-color:  #c0050b;  
+}
+.colorConfirm{
+    color: #c0050b;
+    border: none;
+}
+.colorConfirm:hover{
+    color: #000;
     border: none;
 }
 
@@ -451,3 +458,28 @@ main {
         top: 25%;
     }
  }
+
+ .pagPrincipal__titulo {
+    margin-bottom: 5vh;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4rem;
+  }
+  .pagPrincipal__titulo:before,
+  .pagPrincipal__titulo:after {
+    background-color: #c0050b;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 10%;
+  }
+  .pagPrincipal__titulo:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  .pagPrincipal__titulo:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
