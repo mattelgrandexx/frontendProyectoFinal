@@ -26,7 +26,17 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
+      if(respuesta.permiso === "Suspendido"){
+        Swal.fire(
+          "Usuario suspendido",
+          `Contacte con el centro de atencion al cliente para solucionar el problema.`,
+          "warning"
+        );
+        navigate("/acerca")
+      } else 
       if(respuesta.estado === "Autenticado"){
+      console.log(respuesta)
+
     if(respuesta.status === 200){
           Swal.fire(
             "Bienvenido",

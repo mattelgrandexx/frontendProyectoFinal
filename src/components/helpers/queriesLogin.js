@@ -41,6 +41,7 @@ export const login = async (usuario) => {
           return {
         status: respuesta.status,
         mensaje: datos.mensaje,
+        permiso: datos.permiso,
         email: datos.email,
         token: datos.token,
         _id: datos._id,
@@ -57,6 +58,25 @@ export const obtenerUsuario = async (token) => {
         const respuesta = await fetch(URL + `perfilusuarios/confirm/` + token)
         const usuario = await respuesta.json()
         return usuario
+    } catch(e){
+        console.log(e)
+    }
+}
+
+export const obtenerYSuspenderUsuario = async (_id) => {
+    try{
+        const respuesta = await fetch(URL+"perfilusuarios/"+_id)
+        const userSuspendido = await respuesta.json()
+        return userSuspendido
+    } catch(e){
+        console.log(e)
+    }
+}
+export const obtenerYDarPermisosUser = async (_id) => {
+    try{
+        const respuesta = await fetch(URL+"perfilusuarios/permisos/"+_id)
+        const permisoUser = await respuesta.json()
+        return permisoUser
     } catch(e){
         console.log(e)
     }
