@@ -7,6 +7,7 @@ import CardMenu from "./menus/CardMenu";
 const PaginaPrincipal = () => {
   let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
   let listaCarritoLS = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+  const [userActive, setUserActive] = useState(false);
   let [menus, setMenus] = useState([]);
   let [hamburguesas, setHamburgesas] = useState([]);
   let [extras, setExtras] = useState([]);
@@ -16,6 +17,13 @@ const PaginaPrincipal = () => {
 
   
   useEffect(() => {
+    // Comprueba que haya un usuario logueado
+    if (storageUser) {
+      setUserActive(true);
+    } else {
+      setUserActive(false);
+    }
+
     // Maqueta los menus cuando carga la pagina
     consultarAPI().then(
       (respuesta) => {
@@ -147,7 +155,7 @@ const PaginaPrincipal = () => {
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
-              storageUser={storageUser}
+              userActive={userActive}
             ></CardMenu>
           ))}
         </section>
@@ -160,7 +168,7 @@ const PaginaPrincipal = () => {
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
-              storageUser={storageUser}
+              userActive={userActive}
             ></CardMenu>
           ))}
         </section>
@@ -173,7 +181,7 @@ const PaginaPrincipal = () => {
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
-              storageUser={storageUser}
+              userActive={userActive}
             ></CardMenu>
           ))}
         </section>

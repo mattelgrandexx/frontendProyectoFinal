@@ -3,22 +3,14 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const CardMenu = ({ menu, listaCarrito, setListaCarrito, storageUser }) => {
+const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
   const { nombreMenu, precioMenu, imagen, id } = {
     ...menu,
   };
-  const [userActive, setUserActive] = useState(false);
   const [menuCarrito, setMenuCarrito] = useState({});
   const [menuAgregado, setMenuAgregado] = useState(false);
 
-  // Comprueba que haya un usuario logueado
-  useEffect(() => {
-    if (storageUser) {
-      setUserActive(true);
-    } else {
-      setUserActive(false);
-    }
-  }, []);
+ 
 
   // Primero comprueba que el state menuCarrito no este vacio y  luego actualiza listaCarrito con el menu nuevo
   useEffect(() => {

@@ -16,7 +16,7 @@ const ListaCarrito = () => {
 
   // Comprueba que haya un usuario conectado
   useEffect(() => {
-    if (storageUser) {
+    if (storageUser.length!==0) {
       setUserActive(true);
     }
   }, [setUserActive, storageUser]);
