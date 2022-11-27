@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
-  const { nombreMenu, precioMenu, imagen, id } = {
+  const { nombreMenu, precioMenu, imagen, _id } = {
     ...menu,
   };
   const [menuCarrito, setMenuCarrito] = useState({});
@@ -45,7 +45,7 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
         precioMenu: precioMenu,
         imagen: imagen,
         cantidad: 1,
-        id: id,
+
       });
     } else {
       Swal.fire(
@@ -71,7 +71,7 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
     <article className="cardMenu rounded rounded-3">
       <Link
         className="cardMenu__nombre pb-2 m-1 text-center"
-        to={`/detalle/${id}`}
+        to={`/detalle/${_id}`}
       >
         {nombreMenu}
       </Link>

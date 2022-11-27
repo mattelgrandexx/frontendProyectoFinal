@@ -114,6 +114,8 @@ const PaginaPrincipal = () => {
     </section>
   ) : null;
 
+  
+
   return (
     <main>
       <section>
@@ -155,6 +157,7 @@ const PaginaPrincipal = () => {
             <CardMenu
               key={menu.id}
               menu={menu}
+              
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
               userActive={userActive}

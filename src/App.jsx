@@ -12,7 +12,7 @@ import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import PerfilUsuario from "./components/views/PerfilUsuario";
 import Registrarse from "./components/views/Registrarse";
-
+import 'animate.css';
 import './style.css'
 import Confirm from "./components/views/Confirm";
 
