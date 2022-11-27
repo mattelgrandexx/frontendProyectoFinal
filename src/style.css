@@ -14,7 +14,7 @@
   
   
   .nav {
-	  width: 60%;
+	  width: 90%;
   }
   
   #navContainer {
@@ -112,44 +112,9 @@
   nav li{
 	text-transform: uppercase;
   }
-  
-  
-  
-  
-  @media (max-width: 768px){
-	nav ul{
-	  display: flex;
-	  flex-direction: column;  
-	  justify-content:center;
-	}
-	
-	nav ul li a{
-	  display: flex;
-	  justify-content: center;
-	}
-  
-	/* Parte de pedidos */
-  
-	nav ul li a:before{
-	  right: 0;
-	  left: 0;
-	  bottom: 0;
-	}
-  }
-  
-  .logoLeno{
-	object-fit: cover;
-	width: 100px;
-	top: 20px;
-	
-  }
-  
-  .logoLenoRojo{
-  /* Parte de pedidos */
 
   .footer-col{
     width: 100%;
-}
 }
 
 /* Header */
@@ -229,8 +194,8 @@ nav li{
 	background-color: #ffffff;
 }
 
-.errorImagen{
- /* Parte de dev */
+/* .errorImagen{
+
  
 	object-fit: cover;
 	width: 100px;
@@ -238,7 +203,7 @@ nav li{
 	position: absolute;
 	left: 45%;
 	top: 10%;
-  }
+  } */
   
   .bg-footer{
 	background-color: #000;
