@@ -14,7 +14,11 @@ body{
 
 
 .nav {
-	width: 50%;
+	width: 60%;
+}
+
+#navContainer {
+	width: 90%;
 }
 
 .navDivisor {
@@ -77,7 +81,7 @@ ul{
 
 
 /*responsive*/
-@media(max-width: 767px){
+@media(max-width: 991px){
 	.nav {
 		width: 100%;
 	}
