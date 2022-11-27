@@ -2,84 +2,51 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import {
-  crearPedidoApi,
-  editarPedidoApi,
-} from "../../helpers/queries";
 
-const CardMenu = ({
-  menu,
-  pedido,
-  usuarioLogueado,
-  pedidoCreado,
-  setPedidoCreado,
-}) => {
-  const { nombreMenu, precioMenu, descripcion, imagen, _id } = {
+const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
+  const { nombreMenu, precioMenu, imagen, id } = {
     ...menu,
   };
-  const [producto, setProducto] = useState({});
-  const [pedidoAgregado, setPedidoAgregado] = useState({});
+  const [menuCarrito, setMenuCarrito] = useState({});
+  const [menuAgregado, setMenuAgregado] = useState(false);
 
+ 
+
+  // Primero comprueba que el state menuCarrito no este vacio y  luego actualiza listaCarrito con el menu nuevo
   useEffect(() => {
-    // Si el pedido no fue creado define como producto con las propiedades necesarias para crear un pedido, en cambio si ya fue creado lo defino con las propiedades necesarias para agregar el producto al pedido existente
-    if (!pedidoCreado) {
-      setProducto({
-        nombreUsuario: usuarioLogueado.nombreUsuario,
-        estado: "En preparacion",
-        pedido: [{ nombreMenu: nombreMenu, precioMenu: precioMenu }],
-      });
-      console.log(pedido)
-    } else {
-      console.log(pedidoCreado)
-      setProducto({ nombreMenu: nombreMenu, precioMenu: precioMenu });
-      //Este state tiene el valor del unico arreglo de pedidos que se encuetra dentro del array de pedidos en la BD y es usado para agregar un producto al pedido que ya existe
-      console.log(pedido)
-      setPedidoAgregado(pedido);
+    if (Object.keys(menuCarrito).length !== 0) {
+      setListaCarrito((listaCarrito) => [...listaCarrito, menuCarrito]);
     }
-  }, [pedido]);
+  }, [menuCarrito]);
 
+  // Comprueba cuando cambia listaCarrito que menus estan agregados al localStorage y les cambia el boton de agregar a mis pedidos por pedido agregados para evitar que sigan presionando dicho boton
+  useEffect(() => {
+    if (
+      listaCarrito.find((item) => item.nombreMenu === nombreMenu) === undefined
+    ) {
+      setMenuAgregado(false);
+    } else {
+      setMenuAgregado(true);
+    }
+  }, [listaCarrito]);
+  
+
+  // Funcion para agregar un menu al localStorage
   const agregarPedido = () => {
     //Comprobar que haya un ususario logueado
-    if (Object.keys(usuarioLogueado).length !== 0) {
-      //Crea el pedido en el caso de que todavia no exista y cambia el staet de pedidoCreado a true
-      if (!pedidoCreado) {        
-        crearPedidoApi(producto).then((respuesta) => {
-          if (respuesta.status === 201) {
-            Swal.fire(
-              "Producto agregado",
-              "El producto se agrego a su lista de pedidos",
-              "success"
-            );
-          } else {
-            Swal.fire(
-              "Ocurrio un error",
-              "El pedido no pudo ser creado",
-              "error"
-            );
-          }
-        });
-        setPedidoCreado(true);
-        
-      } else {
-        //Agrega el producto al pedido en caso de que el pedido ya exista
-        console.log(pedidoAgregado);
-        pedidoAgregado.pedido.push(producto);
-        editarPedidoApi(pedidoAgregado._id, pedidoAgregado).then((respuesta) => {
-          if (respuesta.status === 200) {
-            Swal.fire(
-              "Producto agregado",
-              "El producto se agrego a su lista de pedidos",
-              "success"
-            );
-          } else {
-            Swal.fire(
-              "Ocurrio un error",
-              "Intentelo nuevamente en unos minutos",
-              "error"
-            );
-          }
-        });
-      }
+    if (userActive) {
+      // cambia el boton de agregar a mis pedidos por pedido agregados para evitar que sigan presionando dicho boton
+      setMenuAgregado(true);
+      //Agrega al state menuCarrito los datos del menu para agregar al loclaStorage
+      let lista2 = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+      setListaCarrito(lista2)
+      setMenuCarrito({
+        nombreMenu: nombreMenu,
+        precioMenu: precioMenu,
+        imagen: imagen,
+        cantidad: 1,
+        id: id,
+      });
     } else {
       Swal.fire(
         "Inicia sesion",
@@ -89,24 +56,29 @@ const CardMenu = ({
     }
   };
 
+  // Determina si se muestra el boton de agregar al pedido o menu agregado
+  const btn = !menuAgregado ? (
+    <Button className="cardMenu__btn" type="button" onClick={agregarPedido}>
+      Agregar al pedido
+    </Button>
+  ) : (
+    <Button className="cardMenu__btnAgregado" disabled>
+      Menu agregado
+    </Button>
+  );
+
   return (
     <article className="cardMenu rounded rounded-3">
       <Link
         className="cardMenu__nombre pb-2 m-1 text-center"
-        to={`../DetalleMenu/${_id}`}
+        to={`/detalle/${id}`}
       >
         {nombreMenu}
       </Link>
       <div className="cardMenu__descContainer">
         <div className="cardMenu__desc">
           <p className="cardMenu__precio m-0">${precioMenu}</p>
-          <Button
-            className="cardMenu__btn"
-            type="button"
-            onClick={agregarPedido}
-          >
-            Agregar a mi pedido
-          </Button>
+          {btn}
         </div>
         <div className="cardMenu__imgContainer">
           <img className="w-100" src={imagen} alt={nombreMenu} />
