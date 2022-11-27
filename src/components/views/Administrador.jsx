@@ -50,6 +50,7 @@ const Administrador = () => {
   }, []);
 
   const [usuarios, setUsuarios] = useState([]);
+
   useEffect(() => {
     consultarUserApi().then(
       (users) => {
@@ -64,7 +65,8 @@ const Administrador = () => {
         );
       }
     );
-  }, [consultarUserApi, setUsuarios]);
+  }, []);
+   
 
   const borrarUsuario = (id) => {
     Swal.fire({
@@ -72,9 +74,9 @@ const Administrador = () => {
       text: "No podra revertir este cambio!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#c0050",
+      confirmButtonColor: "c0050b",
       cancelButtonColor: "#000",
-      confirmButtonText: "Si, eliminar!",
+      confirmButtonText: "Eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
         borrarUsuarioAPI(id).then((respuesta) => {
@@ -99,7 +101,7 @@ const Administrador = () => {
       text: "Le prohibiras el login al usuario..!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#c0050",
+      confirmButtonColor: "c0050b",
       cancelButtonColor: "#000",
       confirmButtonText: "Suspender",
     }).then((result) => {
@@ -111,9 +113,6 @@ const Administrador = () => {
               "El usuario fue suspendido exitosamente",
               "success"
             );
-            consultarUserApi().then((users) => {
-              setUsuarios(users);
-            });
           }
         });
       }
@@ -125,7 +124,7 @@ const Administrador = () => {
       text: "Le daras permisos nuevamente al usuario...",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#c0050",
+      confirmButtonColor: "c0050b",
       cancelButtonColor: "#000",
       confirmButtonText: "Permitir",
     }).then((result) => {
@@ -137,9 +136,6 @@ const Administrador = () => {
               "Le dimos permisos al usuario para poder acceder",
               "success"
             );
-            consultarUserApi().then((users) => {
-              setUsuarios(users);
-            });
           }
         });
       }
@@ -291,7 +287,7 @@ const Administrador = () => {
             {usuarios.map((usuario) => (
               <ItemUsuario
                 key={usuario._id}
-                usuarios={usuario}
+                usuarios={usuarios}
                 setUsuarios={setUsuarios}
                 _id={usuario._id}
                 borrarUsuario={borrarUsuario}

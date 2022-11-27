@@ -26,8 +26,6 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      console.log(respuesta.estado)
-
       if(respuesta.permiso === "Suspendido"){
         Swal.fire(
           "Usuario suspendido",
