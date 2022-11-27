@@ -63,18 +63,31 @@ export const obtenerUsuario = async (token) => {
     }
 }
 
-export const obtenerYSuspenderUsuario = async (_id) => {
+export const obtenerYSuspenderUsuario = async (_id, req) => {
     try{
-        const respuesta = await fetch(URL+"perfilusuarios/"+_id)
+        
+        const respuesta = await fetch(URL+"perfilusuarios/"+_id,{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(req)
+        })
         const userSuspendido = await respuesta.json()
         return userSuspendido
     } catch(e){
         console.log(e)
     }
 }
-export const obtenerYDarPermisosUser = async (_id) => {
+export const obtenerYDarPermisosUser = async (_id, req) => {
     try{
-        const respuesta = await fetch(URL+"perfilusuarios/permisos/"+_id)
+        const respuesta = await fetch(URL+"perfilusuarios/permisos/"+_id,{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(req)
+        })
         const permisoUser = await respuesta.json()
         return permisoUser
     } catch(e){
