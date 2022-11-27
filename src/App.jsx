@@ -16,7 +16,7 @@ import Registrarse from "./components/views/Registrarse";
 import './style.css'
 import Confirm from "./components/views/Confirm";
 
-import './app.css'
+import './App.css'
 
 
 function App() {
