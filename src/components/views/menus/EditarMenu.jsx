@@ -14,6 +14,7 @@ const EditarMenu = () => {
     setValue
   } = useForm();
   const { id } = useParams();
+ 
   const navegacion = useNavigate();
 
   const onSubmit = (datos) => {
@@ -34,7 +35,6 @@ const EditarMenu = () => {
   useEffect(() => {
     obtenerMenuApi(id).then((respuesta) => {
       if (respuesta.status === 200) {
-        console.log(respuesta);
         setValue("nombreMenu", respuesta.dato.nombreMenu)
         setValue("precioMenu", respuesta.dato.precioMenu)
         setValue("imagen", respuesta.dato.imagen)
@@ -122,7 +122,7 @@ const EditarMenu = () => {
             >
               <option value="">Seleccione una opcion</option>
               <option value="hamburguesas">Hamburguesas</option>
-              <option value="hebidas">Bebidas</option>
+              <option value="bebidas">Bebidas</option>
               <option value="extras">Extras</option>
             </Form.Select>
             <Form.Text className="text-danger">

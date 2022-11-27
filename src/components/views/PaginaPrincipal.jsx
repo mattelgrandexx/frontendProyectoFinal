@@ -27,6 +27,7 @@ const PaginaPrincipal = () => {
     // Maqueta los menus cuando carga la pagina
     consultarAPI().then(
       (respuesta) => {
+        console.log(respuesta)
         setMenus(respuesta);
       },
       (reason) => {
@@ -147,6 +148,7 @@ const PaginaPrincipal = () => {
         </div>
       </section>
       <Container>
+
         <h2 className="pagPrincipal__titulo">Hamburguesas</h2>
         <section className="p-0 cardContainer">
           {hamburguesas.map((menu) => (
@@ -172,7 +174,6 @@ const PaginaPrincipal = () => {
             ></CardMenu>
           ))}
         </section>
-
         <h2 className="pagPrincipal__titulo">Bebidas</h2>
         <section className="p-0 cardContainer">
           {bebidas.map((menu) => (

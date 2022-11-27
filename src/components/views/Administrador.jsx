@@ -3,10 +3,11 @@ import "./admin.css";
 import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import ItemMenu from "./menus/ItemMenu";
-import { consultarAPI, consultarPedidosApi, consultarUserAPI } from "../helpers/queries";
+import { consultarAPI, consultarPedidosApi } from "../helpers/queries";
 import Swal from "sweetalert2";
 import ItemUsuario from "./AdminComponents/ItemUsuario";
 import ItemPedido from "./AdminComponents/ItemPedido";
+import { consultarUserApi } from "../helpers/queriesLogin";
 
 const Administrador = () => {
   const [menus, setMenus] = useState([]);
@@ -28,7 +29,7 @@ const Administrador = () => {
 
   const[usuarios, setUsuarios] = useState([]);
   useEffect(()=>{
-    consultarUserAPI().then((respuesta)=>{
+    consultarUserApi().then((respuesta)=>{
       setUsuarios(respuesta);
     },
     (reason)=>{
@@ -89,7 +90,7 @@ const Administrador = () => {
           </thead>
           <tbody className="oswald400">
             {
-              menus.map((menu)=><ItemMenu key={menu.id} menu={menu} setMenus={setMenus}></ItemMenu>)
+              menus.map((menu)=><ItemMenu key={menu._id} menu={menu} setMenus={setMenus}></ItemMenu>)
             }
           </tbody>
         </Table>
@@ -117,7 +118,7 @@ const Administrador = () => {
           </thead>
           <tbody className="oswald400">
             {
-              pedidos.map((combo)=><ItemPedido key={combo.id} combo={combo} setPedidos={setPedidos}></ItemPedido>)
+              pedidos.map((combo)=><ItemPedido key={combo._id} combo={combo} setPedidos={setPedidos}></ItemPedido>)
             }
           </tbody>
         </Table>
@@ -131,9 +132,6 @@ const Administrador = () => {
       <section className="container bordeCajaRojo fondoBlanco">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="oswald500 textoRojo">Lista de usuarios disponibles</h1>
-          <Link className="oswald400 boton justificarFinal" to="/registro">
-            Agregar un usuario
-          </Link>
           </div>
           <hr />
           <Table responsive bordered className="bordeCajaRojo">
@@ -148,7 +146,7 @@ const Administrador = () => {
           <tbody className="oswald400">
           
              {
-              usuarios.map((usuario)=><ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
+              usuarios.map((usuario)=><ItemUsuario key={usuario._id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
              }
           
           </tbody>

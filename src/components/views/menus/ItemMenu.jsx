@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const ItemMenu = ({menu, setMenus}) => {
-  const {id, nombreMenu, precioMenu, descripcion, imagen, categoria} = {...menu}
+  const {_id, nombreMenu, precioMenu, descripcion, imagen, categoria} = {...menu}
 
   const borrarMenu = ()=>{
     Swal.fire({
@@ -12,12 +12,14 @@ const ItemMenu = ({menu, setMenus}) => {
       text: "No podra revertir este cambio!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar!'
+      confirmButtonColor: '#c0050b',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Eliminar!',
+      cancelButtonText: 'Cancelar'
+
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarMenuApi(id).then((respuesta)=>{ 
+        borrarMenuApi(_id).then((respuesta)=>{ 
           if(respuesta.status === 200){   
             Swal.fire("Producto eliminado","El producto fue eliminado exitosamente","success");
             consultarAPI().then((respuesta)=>{
@@ -34,14 +36,14 @@ const ItemMenu = ({menu, setMenus}) => {
 
   return (
     <tr>
-      <td>{id}</td>
+      <td>{_id}</td>
       <td>{nombreMenu}</td>
       <td>${precioMenu}</td>
       <td>{imagen}</td>
       <td>{categoria}</td>
       <td className='ocultarTexto'>{descripcion}</td>
       <td>
-        <Link className="boton" to={`/administrar/editarMenu/${id}`}>
+        <Link className="boton" to={`/administrar/editarMenu/${_id}`}>
           Editar
         </Link>
         <button className='botonBorrar' onClick={borrarMenu}>

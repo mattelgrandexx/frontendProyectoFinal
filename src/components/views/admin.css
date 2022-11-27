@@ -41,6 +41,14 @@ border: 1px solid black;
 height: 60px;
 padding: 0.5rem;
 }
+.botonSuspenderUsuarios{
+  background-color: #EF9B16;
+text-decoration: none;
+color: white;
+border: 1px solid black;
+height: 60px;
+padding: 0.5rem;
+}
 
 * {
   margin: 0;
@@ -99,6 +107,9 @@ padding: 0.5rem;
 .estadoAncho{
   width: 200px;
 }
+.alinearTexto{
+  align-items: center;
+}
 
 
 
@@ -146,6 +157,11 @@ input:checked + .slider::before{
   transform: translateX(25px);
 }
 
+/* ACERCA DE NOS */
+.centrar{
+justify-content: space-between;
+}
+
 
 /* media queries */
 @media only screen and (max-width: 767px) {
@@ -154,3 +170,4 @@ input:checked + .slider::before{
 
   }
 }
+

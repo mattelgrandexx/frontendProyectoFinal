@@ -127,7 +127,9 @@
 	  display: flex;
 	  justify-content: center;
 	}
-	
+  
+	/* Parte de pedidos */
+  
 	nav ul li a:before{
 	  right: 0;
 	  left: 0;
@@ -143,6 +145,93 @@
   }
   
   .logoLenoRojo{
+  /* Parte de pedidos */
+
+  .footer-col{
+    width: 100%;
+}
+}
+
+/* Header */
+
+
+nav{
+  width: 100%;
+  display: flex;
+  background: #c0050b !important;
+}
+
+
+nav li{
+  text-transform: uppercase;
+}
+
+
+
+
+@media (max-width: 768px){
+  nav ul{
+    display: flex;
+    flex-direction: column;  
+    justify-content:center;
+  }
+  
+  nav ul li a{
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li a:before{
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.logoLeno{
+  object-fit: cover;
+  width: 100px;
+  top: 20px;
+  
+}
+
+.logoLenoRojo{
+  object-fit: cover;
+  width: 100px;
+  top: 20px;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+}
+
+.bg-footer{
+  background-color: #000;
+}
+
+.text-footer{
+  color: gray;
+}
+
+.social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.errorImagen{
+ /* Parte de dev */
+ 
 	object-fit: cover;
 	width: 100px;
 	top: 20px;
