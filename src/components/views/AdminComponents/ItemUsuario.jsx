@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { consultarUserApi } from "../../helpers/queriesLogin";
 
 const ItemUsuario = (props) => {
@@ -8,8 +8,8 @@ const ItemUsuario = (props) => {
     consultarUserApi().then(respuesta => {
       props.setUsuarios(respuesta)
     })
-  }, [])
-  //props.usuarios
+  }, [props.usuarios, props])
+  
   
     return (
         <tr>
