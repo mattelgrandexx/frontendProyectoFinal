@@ -66,22 +66,22 @@ export const Header = () => {
               </Navbar.Brand>
             </div>
             {/* componente condicional (admin) */}
+            
+            { 
+            userActive ? 
             <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
             <NavLink to="/administrar" className="nav-item nav-link">
               Admin
             </NavLink>
-            
-            { 
-            userActive ? 
             <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
               Cerrar sesion
             </Link>
+            </div>
              : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
               Iniciar sesion
             </NavLink>
             }
-            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
