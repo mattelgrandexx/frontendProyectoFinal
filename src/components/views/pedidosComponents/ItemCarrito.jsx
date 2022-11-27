@@ -37,7 +37,7 @@ const ItemCarrito = ({
   // Funcion para borrar un menu del carrito y actualizar el precio total
   const borrarPedido = () => {
     setPrecioTotal(precioTotal - precioMenu);
-    let lista2 = listaCarrito.filter((item) => item.id != id);
+    let lista2 = listaCarrito.filter((item) => item.id !== id);
     localStorage.setItem("listaCarrito", JSON.stringify(lista2));
   };
 

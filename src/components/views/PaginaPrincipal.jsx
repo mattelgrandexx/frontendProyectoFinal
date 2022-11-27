@@ -14,6 +14,7 @@ const PaginaPrincipal = () => {
   let [mostrarPopUp, setMostrarPopUp] = useState(false);
   let [listaCarrito, setListaCarrito] = useState(listaCarritoLS);
 
+  
   useEffect(() => {
     // Maqueta los menus cuando carga la pagina
     consultarAPI().then(
@@ -64,16 +65,23 @@ const PaginaPrincipal = () => {
         id="popUp__cerrar"
         onClick={cerrarPopUp}
       ></i>
+      <div className="d-flex">
       <img
         src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
         className="w-100"
         alt=""
-      />
+        />
+      <img
+        src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
+        className="w-100"
+        alt=""
+        />
+        </div>
       <div className="px-2 py-2 text-center">
-        <div>
+        <div className="popUp__img mx-auto">
           <img
             src="https://i.postimg.cc/FFnKd1zQ/LENOLOGO3.png"
-            className="w-25"
+            className="w-100"
             alt=""
           />
         </div>
@@ -81,16 +89,18 @@ const PaginaPrincipal = () => {
         <p className="mb-1 mb-lg-2">
           Registrate y enterate de todas nuestras novedades y promociones
         </p>
+        <div className="w-75 mx-auto">
         <Form>
           <FormControl
             id="popUp__input"
             type="text"
             placeholder="Ingresa tu email"
-          ></FormControl>
+            ></FormControl>
         </Form>
         <Button className="cardMenu__btn m-0 mt-3" type="button">
           Suscribirse ahora
         </Button>
+            </div>
       </div>
     </section>
   ) : null;
@@ -126,9 +136,6 @@ const PaginaPrincipal = () => {
             src="https://www.denirohamburgueseria.com.ar/img/fondo1920x1080.png"
             alt=""
           />
-          <p id="bannerText">
-            Viví la experiencia Leno, THE REAL AMERICAN FOOD IS HERE{" "}
-          </p>
         </div>
       </section>
       <Container>

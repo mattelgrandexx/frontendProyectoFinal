@@ -9,24 +9,6 @@ import ListaCarrito from "../views/pedidosComponents/ListaCarrito";
 export const Header = () => {
   let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
   const [userActive, setUserActive] = useState(false);
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-
-  // Funcion para abrir el carrito
-  const abrirCarrito = () => {
-    setMostrarCarrito(true);
-  };
-
-  // Muestra el boton del carrito si el ususario esta logueado
-  const btnCarrito = userActive ? (
-    <button id="btnCarrito" onClick={abrirCarrito}>
-      <i class="fa-solid fa-cart-shopping"></i>
-    </button>
-  ) : null;
-
-  // Muestra el carrito si el state mostrarCarrito es true
-  const listaCarrito = mostrarCarrito ? (
-    <ListaCarrito setMostrarCarrito={setMostrarCarrito}></ListaCarrito>
-  ) : null;
 
   useEffect(() => {
     if (storageUser.length !== 0) {
@@ -59,7 +41,7 @@ export const Header = () => {
         <Navbar.Brand as={Link} to="/">
           LENO
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" id="btnNavbar" />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-center align-items-center"
@@ -106,8 +88,7 @@ export const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      {btnCarrito}
-      {listaCarrito}
+      <ListaCarrito></ListaCarrito>
     </Navbar>
   );
 };

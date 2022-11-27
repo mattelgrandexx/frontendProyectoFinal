@@ -2,27 +2,65 @@ import { useEffect, useState } from "react";
 import ItemCarrito from "./ItemCarrito";
 import { crearPedidoApi } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
-const ListaCarrito = ({ setMostrarCarrito }) => {
-  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo"));
-  let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito"));
+const ListaCarrito = () => {
+  const [show, setShow] = useState(false);
+  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo"))||[];
+  const [userActive, setUserActive] = useState(false);
+  let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito"))||[];
   let [precioTotal, setPrecioTotal] = useState(0);
   let [pedido, setPedido] = useState({});
+  let [carritoAbierto, setCarritoAbierto] = useState(false);
+  let [carritoCerrado, setCarritoCerrado] = useState(false);
+
+  // Comprueba que haya un usuario conectado
+  useEffect(() => {
+    if (storageUser) {
+      setUserActive(true);
+    }
+  }, [setUserActive, storageUser]);
+
+  // Funcion para cerrar el carrito y 
+  const cerrarCarrito = () => {
+    setCarritoCerrado(!carritoCerrado)
+    setShow(false);
+  }
+  // Funcion para abrir el carrito
+  const abrirCarrito = () => {
+    setCarritoAbierto(!carritoAbierto);
+    setShow(true);
+  } 
+  
+  // Si hay un usuario conectado se muestra el btn del carrito
+  const btnCarrito = userActive ? (
+    <button id="btnCarrito" onClick={abrirCarrito}>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+  ) : null;
 
   // Establece el state setPedido con los datos para subir el pedido a la BD y establece el precio total del carrito
   useEffect(() => {
     setPedido({ nombreUsuario: storageUser, pedido: listaCarrito });
+  }, []);
+
+  // Establece el precio total del pedido cada vez que se abre el carrito
+  useEffect(() => {
+    listaCarrito = JSON.parse(localStorage.getItem("listaCarrito"))||[];
     listaCarrito.forEach((menu) => {
       setPrecioTotal(
         (precioTotal += parseInt(menu.precioMenu * menu.cantidad))
       );
     });
-  }, []);
-
-  // Funcion para cerrar el carrito
-  const cerrarCarrito = () => {
-    setMostrarCarrito(false);
-  };
+  }, [carritoAbierto])
+  
+  // Reinicia el precio total del pedido cada vez que se cierra el carrito
+  useEffect(() => {
+    listaCarrito = JSON.parse(localStorage.getItem("listaCarrito"))||[];
+    listaCarrito.forEach((menu) => {
+      setPrecioTotal(0);
+    });
+  }, [carritoCerrado])
 
   // Funcion para agregar pedido a la base de dato
   const agregarPedido = () => {
@@ -33,7 +71,7 @@ const ListaCarrito = ({ setMostrarCarrito }) => {
       showCancelButton: true,
       confirmButtonColor: "#c0050b",
       cancelButtonColor: "#000",
-      cancelButtonTextColor: '#fafafa',
+      cancelButtonTextColor: "#fafafa",
       confirmButtonText: "Si, enviar!",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -57,32 +95,38 @@ const ListaCarrito = ({ setMostrarCarrito }) => {
   };
 
   return (
-    <section id="listaCarrito">
-      <button className="listaCarrito__cerrar" onClick={cerrarCarrito}>
-        <i className="fa-solid fa-right-from-bracket "></i>
-      </button>
-      <h3 className="cardMenu__nombre text-center mt-2">Mis pedidos</h3>
-      <div className="listaCarrito__items">
-        {listaCarrito.map((menu) => (
-          <ItemCarrito
-            key={menu.id}
-            id={menu.id}
-            nombre={menu.nombreMenu}
-            precio={menu.precioMenu}
-            imagen={menu.imagen}
-            precioTotal={precioTotal}
-            setPrecioTotal={setPrecioTotal}
-            listaCarrito={listaCarrito}
-          ></ItemCarrito>
-        ))}
-      </div>
-      <div className="text-end mb-5">
-        <p className="fs-2 fw-bolder mt-4">Precio total: ${precioTotal}</p>
-        <button className="listaCarrito__btn" onClick={agregarPedido}>
-          Enviar pedido
-        </button>
-      </div>
-    </section>
+    <>
+      {btnCarrito}
+      <Offcanvas show={show} onHide={cerrarCarrito} placement={"end"} id="listaCarrito">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title className="cardMenu__nombre text-center mt-2">
+            Mis pedidos
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body className="overflow-hidden">
+          <div className="listaCarrito__items">
+            {listaCarrito.map((menu) => (
+              <ItemCarrito
+                key={menu.id}
+                id={menu.id}
+                nombre={menu.nombreMenu}
+                precio={menu.precioMenu}
+                imagen={menu.imagen}
+                precioTotal={precioTotal}
+                setPrecioTotal={setPrecioTotal}
+                listaCarrito={listaCarrito}
+              ></ItemCarrito>
+            ))}
+          </div>
+          <div className="text-end mb-5">
+            <p className="fs-2 fw-bolder mt-4">Precio total: ${precioTotal}</p>
+            <button className="listaCarrito__btn" onClick={agregarPedido}>
+              Enviar pedido
+            </button>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 };
 

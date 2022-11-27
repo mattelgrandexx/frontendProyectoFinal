@@ -20,14 +20,14 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, storageUser }) => {
     }
   }, []);
 
-  // Primero comprueba que el state menuCarrito no este vacio, luego que en el state listaCarrito no se encuentre agregado el menu y si luego actualiza listaCarrito con el menu nuevo
+  // Primero comprueba que el state menuCarrito no este vacio y  luego actualiza listaCarrito con el menu nuevo
   useEffect(() => {
     if (Object.keys(menuCarrito).length !== 0) {
       setListaCarrito((listaCarrito) => [...listaCarrito, menuCarrito]);
     }
   }, [menuCarrito]);
 
-  // Comprueba cuando carga la pagina que menus estan agregados al localStorage y les cambia el boton de agregar a mis pedidos por pedido agregados para evitar que sigan presionando dicho boton
+  // Comprueba cuando cambia listaCarrito que menus estan agregados al localStorage y les cambia el boton de agregar a mis pedidos por pedido agregados para evitar que sigan presionando dicho boton
   useEffect(() => {
     if (
       listaCarrito.find((item) => item.nombreMenu === nombreMenu) === undefined
@@ -36,7 +36,8 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, storageUser }) => {
     } else {
       setMenuAgregado(true);
     }
-  }, []);
+  }, [listaCarrito]);
+  
 
   // Funcion para agregar un menu al localStorage
   const agregarPedido = () => {
@@ -44,7 +45,9 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, storageUser }) => {
     if (userActive) {
       // cambia el boton de agregar a mis pedidos por pedido agregados para evitar que sigan presionando dicho boton
       setMenuAgregado(true);
-      //Agrega al state menuCarrito las propiedades del menu para agregar al loclaStorage
+      //Agrega al state menuCarrito los datos del menu para agregar al loclaStorage
+      let lista2 = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+      setListaCarrito(lista2)
       setMenuCarrito({
         nombreMenu: nombreMenu,
         precioMenu: precioMenu,
@@ -61,9 +64,10 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, storageUser }) => {
     }
   };
 
+  // Determina si se muestra el boton de agregar al pedido o menu agregado
   const btn = !menuAgregado ? (
     <Button className="cardMenu__btn" type="button" onClick={agregarPedido}>
-      Agregar a mi pedido
+      Agregar al pedido
     </Button>
   ) : (
     <Button className="cardMenu__btnAgregado" disabled>
