@@ -142,7 +142,7 @@ const PaginaPrincipal = () => {
         <div>
           <img
             id="bannerImg"
-            src="https://www.denirohamburgueseria.com.ar/img/fondo1920x1080.png"
+            src="https://i.postimg.cc/NLqZrvSb/photo-1617086903031-8dbff0098f7a.png"
             alt=""
           />
         </div>

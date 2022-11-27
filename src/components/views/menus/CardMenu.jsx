@@ -4,13 +4,33 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
-  const { nombreMenu, precioMenu, imagen, id } = {
+  const { nombreMenu, precioMenu, imagen, id, categoria } = {
     ...menu,
   };
   const [menuCarrito, setMenuCarrito] = useState({});
   const [menuAgregado, setMenuAgregado] = useState(false);
 
  
+
+  const img =
+    categoria === "bebidas" ? (
+      <div className="cardMenu__imgContainer bebidas mx-auto">
+        <img
+          className="w-100 cardMenu__img"
+          src={imagen}
+          alt={nombreMenu}
+        />
+      </div>
+    ) : (
+      <div className="cardMenu__imgContainer">
+        <img
+          className="w-100 cardMenu__img"
+          src={imagen}
+          alt={nombreMenu}
+        />
+      </div>
+    );
+
 
   // Primero comprueba que el state menuCarrito no este vacio y  luego actualiza listaCarrito con el menu nuevo
   useEffect(() => {
@@ -80,9 +100,7 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
           <p className="cardMenu__precio m-0">${precioMenu}</p>
           {btn}
         </div>
-        <div className="cardMenu__imgContainer">
-          <img className="w-100" src={imagen} alt={nombreMenu} />
-        </div>
+       {img}
       </div>
     </article>
   );
