@@ -20,7 +20,6 @@ const PaginaPrincipal = () => {
 
     consultarAPI().then(
       (respuesta) => {
-        console.log(respuesta)
         setMenus(respuesta);
       },
       (reason) => {

@@ -26,6 +26,8 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
+      console.log(respuesta.estado)
+
       if(respuesta.permiso === "Suspendido"){
         Swal.fire(
           "Usuario suspendido",
@@ -33,32 +35,30 @@ const handleShow = () => setShow(true);
           "warning"
         );
         navigate("/acerca")
-      } else 
-      if(respuesta.estado === "Autenticado"){
-      console.log(respuesta)
-
-    if(respuesta.status === 200){
-          Swal.fire(
-            "Bienvenido",
-            `Gracias por contar con nosotros.`,
-            "success"
-          );
-          localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email, respuesta.estado));
-          navigate("/");
-      } else {
+      } 
+      if(respuesta.status === 200){
         Swal.fire(
-          "Email o contraseña incorrecta",
-          `No pudimos loguearte, vuelve a intentarlo`,
-          "error"
+          "Bienvenido",
+          `Gracias por contar con nosotros.`,
+          "success"
         );
-      }
+        localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email, respuesta.estado));
+        navigate("/");
     } else {
       Swal.fire(
-        "Email no verificado.",
-        `Verifica tu email antes de iniciar sesion.`,
+        "Email o contraseña incorrecta",
+        `No pudimos loguearte, vuelve a intentarlo`,
         "error"
       );
-    }
+    } 
+         if(respuesta.estado === "no autenticado"){
+          Swal.fire(
+            "Email no verificado.",
+            `Verifica tu email antes de iniciar sesion.`,
+            "error"
+          );
+        }
+    
     });
   };
 
