@@ -33,7 +33,7 @@ const AcercaDeNos = () => {
 
         <div className="container row text-center d-flex justify-content-center">
           <div className="row centrar">
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo my-2 text-center fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo my-2 text-center fondoRojo">
               <h1 className="alinearTexto oswald500 textoBlanco">
                 Nuestra Historia
               </h1>
@@ -45,7 +45,7 @@ const AcercaDeNos = () => {
                 />
               </div>
             </div>
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/Vkgn2fKP/story-ny-9bad7a0.jpg"
@@ -61,7 +61,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2 fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2 fondoRojo">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/FKK34M6d/story-haircut-fa73f82.jpg"
@@ -77,7 +77,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/SNnk9DM0/story-banner-0c65844.png"
@@ -88,7 +88,7 @@ const AcercaDeNos = () => {
               <p className="m-2 oswald500 textoRojo">Así nació Leno</p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2 fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2 fondoRojo">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/4yG3Jt3L/reserva-e4dfd20.jpg"
@@ -104,7 +104,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/BbCnt6Lq/story-documentary-5b33de5.jpg"
@@ -152,7 +152,7 @@ const AcercaDeNos = () => {
         </div>
         <div className="container row text-center d-flex justify-content-center">
           <div className="row centrar">
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo my-2 text-center fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo my-2 text-center fondoRojo">
               <h1 className="alinearTexto oswald500 textoBlanco mt-2">
                 PASO A PASO
               </h1>
@@ -164,7 +164,7 @@ const AcercaDeNos = () => {
                 />
               </div>
             </div>
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/8PMhm89M/story-dry-aged-b7a704a.jpg"
@@ -181,7 +181,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2 fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2 fondoRojo">
               <div className="acercaNosIMG d-flex text-center">
                 <h2 className="oswald500 textoBlanco mt-5">
                   MADURACION PROPIA
@@ -196,7 +196,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <h2 className="oswald500 textoRojo m-5">EL SECRETO DEL PAN</h2>
               </div>
@@ -209,7 +209,7 @@ const AcercaDeNos = () => {
               </div>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2 fondoRojo">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2 fondoRojo">
               <p className="oswald400 textoBlanco mt-5">
                 El pan de nuestras burgers lo hacemos nosotros mismos cada
                 mañana. Estuvimos un año entero, de madrugada al salir de
@@ -221,7 +221,7 @@ const AcercaDeNos = () => {
               </p>
             </div>
 
-            <div className="col-12 col-md-3 col-lg-3 bordeCajaRojo m-2">
+            <div className="col-12 col-md-4 col-lg-3 bordeCajaRojo m-2">
               <div className="acercaNosIMG d-flex text-center">
                 <img
                   src="https://i.postimg.cc/bYKxnYCq/story-bread-199a94c.jpg"
