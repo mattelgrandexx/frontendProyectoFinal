@@ -27,7 +27,6 @@ const PaginaPrincipal = () => {
     // Maqueta los menus cuando carga la pagina
     consultarAPI().then(
       (respuesta) => {
-        console.log(respuesta)
         setMenus(respuesta);
       },
       (reason) => {
