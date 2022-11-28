@@ -67,6 +67,7 @@ const ListaCarrito = () => {
 
   // Funcion para agregar pedido a la base de dato
   const agregarPedido = () => {
+    console.log(pedido);
     Swal.fire({
       title: "¿No te falta nada?",
       text: "¡Gracias por tu compra!",

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 
 const ItemPedido = ({combo, setPedidos}) => {
-  const {pedido, id, nombreUsuario } = { ...combo };
+  const {pedido, _id, nombreUsuario } = { ...combo };
   const [estado, setEstado] = useState(false);
 
   const borrarPedido = () => {
@@ -20,7 +20,7 @@ const ItemPedido = ({combo, setPedidos}) => {
         confirmButtonText: 'Si, eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-            borrarPedidoApi(id).then((respuesta) => {
+            borrarPedidoApi(_id).then((respuesta) => {
               if (respuesta.status === 200) {
                 Swal.fire(
                   "Pedido eliminado",
@@ -51,7 +51,7 @@ const ItemPedido = ({combo, setPedidos}) => {
  
   return (
     <tr>
-      <td>{id}</td>
+      <td>{_id}</td>
       <td>{nombreUsuario}</td>
       <td>{pedido.map((item) => " - " + item.nombreMenu + " $" + item.precioMenu + " ")}</td>
       <td>{estado ? "Listo" : "En preparacion"}</td>
