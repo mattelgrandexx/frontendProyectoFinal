@@ -5,14 +5,14 @@ import { obtenerMenuApi } from "../helpers/queries";
 
 const DetalleMenu = () => {
   const { id } = useParams();
-  const [producto, setProducto] = useState({});
+  const [menu, setMenu] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
     obtenerMenuApi(id).then((respuesta) => {
       if (respuesta.status === 200) {
         console.log(respuesta);
         //cargar los datos
-        setProducto(respuesta);
+        setMenu(respuesta.dato);
       }
     });
   }, []);
@@ -24,38 +24,38 @@ const DetalleMenu = () => {
   }
 
 
-  if ( !producto ) {
+  if ( !menu) {
     return <Navigate to="/" />
   }
   
 
   return (
-    <div className="row mt-5">
+    <div className="row mt-5 container my-5">
       <div className="col-4">
         <img
-          src={producto.imagen}
-          alt={producto.nombreMenu}
+          src={menu.imagen}
+          alt={menu.nombreMenu}
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
       </div>
 
       <div className="col-8">
-        <h3>{producto.nombreMenu}</h3>
+        <h3><strong>{menu.nombreMenu}</strong></h3>
         <ul className="list-group list-group-flush">
+          {/* <li className="list-group-item">
+            {" "}
+            <b>Pan:</b> {menu.pan}{" "}
+          </li> */}
           <li className="list-group-item">
             {" "}
-            <b>Alter ego:</b> {producto.pan}{" "}
-          </li>
-          <li className="list-group-item">
-            {" "}
-            <b>Publisher:</b> {producto.descripcion}{" "}
+            <b>Ingredientes:</b> {menu.descripcion}{" "}
           </li>
         </ul>
 
         <h5 className="mt-3"> Precio: </h5>
-        <p>${producto.precioMenu}</p>
+        <p>${menu.precioMenu}</p>
 
-        <button className="btn btn-outline-primary" onClick={onNavigateBack}>
+        <button className="btn btn-outline-primary my-4" onClick={onNavigateBack}>
           Regresar
         </button>
       </div>

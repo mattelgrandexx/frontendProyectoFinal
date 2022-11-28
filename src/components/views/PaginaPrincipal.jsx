@@ -27,7 +27,6 @@ const PaginaPrincipal = () => {
     // Maqueta los menus cuando carga la pagina
     consultarAPI().then(
       (respuesta) => {
-        console.log(respuesta)
         setMenus(respuesta);
       },
       (reason) => {
@@ -114,6 +113,8 @@ const PaginaPrincipal = () => {
     </section>
   ) : null;
 
+  
+
   return (
     <main>
       <section>
@@ -133,6 +134,7 @@ const PaginaPrincipal = () => {
             <CardMenu
               key={menu._id}
               menu={menu}
+              
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
               userActive={userActive}
