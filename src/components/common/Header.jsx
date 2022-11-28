@@ -36,12 +36,11 @@ export const Header = () => {
     });
   };
 
+
+
   return (
-    <Navbar variant="dark" expand="lg">
+    <Navbar variant="dark" expand="lg" className="py-4 py-lg-2">
       <Container id="navContainer">
-        <Navbar.Brand as={Link} to="/">
-          LENO
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" id="btnNavbar" />
         <Navbar.Collapse
           id="basic-navbar-nav"

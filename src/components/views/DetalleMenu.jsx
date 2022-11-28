@@ -17,47 +17,40 @@ const DetalleMenu = () => {
     });
   }, []);
 
-  
-
   const onNavigateBack = () => {
     navigate(-1);
-  }
+  };
 
-
-  if ( !menu) {
-    return <Navigate to="/" />
+  if (!menu) {
+    return <Navigate to="/" />;
   }
-  
 
   return (
-    <div className="row mt-5 container my-5">
-      <div className="col-4">
+    <div className="row container py-5">
+      <div className="col-12 col-md-6 col-lg-4 my-2">
         <img
           src={menu.imagen}
           alt={menu.nombreMenu}
-          className="img-thumbnail animate__animated animate__fadeInLeft"
+          className="w-100 img-thumbnail animate__animated animate__fadeInLeft bg-crema"
         />
       </div>
 
-      <div className="col-8">
-        <h3><strong>{menu.nombreMenu}</strong></h3>
-        <ul className="list-group list-group-flush">
-          {/* <li className="list-group-item">
-            {" "}
-            <b>Pan:</b> {menu.pan}{" "}
-          </li> */}
-          <li className="list-group-item">
-            {" "}
-            <b>Ingredientes:</b> {menu.descripcion}{" "}
-          </li>
-        </ul>
+      <div className="col-12 col-md-6 col-lg-8 ">
+        <h3 className="detalle__titulo">
+          <strong>{menu.nombreMenu}</strong>
+        </h3>
+        <div className="px-3">
 
-        <h5 className="mt-3"> Precio: </h5>
+        <p className="fs-4"><b>Ingredientes: </b>{menu.descripcion}</p>
+        <h3 className="mt-3"> Precio: </h3>
         <p>${menu.precioMenu}</p>
-
-        <button className="btn btn-outline-primary my-4" onClick={onNavigateBack}>
+        <button
+          className="detalle__btn"
+          onClick={onNavigateBack}
+          >
           Regresar
         </button>
+          </div>
       </div>
     </div>
   );
