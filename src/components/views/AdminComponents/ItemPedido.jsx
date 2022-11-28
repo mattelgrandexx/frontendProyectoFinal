@@ -8,7 +8,6 @@ import { useState } from "react";
 const ItemPedido = ({combo, setPedidos}) => {
   const {pedido, id, nombreUsuario } = { ...combo };
   const [estado, setEstado] = useState(false);
-  console.log(combo.pedido)
 
   const borrarPedido = () => {
     Swal.fire({

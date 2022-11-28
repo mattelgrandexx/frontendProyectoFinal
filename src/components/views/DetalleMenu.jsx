@@ -10,7 +10,6 @@ const DetalleMenu = () => {
   useEffect(() => {
     obtenerMenuApi(id).then((respuesta) => {
       if (respuesta.status === 200) {
-        console.log(respuesta);
         //cargar los datos
         setMenu(respuesta.dato);
       }
