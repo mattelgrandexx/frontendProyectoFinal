@@ -1,28 +1,257 @@
 {
-    "menus": [
-      {
-        "nombreMenu": "Hamburguesa rustica",
-        "precioMenu": 1400,
-        "descripcion": "Hamburguesa 200gr de vacuno, con lechuga fresca y tomate de huerto, cebolla crispy. Con salsa especial de la casa. Acompañada de papas fritas o rusticas.",
-        "imagen": "https://st2.depositphotos.com/1020618/8867/i/450/depositphotos_88671760-stock-photo-close-up-of-home-made.jpg",
-        "categoria": "hamburguesa"
-      }
-    ], 
-    "usuarios": [
-      {
-          "nombreUsuario": "nicoelias997",
-          "email": "nicoelias997@gmail.com",
-          "password": "12345678"
-      }
-    ],
-    "pedidos": [
-      {
-          "estado": "En preparacion",
-          "pedido": [
-              "hamburguesa",
-              "papas",
-              "bebida"
-          ]
-      }
+  "menus": [
+    {
+      "nombreMenu": "Singular",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/Y0cMRLW4/singular.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, BBQ de mamá, bacon, cebolla caramelizada y crema camembert.",
+      "id": 1
+    },
+    {
+      "nombreMenu": "Stifler",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/7PTLzw2G/la-mama-de-stifler.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2 x 110g dry aged burger, doble cheddar ahumado en dos texturas (fat y thin), pickles caseros y bbq de mamá.",
+      "id": 2
+    },
+    {
+      "nombreMenu": "Ari Gold",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/2586LWQr/ari-gold.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, ceberg, tomate, cebolla relish, Dickles y Leno secret mayo.",
+      "id": 3
+    },
+    {
+      "nombreMenu": "Satisfaction",
+      "precioMenu": "1100",
+      "imagen": "https://i.postimg.cc/Gp2LmCRp/satisfaction.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2 x 110gr dry aged burger, doble cheddar, smokey mayo.",
+      "id": 4
+    },
+    {
+      "nombreMenu": "Animal Style",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/k42gfdYH/animal-style.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, pulled pork, bbq de mamá, cebolla rosa.",
+      "id": 5
+    },
+    {
+      "nombreMenu": "Loser",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/9QcXs9NZ/loser.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Dry aged burger, cheddar, cebolla caramelizada y salsa coreana gochujang...",
+      "id": 6
+    },
+    {
+      "nombreMenu": "Mc Lovin",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/tC3CrkD9/burger-del-mes.png",
+      "categoria": "hamburguesas",
+      "descripcion": "2x110gr dry aged burger, doble bacon, cebolla caramelizada, salsa de queso cheddar y salsa de manteq",
+      "id": 7
+    },
+    {
+      "nombreMenu": "Carlton Banks",
+      "precioMenu": "1200",
+      "imagen": "https://i.postimg.cc/xCBTZFW1/caritonbanks.png",
+      "categoria": "hamburguesas",
+      "descripcion": "Crispy chicken burger, cheddar, iceberg, bacon y smokey mayo, cebollino decorativo.",
+      "id": 8
+    },
+    {
+      "nombreMenu": "Papas Fritas",
+      "precioMenu": "600",
+      "imagen": "https://i.postimg.cc/WzVxtGZ7/papas.png",
+      "categoria": "extras",
+      "descripcion": "Papas fritas semi rusticas, condimentadas con sal y pimienta.",
+      "id": 9
+    },
+    {
+      "nombreMenu": "Bacon cheese papas fritas",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/k5k0P3Xz/bacon-cheese.png",
+      "categoria": "extras",
+      "descripcion": "Papas fritas con queso fundido, salsa de bacon, bacon jam y cebollino decorativo.",
+      "id": 10
+    },
+    {
+      "nombreMenu": "Vegan nachos",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/2SyMq81g/vegan-nachos.png",
+      "categoria": "extras",
+      "descripcion": "Doritos, palta y pico de gallo.",
+      "id": 11
+    },
+    {
+      "nombreMenu": "Nuggets",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/1R0L2dx7/nuggets.png",
+      "categoria": "extras",
+      "descripcion": "Carne picada de pollo, rebosada con agregado de salsa bbq y cebollino decorativo.",
+      "id": 12
+    },
+    {
+      "nombreMenu": "Nachos all in",
+      "precioMenu": "800",
+      "imagen": "https://i.postimg.cc/8P1qSbNp/nachos-all-in.png",
+      "categoria": "extras",
+      "descripcion": "Doritos, queso fundido, palta, pico de gallo, cochinita pibil, olivas negras y sweet chilli.",
+      "id": 13
+    },
+    {
+      "nombreMenu": "BBQ ribs",
+      "precioMenu": "899",
+      "imagen": "https://i.postimg.cc/KvJCvg8n/bbq-ribs.png",
+      "categoria": "extras",
+      "descripcion": "Costillas a baja temperatura cortadas individualmente y cocinadas a la parrilla. Decoradas con BBQ.",
+      "id": 14
+    },
+    {
+      "nombreMenu": "Kids nuggets",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/sxJqWM9C/kid-nuggets.png",
+      "categoria": "extras",
+      "descripcion": "Cornflake chicken nuggets, ketchup y papas fritas.",
+      "id": 15
+    },
+    {
+      "nombreMenu": "Croquetas",
+      "precioMenu": "1000",
+      "imagen": "https://i.postimg.cc/SKXBPNqc/croquetas.png",
+      "categoria": "extras",
+      "descripcion": "Croquetas de pollo.",
+      "id": 16
+    },
+    {
+      "nombreMenu": "Hummus",
+      "precioMenu": "399",
+      "imagen": "https://i.postimg.cc/4dVrJLYd/hummus.png",
+      "categoria": "extras",
+      "descripcion": "Hummus casero, con un toque de miel, pimentón y aceite de oliva, acompañado de veggie.",
+      "id": 17
+    },
+    {
+      "nombreMenu": "Cerveza 1906",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/CxCYNKh5/1906.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de un lindo color ámbar. Limpia, brillante y de abundante espuma blanca.",
+      "id": 18
+    },
+    {
+      "nombreMenu": "Cerveza 1925",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/bwfpknj4/1925.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza Pilsner de carácter intenso y con mucho cuerpo, reinterpretación del estilo Amber Lager.",
+      "id": 19
+    },
+    {
+      "nombreMenu": "Alhambra roja",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/8crgrpX1/alhambra-roja.png",
+      "categoria": "bebidas",
+      "descripcion": "Cerveza de un color cobrizo excepcional y único, aspecto brillante y una espuma densa.",
+      "id": 20
+    },
+    {
+      "nombreMenu": "Vino La camioneta",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/Kzj2xrn3/camioneta.png",
+      "categoria": "hebidas",
+      "descripcion": "Vino tinto deliciosamente fresco y afrutado con verdadero carácter y personalidad.",
+      "id": 21
+    },
+    {
+      "nombreMenu": "Estrella Galicia (sin alcohol)",
+      "precioMenu": "300",
+      "imagen": "https://i.postimg.cc/Bvq3wGbg/cerveza-sin-alcohol.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de aspecto brillante que refleja el color típico de las cervezas tipo Pilsen.",
+      "id": 22
+    },
+    {
+      "nombreMenu": "Estrella Galicia (gluten free)",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/9fJh6Nqj/estrella-gaicia-gluten-free.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza libre de gluten.",
+      "id": 23
+    },
+    {
+      "nombreMenu": "Estrella Galicia (lata)",
+      "precioMenu": "200",
+      "imagen": "https://i.postimg.cc/QVGGQ2vc/estrella-galicia-lata.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza de color dorado brillante que parte de una selección de maltas y lúpulo especialmente amargo",
+      "id": 24
+    },
+    {
+      "nombreMenu": "Cerveza Franziskaner",
+      "precioMenu": "400",
+      "imagen": "https://i.postimg.cc/4d0Td75L/franziskaner.png",
+      "categoria": "hebidas",
+      "descripcion": "Es un Weissbier natural y elegante de Baviera con una espuma blanca exuberante.",
+      "id": 25
+    },
+    {
+      "nombreMenu": "Cerveza Hundred pale ale",
+      "precioMenu": "350",
+      "imagen": "https://i.postimg.cc/BZdX7X0B/hundred-pale-ale.png",
+      "categoria": "hebidas",
+      "descripcion": "Cerveza artesanal pale ale suave, y de bajo perfil maltoso, por lo que resulta menos amarga.",
+      "id": 26
+    }
+  ],
+  "usuarios": [{
+      "nombreUsuario": "Nicolas",
+      "apellidoUsuario": "Elias",
+      "email": "nico@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "0a4ixNw"
+    },
+    {
+      "nombreUsuario": "Nico",
+      "apellidoUsuario": "Elias",
+      "email": "lalala@gmail.com",
+      "password": "12345678",
+      "check": true,
+      "id": "tKPxJ_B"
+    },
+    {
+      "nombreUsuario": "aaa",
+      "apellidoUsuario": "bb",
+      "email": "niconico@gmail.com",
+      "password": "holahola",
+      "check": true,
+      "id": "MktpAdS"
+    }
+  ],
+  "pedidos": [
+  {
+      "nombreUsuario": "Nico",
+      "pedido": [
+        {
+          "nombreMenu": "Hamburguesa rustica",
+          "precioMenu": 1400
+        },
+        {
+          "nombreMenu": "Hamburguesa asd",
+          "precioMenu": 1400
+        },
+        {
+          "nombreMenu": "Hamburguesa zxc",
+          "precioMenu": 1400
+        }
+      ],
+      "id": 1
+    }
   ]
-  }
+}
