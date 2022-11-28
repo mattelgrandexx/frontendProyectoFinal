@@ -35,14 +35,18 @@ const ListaCarrito = () => {
   // Si hay un usuario conectado se muestra el btn del carrito
   const btnCarrito = userActive ? (
     <button id="btnCarrito" onClick={abrirCarrito}>
-      <i class="fa-solid fa-cart-shopping"></i>
+      <i className="fa-solid fa-cart-shopping"></i>
     </button>
   ) : null;
 
   // Establece el state setPedido con los datos para subir el pedido a la BD y establece el precio total del carrito
   useEffect(() => {
+    listaCarrito.forEach(menu => {
+      delete menu.imagen;
+    });
+    console.log(listaCarrito);
     setPedido({ nombreUsuario: storageUser, pedido: listaCarrito });
-  }, []);
+  }, [precioTotal, carritoAbierto]);
 
   // Establece el precio total del pedido cada vez que se abre el carrito
   useEffect(() => {
@@ -64,6 +68,7 @@ const ListaCarrito = () => {
 
   // Funcion para agregar pedido a la base de dato
   const agregarPedido = () => {
+    console.log(pedido)
     Swal.fire({
       title: "¿No te falta nada?",
       text: "¡Gracias por tu compra!",
@@ -82,6 +87,7 @@ const ListaCarrito = () => {
               "El producto se agrego a su lista de pedidos",
               "success"
             );
+            // localStorage.setItem("listaCarrito", [])
           } else {
             Swal.fire(
               "Ocurrio un error",
@@ -97,17 +103,17 @@ const ListaCarrito = () => {
   return (
     <>
       {btnCarrito}
-      <Offcanvas show={show} onHide={cerrarCarrito} placement={"end"} id="listaCarrito">
+      <Offcanvas show={show} onHide={cerrarCarrito} placement={"end"} className="px-0" id="listaCarrito">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className="cardMenu__nombre text-center mt-2">
+          <Offcanvas.Title className="cardMenu__nombre text-center  mt-2 w-75">
             Mis pedidos
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="overflow-hidden">
           <div className="listaCarrito__items">
-            {listaCarrito.map((menu) => (
+            {listaCarrito.map((menu, posicion) => (
               <ItemCarrito
-                key={menu.id}
+                key={posicion}
                 id={menu.id}
                 nombre={menu.nombreMenu}
                 precio={menu.precioMenu}

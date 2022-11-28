@@ -45,9 +45,9 @@ export const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" id="btnNavbar" />
         <Navbar.Collapse
           id="basic-navbar-nav"
-          className="justify-content-center align-items-center"
+          className="justify-content-center align-items-center ms-5 me-0"
         >
-          <Nav className="nav d-flex px-5 align-items-center">
+          <Nav className="nav d-flex ms-2 align-items-center">
             <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly ">
               <NavLink to="/" className="nav-item nav-link">
                 Inicio

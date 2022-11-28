@@ -120,30 +120,8 @@ const PaginaPrincipal = () => {
       <section>
         <div>
           <img
-            src="https://i.postimg.cc/BvGbSy6L/bandera.jpg"
-            className="tamañoBandera"
-            alt=""
-          />
-          <img
-            src="https://i.postimg.cc/BvGbSy6L/bandera.jpg"
-            className="tamañoBandera"
-            alt=""
-          />
-          <img
-            src="https://i.postimg.cc/BvGbSy6L/bandera.jpg"
-            className="tamañoBandera"
-            alt=""
-          />
-          <img
-            src="https://i.postimg.cc/BvGbSy6L/bandera.jpg"
-            className="tamañoBandera"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
             id="bannerImg"
-            src="https://www.denirohamburgueseria.com.ar/img/fondo1920x1080.png"
+            src="https://i.postimg.cc/tyhjxBV0/photo-1617086903031-8dbff0098f7a.png"
             alt=""
           />
         </div>
@@ -154,7 +132,7 @@ const PaginaPrincipal = () => {
         <section className="p-0 cardContainer">
           {hamburguesas.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               
               listaCarrito={listaCarrito}
@@ -168,7 +146,7 @@ const PaginaPrincipal = () => {
         <section className="p-0 cardContainer">
           {extras.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
@@ -177,10 +155,10 @@ const PaginaPrincipal = () => {
           ))}
         </section>
         <h2 className="pagPrincipal__titulo">Bebidas</h2>
-        <section className="p-0 cardContainer">
+        <section className="p-0 cardContainer mb-0 pb-5">
           {bebidas.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}

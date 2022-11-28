@@ -42,13 +42,15 @@ const ItemMenu = ({menu, setMenus}) => {
       <td>{imagen}</td>
       <td>{categoria}</td>
       <td className='ocultarTexto'>{descripcion}</td>
-      <td>
+      <td className=''>
+        <div className='d-flex flex-column'>
         <Link className="boton" to={`/administrar/editarMenu/${_id}`}>
           Editar
         </Link>
         <button className='botonBorrar' onClick={borrarMenu}>
           Borrar
         </button>
+        </div>
       </td>
     </tr>
   );
