@@ -39,12 +39,11 @@ const ListaCarrito = () => {
     </button>
   ) : null;
 
-  // Establece el state setPedido con los datos para subir el pedido a la BD y establece el precio total del carrito
+  // Elimina la propiedad imagen de la lsita del carrito, establece el state setPedido con los datos para subir el pedido a la BD y establece el precio total del carrito
   useEffect(() => {
     listaCarrito.forEach(menu => {
       delete menu.imagen;
     });
-    console.log(listaCarrito);
     setPedido({ nombreUsuario: storageUser, pedido: listaCarrito });
   }, [precioTotal, carritoAbierto]);
 
@@ -68,7 +67,6 @@ const ListaCarrito = () => {
 
   // Funcion para agregar pedido a la base de dato
   const agregarPedido = () => {
-    console.log(pedido)
     Swal.fire({
       title: "¿No te falta nada?",
       text: "¡Gracias por tu compra!",
@@ -76,7 +74,6 @@ const ListaCarrito = () => {
       showCancelButton: true,
       confirmButtonColor: "#c0050b",
       cancelButtonColor: "#000",
-      cancelButtonTextColor: "#fafafa",
       confirmButtonText: "Si, enviar!",
     }).then((result) => {
       if (result.isConfirmed) {
