@@ -24,9 +24,9 @@ const CrearMenu = () => {
     })
   }
   return (
-    <section className='fondoBlanco'>
+    <section className='fondoBlanco py-5'>
 
-    <section className='m-5 bordeCajaRojo'>
+    <section className='mx-5 bordeCajaRojo'>
       <div className=''>
       <h1 className='oswald500 textoRojo'>Nuevo Producto</h1>
       <hr />

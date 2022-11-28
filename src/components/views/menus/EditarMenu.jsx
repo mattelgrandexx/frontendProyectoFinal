@@ -45,8 +45,8 @@ const EditarMenu = () => {
   }, []);
 
   return (
-    <section className="fondoBlanco ">
-      <section className="bordeCajaRojo mt-5 container">
+    <section className="fondoBlanco py-5">
+      <section className="bordeCajaRojo  container">
         <h1 className="oswald500 textoRojo">Editar Producto</h1>
         <hr />
         <Form onSubmit={handleSubmit(onSubmit)}>

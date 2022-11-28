@@ -153,7 +153,7 @@ const PaginaPrincipal = () => {
         <section className="p-0 cardContainer">
           {hamburguesas.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
@@ -166,7 +166,7 @@ const PaginaPrincipal = () => {
         <section className="p-0 cardContainer">
           {extras.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
@@ -175,10 +175,10 @@ const PaginaPrincipal = () => {
           ))}
         </section>
         <h2 className="pagPrincipal__titulo">Bebidas</h2>
-        <section className="p-0 cardContainer">
+        <section className="p-0 cardContainer mb-0 pb-5">
           {bebidas.map((menu) => (
             <CardMenu
-              key={menu.id}
+              key={menu._id}
               menu={menu}
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}

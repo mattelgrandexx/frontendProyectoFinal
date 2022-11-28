@@ -37,16 +37,16 @@ const ItemCarrito = ({
   // Funcion para borrar un menu del carrito y actualizar el precio total
   const borrarPedido = () => {
     setPrecioTotal(precioTotal - precioMenu);
-    let lista2 = listaCarrito.filter((item) => item.id !== id);
+    let lista2 = listaCarrito.filter((item) => item.nombreMenu !== nombre);
     localStorage.setItem("listaCarrito", JSON.stringify(lista2));
   };
 
   return (
     <article className="d-flex mt-4 itemCarrito">
-      <div className="me-2">
-        <img className="w-100" src={imagen} alt={nombre} />
+      <div className="itemCarrito_imgContainer">
+        <img className="h-100 itemCarrito__img" src={imagen} alt={nombre} />
       </div>
-      <div className="w-75 mt-3">
+      <div className="w-50 mt-3 itemCarrito__desc">
         <h5 className="h3 fw-bolder mb-0">{nombre}</h5>
         <div className="d-flex mt-3 mb-4">
           <button
@@ -70,7 +70,7 @@ const ItemCarrito = ({
       <div className="mt-3">
         <button
           type="button"
-          className="btnEliminarCarrito ms-5"
+          className="btnEliminarCarrito"
           onClick={borrarPedido}
         >
           <i className="fa-regular fa-rectangle-xmark"></i>
