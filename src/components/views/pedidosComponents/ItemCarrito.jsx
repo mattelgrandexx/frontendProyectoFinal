@@ -43,7 +43,7 @@ const ItemCarrito = ({
 
   return (
     <article className="d-flex mt-4 itemCarrito">
-      <div className="itemCarrito_imgContainer">
+      <div className="itemCarrito_imgContainer w-50">
         <img className="h-100 itemCarrito__img" src={imagen} alt={nombre} />
       </div>
       <div className="w-50 mt-3 itemCarrito__desc">
