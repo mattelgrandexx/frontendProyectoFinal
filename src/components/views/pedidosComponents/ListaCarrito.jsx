@@ -94,6 +94,7 @@ const ListaCarrito = () => {
               "El pedido no pudo ser creado",
               "error"
             );
+            console.log()
           }
         });
       }

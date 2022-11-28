@@ -6,7 +6,7 @@ const URLPEDIDOS = process.env.REACT_APP_API_BAR_MENU_PEDIDOS;
 
 export const consultarAPI = async()=>{
     try {
-        const respuesta = await fetch(URLMENU + "/menus");
+        const respuesta = await fetch(URLMENU + "menus");
         const listaMenus = await respuesta.json()
         return listaMenus;
     } catch (error) {
@@ -16,7 +16,7 @@ export const consultarAPI = async()=>{
 }
 export const obtenerMenuApi = async(id)=>{
     try {
-        const respuesta = await fetch(URLMENU+'/menus/'+id);
+        const respuesta = await fetch(URLMENU+'menus/'+id);
         const menu={
             dato: await respuesta.json(),
             status: respuesta.status
@@ -30,7 +30,7 @@ export const obtenerMenuApi = async(id)=>{
 
 export const crearMenuApi = async(menu)=>{
     try {
-        const respuesta = await fetch(URLMENU + "/menus",{
+        const respuesta = await fetch(URLMENU + "menus",{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export const crearMenuApi = async(menu)=>{
 
 export const borrarMenuApi = async(_id)=>{
     try {
-        const respuesta = await fetch(URLMENU+'/menus/'+_id,{
+        const respuesta = await fetch(URLMENU+'menus/'+_id,{
             method: "DELETE"          
         });
         return respuesta;
@@ -59,7 +59,7 @@ export const borrarMenuApi = async(_id)=>{
 
 export const editarMenuApi = async(_id, menu)=>{
     try {
-        const respuesta = await fetch(URLMENU+'/menus/'+_id,{
+        const respuesta = await fetch(URLMENU+'menus/'+_id,{
             method: "PUT",
             headers:{
                 "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export const editarMenuApi = async(_id, menu)=>{
 
   export const borrarPedidoApi = async(_id)=>{
     try {
-        const respuesta = await fetch(URLPEDIDOS+'/combos/'+_id,{
+        const respuesta = await fetch(URLPEDIDOS+'combos/'+_id,{
             method: "DELETE"          
         });
         return respuesta;
@@ -96,7 +96,7 @@ export const editarMenuApi = async(_id, menu)=>{
 
   export const editarPedidoApi = async (_id, pedido) => {
     try {
-      const respuesta = await fetch(URLPEDIDOS + "/combos/" + _id, {
+      const respuesta = await fetch(URLPEDIDOS + "combos/" + _id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const editarMenuApi = async(_id, menu)=>{
 
   export const consultarPedidosApi = async () => {
     try {
-      const respuesta = await fetch(URLPEDIDOS + "/combos");
+      const respuesta = await fetch(URLPEDIDOS + "combos");
       const listaPedidos = await respuesta.json();
       return listaPedidos;
     } catch (error) {
@@ -126,7 +126,7 @@ export const editarMenuApi = async(_id, menu)=>{
 
   export const crearPedidoApi = async (menu) => {
     try {
-      const respuesta = await fetch(URLPEDIDOS + "/combos", {
+      const respuesta = await fetch(URLPEDIDOS + "combos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
