@@ -14,15 +14,15 @@ text-decoration: none;
 padding: 0.5rem;
 color: white;
 border: 1px solid black;
-margin: 20px 10px 2px 0px;
+
 }
 .botonBorrar{
-  background-color: #c0050b;
+background-color: #c0050b;
 text-decoration: none;
-padding: 0.4rem;
+padding: 0.5rem;
 color: white;
 border: 1px solid black;
-margin: 20px 0px 2px 0px;
+margin-top: 2px;
 
 }
 .botonBorrarPedidos{
