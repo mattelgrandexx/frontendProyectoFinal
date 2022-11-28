@@ -18,7 +18,7 @@ const PaginaPrincipal = () => {
   
   useEffect(() => {
     // Comprueba que haya un usuario logueado
-    if (storageUser) {
+    if (storageUser.length !== 0) {
       setUserActive(true);
     } else {
       setUserActive(false);
