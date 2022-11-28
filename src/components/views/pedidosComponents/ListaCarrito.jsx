@@ -74,7 +74,6 @@ const ListaCarrito = () => {
       showCancelButton: true,
       confirmButtonColor: "#c0050b",
       cancelButtonColor: "#000",
-      cancelButtonTextColor: "#fafafa",
       confirmButtonText: "Si, enviar!",
     }).then((result) => {
       if (result.isConfirmed) {
