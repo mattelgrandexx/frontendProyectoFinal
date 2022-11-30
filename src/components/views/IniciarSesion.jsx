@@ -26,13 +26,22 @@ const handleShow = () => setShow(true);
 
   const onSubmit = (datos) => {
     login(datos).then((respuesta) => {
-      if(respuesta.permiso === "Suspendido"){
+        if(respuesta.permiso === "Suspendido"){
         Swal.fire(
           "Usuario suspendido",
           `Contacte con el centro de atencion al cliente para solucionar el problema.`,
           "warning"
         );
         navigate("/acerca")
+        return
+      } 
+      if(respuesta.estado ==="no autenticado"){
+        Swal.fire(
+          "Email no verificado.",
+          `Verifica tu email antes de iniciar sesion.`,
+          "error"
+        );
+        return
       } 
       if(respuesta.status === 200){
         Swal.fire(
@@ -49,17 +58,9 @@ const handleShow = () => setShow(true);
         "error"
       );
     } 
-         if(respuesta.estado === "no autenticado"){
-          Swal.fire(
-            "Email no verificado.",
-            `Verifica tu email antes de iniciar sesion.`,
-            "error"
-          );
-        }
     
     });
   };
-
   const recuperarPassword = (datos) => {
    recuperarUserPassword(datos).then(respuesta => {
     if(respuesta.status === 200){
