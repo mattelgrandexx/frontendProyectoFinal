@@ -5,7 +5,7 @@ que se dedica a la venta de hamburguesas.
 
 ## Accede a la demo desde el siguiente link:
 
-[Demo](https://tourmaline-dragon-01cd23.netlify.app/)
+[Demo](https://musical-syrniki-620ff4.netlify.app/)
 
 ## Librerias utilizadas en este proyecto:
 - animate.css   V 4.1.1
