@@ -17,12 +17,24 @@ import './style.css'
 import Confirm from "./components/views/Confirm";
 
 import './app.css'
+import { useEffect, useState } from "react";
 
 
 function App() {
+
+  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
+  const [userActive, setUserActive] = useState(false);
+
+  useEffect(() => {
+    if (storageUser.length !== 0) {
+      setUserActive(true);
+    }
+  }, [setUserActive, storageUser]);
+
+
   return (
     <BrowserRouter>
-      <Header/>
+      <Header setUserActive={setUserActive} userActive={userActive} />
       <Routes>
         <Route exact path="/" element={<PaginaPrincipal />}></Route>
         <Route exact path="/administrar" element={<Administrador />}></Route>
