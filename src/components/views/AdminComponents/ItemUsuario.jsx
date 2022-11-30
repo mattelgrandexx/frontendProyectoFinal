@@ -4,11 +4,11 @@ import { consultarUserApi } from "../../helpers/queriesLogin";
 const ItemUsuario = (props) => {
   
 
-  useEffect(() => {
-    consultarUserApi().then(respuesta => {
-      props.setUsuarios(respuesta)
-    })
-  }, [props.usuarios, props])
+  // useEffect(() => {
+  //   consultarUserApi().then(respuesta => {
+  //     props.setUsuarios(respuesta)
+  //   })
+  // }, [props.usuarios, props])
   
   
     return (

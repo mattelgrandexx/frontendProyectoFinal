@@ -17,23 +17,29 @@ import './style.css'
 import Confirm from "./components/views/Confirm";
 
 import './app.css'
+import { useEffect, useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
+      <Header />
       <Routes>
-        <Route exact path="/" element={<PaginaPrincipal />}></Route>
-        <Route exact path="/administrar" element={<Administrador />}></Route>
-        <Route exact path="/administrar/crear" element={<CrearMenu />}></Route>
-        <Route exact path='/administrar/editarMenu/:id' element={<EditarMenu/>}></Route>
+        <Route exact path="/" element={<PaginaPrincipal />}></Route>      
         <Route exact path="/detalle/:id" element={<DetalleMenu />}></Route>
-        <Route exact path="/login" element={<PerfilUsuario />}></Route>
-        <Route exact path="/registro" element={<Registrarse />}></Route>
         <Route exact path="/acerca" element={<AcercaDeNos />}></Route>
         <Route exact path="*" element={<Error404 />}></Route>
+        <Route exact path="/login" element={<PerfilUsuario />}></Route>
         <Route exact path="/confirmar/:token" element={<Confirm></Confirm>}></Route>
+        <Route path="/administrar/*" element={
+        <RutasProtegidas>
+          <RutasAdmin></RutasAdmin>
+        </RutasProtegidas>
+      }>
+
+        </Route>
        </Routes>
       <Footer></Footer>
 
