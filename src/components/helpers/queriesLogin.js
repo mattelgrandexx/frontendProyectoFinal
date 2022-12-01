@@ -122,3 +122,27 @@ export const recuperarUserPassword = async (datos) => {
     }
 }
 
+export const actualizarPass = async (datos, token) => {
+    try{
+        const respuesta = await fetch(URL + "perfilusuarios/recuperacion/" + token, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        })
+        return respuesta
+    } catch(e){
+        console.log(e)
+    }
+}
+export const obtenerEmail = async (token) => {
+    try{
+        const respuesta = await fetch(URL + `perfilusuarios/recuperacion/` + token)
+        const usuario = await respuesta.json()
+        return usuario
+    } catch(e){
+        console.log(e)
+    }
+}
+
