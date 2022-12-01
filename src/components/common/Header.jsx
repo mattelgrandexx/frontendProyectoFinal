@@ -35,6 +35,7 @@ export const Header = () => {
       if (result.isConfirmed) {
         setUserActive(false);
         localStorage.removeItem("usuarioActivo");
+        localStorage.removeItem("usuarioNoAdmin")
         navigate("/login");
       }
     });
@@ -68,7 +69,8 @@ export const Header = () => {
                 />
               </Navbar.Brand>
             </div>
-            {/* componente condicional (admin) */}
+            <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
+
             {
               (storageUser.length !== 0) ?  <NavLink to="/administrar" className="nav-item nav-link">
               Admin
@@ -76,16 +78,16 @@ export const Header = () => {
             }
             { 
             userActive ? 
-            <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
             <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
               Cerrar sesion
             </Link>
-            </div>
              : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
               Iniciar sesion
             </NavLink>
             }
+            </div>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

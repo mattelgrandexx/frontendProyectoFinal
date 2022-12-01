@@ -45,7 +45,8 @@ export const login = async (usuario) => {
         email: datos.email,
         token: datos.token,
         _id: datos._id,
-        estado: datos.estado
+        estado: datos.estado,
+        admin: datos.admin
       };
     } catch (error) {
       console.log("errores en el login");

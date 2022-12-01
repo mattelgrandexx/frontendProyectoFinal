@@ -43,7 +43,6 @@ const handleShow = () => setShow(true);
         );
         return
       } 
-      console.log(respuesta)
       if(respuesta.status === 200){
         Swal.fire(
           "Bienvenido",
