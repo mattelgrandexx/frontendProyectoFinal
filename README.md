@@ -5,7 +5,7 @@ que se dedica a la venta de hamburguesas.
 
 ## Accede a la demo desde el siguiente link:
 
-[Demo](https://lenohamburgueseria.netlify.app/)
+[Demo](https://lenohamburguesas.netlify.app/)
 
 ## Librerias utilizadas en este proyecto:
 - animate.css   V 4.1.1
