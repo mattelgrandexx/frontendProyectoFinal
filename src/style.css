@@ -199,16 +199,20 @@ nav li{
 	background-color: #ffffff;
 }
 
-/* .errorImagen{
 
- 
-	object-fit: cover;
-	width: 100px;
-	top: 20px;
-	position: absolute;
-	left: 45%;
-	top: 10%;
-  } */
+.errorImagen{
+	width: 370px;
+	height: 370px;
+
+}
+
+.fondoError{
+	background-color: white;
+}
+.botonRegresarError{
+	width: 25%;
+	
+}
   
   .bg-footer{
 	background-color: #000;
@@ -235,10 +239,6 @@ nav li{
 	  background-color: #ffffff;
   }
   
-  .errorImagen{
-	  object-fit: cover;
-	  height: 300px;
-  }
   
   .card-leno{
 	height: 400px;
