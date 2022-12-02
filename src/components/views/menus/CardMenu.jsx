@@ -23,7 +23,10 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
 
   // Primero comprueba que el state menuCarrito no este vacio y  luego actualiza listaCarrito con el menu nuevo
   useEffect(() => {
-    if (Object.keys(menuCarrito).length !== 0) {
+    if (
+      Object.keys(menuCarrito).length !== 0 &&
+      listaCarrito.find((item) => item.nombreMenu === nombreMenu) === undefined
+    ) {
       setListaCarrito((listaCarrito) => [...listaCarrito, menuCarrito]);
     }
   }, [menuCarrito]);
@@ -53,7 +56,6 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
         precioMenu: precioMenu,
         imagen: imagen,
         cantidad: 1,
-
       });
     } else {
       Swal.fire(
