@@ -26,11 +26,11 @@ const DetalleMenu = () => {
 
   return (
     <div className="row container py-5">
-      <div className="col-12 col-md-6 col-lg-4 my-2">
+      <div className="col-12 col-md-6 col-lg-4   detalle__img text-center">
         <img
           src={menu.imagen}
           alt={menu.nombreMenu}
-          className="w-100 img-thumbnail animate__animated animate__fadeInLeft bg-crema"
+          className="h-100 img-thumbnail animate__animated animate__fadeInLeft bg-crema"
         />
       </div>
 
