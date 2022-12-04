@@ -9,6 +9,9 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
   };
   const [menuCarrito, setMenuCarrito] = useState({});
   // const [menuAgregado, setMenuAgregado] = useState(false);
+  const [masUno, setMasUno] = useState(false);
+
+  const prodAgregado = masUno ? <span className="fw-bold">+1</span> : null;
 
   const img =
     categoria === "bebidas" ? (
@@ -28,6 +31,12 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
       listaCarrito.find((item) => item.nombreMenu === nombreMenu) === undefined
     ) {
       setListaCarrito((listaCarrito) => [...listaCarrito, menuCarrito]);
+      // Si el menu ya se encuentra en la lista del carrito, este aumenta su cantidad en uno
+    } else if (listaCarrito.find((item) => item.nombreMenu === nombreMenu)) {
+      let itemParaAumentar = listaCarrito.findIndex(
+        (item) => item.nombreMenu === nombreMenu
+      );
+      listaCarrito[itemParaAumentar].cantidad += 1;
     }
   }, [menuCarrito]);
 
@@ -57,6 +66,11 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
         imagen: imagen,
         cantidad: 1,
       });
+
+      setMasUno(true);
+      setTimeout(() => {
+        setMasUno(false);
+      }, 1000);
     } else {
       Swal.fire(
         "Inicia sesion",
@@ -93,7 +107,7 @@ const CardMenu = ({ menu, listaCarrito, setListaCarrito, userActive }) => {
             type="button"
             onClick={agregarPedido}
           >
-            Agregar al pedido
+            Agregar al pedido {prodAgregado}
           </Button>
         </div>
         {img}
