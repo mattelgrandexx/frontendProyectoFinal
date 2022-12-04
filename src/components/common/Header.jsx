@@ -8,13 +8,17 @@ import ListaCarrito from "../views/pedidosComponents/ListaCarrito";
 
 export const Header = () => {
   let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
+  let usuarioNoAdmin = JSON.parse(localStorage.getItem("usuarioNoAdmin")) || [];
+
   const [userActive, setUserActive] = useState(false);
 
+
+
   useEffect(() => {
-    if (storageUser.length !== 0) {
+    if (storageUser.length !== 0 || usuarioNoAdmin.length !== 0) {
       setUserActive(true);
     }
-  }, [setUserActive, storageUser]);
+  }, [setUserActive, storageUser, usuarioNoAdmin]);
 
   const navigate = useNavigate();
 
@@ -31,6 +35,7 @@ export const Header = () => {
       if (result.isConfirmed) {
         setUserActive(false);
         localStorage.removeItem("usuarioActivo");
+        localStorage.removeItem("usuarioNoAdmin")
         navigate("/login");
       }
     });
@@ -64,23 +69,25 @@ export const Header = () => {
                 />
               </Navbar.Brand>
             </div>
-            {/* componente condicional (admin) */}
-            
+            <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
+
+            {
+              (storageUser.length !== 0) ?  <NavLink to="/administrar" className="nav-item nav-link">
+              Admin
+            </NavLink> : null
+            }
             { 
             userActive ? 
-            <div className="navDivisor d-flex flex-column flex-lg-row align-items-center justify-content-evenly">
-            <NavLink to="/administrar" className="nav-item nav-link">
-              Admin
-            </NavLink>
             <Link variant="none" as="button" onClick={() => cerrarSesion()} className="nav-item nav-link d-flex">
               Cerrar sesion
             </Link>
-            </div>
              : 
             <NavLink end to="/login" className="nav-item nav-link d-flex">
               Iniciar sesion
             </NavLink>
             }
+            </div>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

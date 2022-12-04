@@ -20,6 +20,7 @@ import './app.css'
 import { useEffect, useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
+import CardResetPassword from "./components/views/CardResetPassword";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="*" element={<Error404 />}></Route>
         <Route exact path="/login" element={<PerfilUsuario />}></Route>
         <Route exact path="/confirmar/:token" element={<Confirm></Confirm>}></Route>
+        <Route exact path="/reset/:token" element={<CardResetPassword></CardResetPassword>}></Route>
         <Route path="/administrar/*" element={
         <RutasProtegidas>
           <RutasAdmin></RutasAdmin>

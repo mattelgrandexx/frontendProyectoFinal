@@ -5,7 +5,7 @@ import { consultarAPI } from "../helpers/queries";
 import CardMenu from "./menus/CardMenu";
 
 const PaginaPrincipal = () => {
-  let storageUser = JSON.parse(localStorage.getItem("usuarioActivo")) || [];
+  let storageUser = JSON.parse(localStorage.getItem("usuarioNoAdmin")) || [];
   let listaCarritoLS = JSON.parse(localStorage.getItem("listaCarrito")) || [];
   const [userActive, setUserActive] = useState(false);
   let [menus, setMenus] = useState([]);

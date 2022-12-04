@@ -49,9 +49,14 @@ const handleShow = () => setShow(true);
           `Gracias por contar con nosotros.`,
           "success"
         );
-        localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email, respuesta.estado));
-        navigate("/");
-    } else {
+        if(respuesta.admin === "true"){
+          localStorage.setItem("usuarioActivo", JSON.stringify(respuesta.email));
+          navigate("/administrar");
+        } else {
+          localStorage.setItem("usuarioNoAdmin", JSON.stringify(respuesta.email));
+          navigate("/");
+        }
+      } else {
       Swal.fire(
         "Email o contraseña incorrecta",
         `No pudimos loguearte, vuelve a intentarlo`,
