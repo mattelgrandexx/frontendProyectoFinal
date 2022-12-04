@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container } from 'react-bootstrap'
 import { NavLink, useParams } from 'react-router-dom'
-import { obtenerUsuario } from '../helpers/queriesLogin'
+import { obtenerUsuario } from '../../helpers/queriesLogin'
 
 const Confirm = () => {
 

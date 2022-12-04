@@ -4,23 +4,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/common/Footer";
 import { Header } from "./components/common/Header";
 import AcercaDeNos from "./components/views/AcercaDeNos";
-import Administrador from "./components/views/Administrador";
 import DetalleMenu from "./components/views/DetalleMenu";
 import Error404 from "./components/views/Error404";
-import CrearMenu from "./components/views/menus/CrearMenu";
-import EditarMenu from "./components/views/menus/EditarMenu";
 import PaginaPrincipal from "./components/views/PaginaPrincipal";
-import PerfilUsuario from "./components/views/PerfilUsuario";
-import Registrarse from "./components/views/Registrarse";
+import PerfilUsuario from "./components/views/usuario/PerfilUsuario";
 import 'animate.css';
 import './style.css'
-import Confirm from "./components/views/Confirm";
+import Confirm from "./components/views/usuario/Confirm";
 
 import './app.css'
-import { useEffect, useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
-import CardResetPassword from "./components/views/CardResetPassword";
+import CardResetPassword from "./components/views/usuario/CardResetPassword";
 
 
 function App() {

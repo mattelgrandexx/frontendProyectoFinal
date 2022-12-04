@@ -3,8 +3,8 @@ import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { login, recuperarUserPassword } from "../helpers/queriesLogin";
-import ResetPassword from "./ResetPassword";
+import { login, recuperarUserPassword } from "../../helpers/queriesLogin";
+import ResetPassword from "../usuario/ResetPassword";
 
 const IniciarSesion = () => {
 

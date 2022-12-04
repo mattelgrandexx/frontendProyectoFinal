@@ -3,7 +3,7 @@ import { Form, Card, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { crearUserApi } from "../helpers/queriesLogin";
+import { crearUserApi } from "../../helpers/queriesLogin";
 
 const Registrarse = () => {
   const navigate = useNavigate();

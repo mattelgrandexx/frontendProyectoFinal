@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { actualizarPass, obtenerEmail } from "../helpers/queriesLogin";
+import { actualizarPass, obtenerEmail } from "../../helpers/queriesLogin";
 import Swal from "sweetalert2";
 
 const CardResetPassword = () => {

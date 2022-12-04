@@ -1,9 +1,9 @@
 import React, {  useState } from 'react'
-import IniciarSesion from './IniciarSesion'
-import Registrarse from './Registrarse'
+import IniciarSesion from '../usuario/IniciarSesion'
+import Registrarse from '../usuario/Registrarse'
 import {  Row, Col } from 'react-bootstrap'
-import User from './User'
-import MisPedidos from './MisPedidos'
+import User from '../usuario/User'
+import MisPedidos from '../usuario/MisPedidos'
 
 const PerfilUsuario = () => {
 
