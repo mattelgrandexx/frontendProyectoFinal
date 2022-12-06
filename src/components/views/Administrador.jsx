@@ -102,7 +102,6 @@ const Administrador = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         obtenerYSuspenderUsuario(id).then((respuesta) => {
-          console.log(respuesta)
           if (respuesta.status === 200) {
                        Swal.fire(
               "Usuario suspendido",
@@ -129,7 +128,6 @@ const Administrador = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         obtenerYDarPermisosUser(id).then((respuesta) => {
-          console.log(respuesta)
           if (respuesta.status === 200) {
             Swal.fire(
               "Usuario con permisos nuevamente",
