@@ -82,7 +82,7 @@ main {
   background-color: #ef9b16;
   width: 50%;
   padding: 5px 2px;
-  border: 3px solid white;
+  border: 3px solid #e9e4de;
   outline: 3px solid #ef9b16;
   --bs-btn-active-bg: #ef9b16;
   --bs-btn-active-border-color: #ef9b16;
@@ -91,7 +91,7 @@ main {
   color: #ef9b16;
   background-color: #fff;
   border: 3px solid #ef9b16;
-  outline: 3px solid #fff;
+  outline: 3px solid #e9e4de;
 }
 
 /* Pagina principal */
@@ -142,10 +142,10 @@ main {
   border: 1.5px solid #c0050b;
 }
 .cardMenu__nombre {
-  background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+  background: -moz-repeating-linear-gradient(135deg, #e9e4de, #c0050baa 0.5px);
   background: -webkit-repeating-linear-gradient(
     135deg,
-    #ffffff,
+    #e9e4de,
     #c0050baa 0.5px
   );
   display: block;
@@ -154,18 +154,18 @@ main {
   font-weight: bolder;
   letter-spacing: 2px;
   color: #c0050b;
-  text-shadow: #f2f2f2 2px 0px 0px, #f2f2f2 1.75517px 0.958851px 0px,
-    #f2f2f2 1.0806px 1.68294px 0px, #f2f2f2 0.141474px 1.99499px 0px,
-    #f2f2f2 -0.832294px 1.81859px 0px, #f2f2f2 -1.60229px 1.19694px 0px,
-    #f2f2f2 -1.97999px 0.28224px 0px, #f2f2f2 -1.87291px -0.701566px 0px,
-    #f2f2f2 -1.30729px -1.51361px 0px, #f2f2f2 -0.421592px -1.95506px 0px,
-    #f2f2f2 0.567324px -1.91785px 0px, #f2f2f2 1.41734px -1.41108px 0px,
-    #f2f2f2 1.92034px -0.558831px 0px;
+  text-shadow: #e9e4de 2px 0px 0px, #e9e4de 1.75517px 0.958851px 0px,
+    #e9e4de 1.0806px 1.68294px 0px, #e9e4de 0.141474px 1.99499px 0px,
+    #e9e4de -0.832294px 1.81859px 0px, #e9e4de -1.60229px 1.19694px 0px,
+    #e9e4de -1.97999px 0.28224px 0px, #e9e4de -1.87291px -0.701566px 0px,
+    #e9e4de -1.30729px -1.51361px 0px, #e9e4de -0.421592px -1.95506px 0px,
+    #e9e4de 0.567324px -1.91785px 0px, #e9e4de 1.41734px -1.41108px 0px,
+    #e9e4de 1.92034px -0.558831px 0px;
 }
 
 .cardMenu__nombre:hover {
   color: #c0050b;
-  background: -moz-repeating-linear-gradient(135deg, #ffffff, #c0050baa 0.5px);
+  background: -moz-repeating-linear-gradient(135deg, #e9e4de, #c0050baa 0.5px);
   background: -webkit-repeating-linear-gradient(
     135deg,
     #ffffff,
@@ -187,10 +187,10 @@ main {
 }
 
 .cardMenu__descContainer {
+  height: 22vh;
   display: flex;
   justify-content: space-between;
   padding-left: 0.7em;
-  height: 27vh;
 }
 
 .cardMenu__desc {
@@ -208,12 +208,12 @@ main {
 
 .cardMenu__btn {
   font-size: 0.9rem;
-  color: white;
+  color: #e9e4de;
   background-color: #ef9b16;
   width: 100%;
   padding: 5px 2px;
-  margin: 20% 0;
-  border: 2px solid white;
+  margin-top: 10%;
+  border: 2px solid #e9e4de;
   outline: 2px solid #ef9b16;
   --bs-btn-active-bg: #ef9b16;
   --bs-btn-active-border-color: #ef9b16;
@@ -222,7 +222,7 @@ main {
   color: #ef9b16;
   background-color: #fff;
   border: 3px solid #ef9b16;
-  outline: 3px solid #fff;
+  outline: 3px solid #e9e4de;
 }
 
 .cardMenu__btnAgregado {
@@ -240,13 +240,15 @@ main {
   align-self: center;
   width: 64%;
 }
-.bebidas {
-  width: 28%;
+.cardMenu__img {
+  width: 100%;
+  height: 22vh;
+  object-fit: contain;
 }
 
 /* Pop up */
 #popUp {
-  width: 40vw;
+  width: 30vw;
   position: fixed;
   bottom: 0;
   right: 2vw;
@@ -437,14 +439,14 @@ main {
   .cardMenu__descContainer {
     height: 16vh;
   }
-  .bebidas {
-    width: 23%;
-  }
   .cardMenu__precio {
     font-size: 1.7rem;
   }
   .cardMenu__btn {
     font-size: 1rem;
+  }
+  .cardMenu__img {
+    height: 16vh;
   }
 
   /*Seccion del carrito  */
@@ -513,7 +515,7 @@ main {
     width: 100%;
   }
   .cardMenu__descContainer {
-    height: 23vh;
+    height: 21vh;
   }
 
   .cardMenu__precio {
@@ -522,8 +524,8 @@ main {
   .cardMenu__btn {
     font-size: 0.9rem;
   }
-  .bebidas {
-    width: 23%;
+  .cardMenu__img {
+    height: 21vh;
   }
 
   #popUp {

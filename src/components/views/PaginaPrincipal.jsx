@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Form, FormControl } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { consultarAPI } from "../helpers/queries";
 import CardMenu from "./menus/CardMenu";
@@ -7,6 +8,7 @@ import CardMenu from "./menus/CardMenu";
 const PaginaPrincipal = () => {
   let storageUser = JSON.parse(localStorage.getItem("usuarioNoAdmin")) || [];
   let listaCarritoLS = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+  let popUpMostrado = JSON.parse(sessionStorage.getItem("popUpMostrado")) || [];
   const [userActive, setUserActive] = useState(false);
   let [menus, setMenus] = useState([]);
   let [hamburguesas, setHamburgesas] = useState([]);
@@ -15,7 +17,6 @@ const PaginaPrincipal = () => {
   let [mostrarPopUp, setMostrarPopUp] = useState(false);
   let [listaCarrito, setListaCarrito] = useState(listaCarritoLS);
 
-  
   useEffect(() => {
     // Comprueba que haya un usuario logueado
     if (storageUser.length !== 0) {
@@ -41,9 +42,12 @@ const PaginaPrincipal = () => {
     );
 
     // Establece el tiempo que transcurrira hasta que se establezca mostrarPopUp en true y se abra el popUp
-    setTimeout(() => {
-      setMostrarPopUp(true);
-    }, 5000);
+    if (popUpMostrado == !true) {
+      setTimeout(() => {
+        sessionStorage.setItem("popUpMostrado", JSON.stringify(true));
+        setMostrarPopUp(true);
+      }, 5000);
+    }
   }, []);
 
   // Filtra los menus traidos de la BD y los asigna a sus categorias correspondientes
@@ -74,17 +78,17 @@ const PaginaPrincipal = () => {
         onClick={cerrarPopUp}
       ></i>
       <div className="d-flex">
-      <img
-        src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
-        className="w-100"
-        alt=""
+        <img
+          src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
+          className="w-100"
+          alt=""
         />
-      <img
-        src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
-        className="w-100"
-        alt=""
+        <img
+          src="https://i.postimg.cc/0ySrqx81/bandera-transparente.png"
+          className="w-100"
+          alt=""
         />
-        </div>
+      </div>
       <div className="px-2 py-2 text-center">
         <div className="popUp__img mx-auto">
           <img
@@ -98,22 +102,20 @@ const PaginaPrincipal = () => {
           Registrate y enterate de todas nuestras novedades y promociones
         </p>
         <div className="w-75 mx-auto">
-        <Form>
-          <FormControl
-            id="popUp__input"
-            type="text"
-            placeholder="Ingresa tu email"
+          <Form>
+            <FormControl
+              id="popUp__input"
+              type="text"
+              placeholder="Ingresa tu email"
             ></FormControl>
-        </Form>
-        <Button className="cardMenu__btn m-0 mt-3" type="button">
-          Suscribirse ahora
-        </Button>
-            </div>
+          </Form>
+          <Link to={`/error`} className="btn cardMenu__btn m-0 mt-3" type="button">
+            Suscribirse ahora
+          </Link>
+        </div>
       </div>
     </section>
   ) : null;
-
-  
 
   return (
     <main>
@@ -127,14 +129,12 @@ const PaginaPrincipal = () => {
         </div>
       </section>
       <Container>
-
         <h2 className="pagPrincipal__titulo">Hamburguesas</h2>
         <section className="p-0 cardContainer">
           {hamburguesas.map((menu) => (
             <CardMenu
               key={menu._id}
               menu={menu}
-              
               listaCarrito={listaCarrito}
               setListaCarrito={setListaCarrito}
               userActive={userActive}
