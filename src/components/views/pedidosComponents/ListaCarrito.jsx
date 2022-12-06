@@ -59,10 +59,7 @@ const ListaCarrito = () => {
 
   // Reinicia el precio total del pedido cada vez que se cierra el carrito
   useEffect(() => {
-    listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
-    listaCarrito.forEach((menu) => {
-      setPrecioTotal(0);
-    });
+    setPrecioTotal(0);
   }, [carritoCerrado]);
 
   // Funcion para agregar pedido a la base de dato. Se ejecuta solo si la lista no esta vacia
@@ -85,7 +82,6 @@ const ListaCarrito = () => {
                 "El producto se agrego a su lista de pedidos",
                 "success"
               );
-              // localStorage.setItem("listaCarrito", [])
             } else {
               Swal.fire(
                 "Ocurrio un error",
