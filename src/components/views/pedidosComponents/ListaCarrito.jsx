@@ -76,12 +76,25 @@ const ListaCarrito = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           crearPedidoApi(pedido).then((respuesta) => {
+            // Si se crea correctamente muestra este cartel
             if (respuesta.status === 201) {
-              Swal.fire(
-                "Producto agregado",
-                "El producto se agrego a su lista de pedidos",
-                "success"
-              );
+              Swal.fire({
+                title: "Pedido enviado",
+                text: "El pedido se creo correctamente",
+                icon: "success",
+                showCancelButton: false,
+                allowOutsideClick: false,
+              }).then((result) => {
+                // Borra el local storage y recarga la pagina
+                if (result.isConfirmed) {
+                  listaCarrito = [];
+                  localStorage.setItem(
+                    "listaCarrito",
+                    JSON.stringify(listaCarrito)
+                  );
+                  window.location.reload(false);
+                }
+              });
             } else {
               Swal.fire(
                 "Ocurrio un error",
