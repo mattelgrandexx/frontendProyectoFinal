@@ -13,6 +13,7 @@ import {
   obtenerYDarPermisosUser,
   obtenerYSuspenderUsuario,
 } from "../helpers/queriesLogin";
+import { useCallback } from "react";
 
 const Administrador = () => {
   const [menus, setMenus] = useState([]);
@@ -51,21 +52,15 @@ const Administrador = () => {
 
   const [usuarios, setUsuarios] = useState([]);
 
+
   useEffect(() => {
     consultarUserApi().then(
       (users) => {
         setUsuarios(users);
-      },
-      (reason) => {
-        console.log(reason);
-        Swal.fire(
-          "Ocurrio un error",
-          "Intentelo nuevamente en unos minutos",
-          "error"
-        );
-      }
-    );
-  }, []);
+
+      })
+  }, [])
+     
    
 
   const borrarUsuario = (id) => {
@@ -107,12 +102,16 @@ const Administrador = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         obtenerYSuspenderUsuario(id).then((respuesta) => {
+          console.log(respuesta)
           if (respuesta.status === 200) {
-            Swal.fire(
+                       Swal.fire(
               "Usuario suspendido",
               "El usuario fue suspendido exitosamente",
               "success"
             );
+            consultarUserApi().then((users) => {
+              setUsuarios(users);
+            });
           }
         });
       }
@@ -130,12 +129,16 @@ const Administrador = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         obtenerYDarPermisosUser(id).then((respuesta) => {
+          console.log(respuesta)
           if (respuesta.status === 200) {
             Swal.fire(
               "Usuario con permisos nuevamente",
               "Le dimos permisos al usuario para poder acceder",
               "success"
             );
+            consultarUserApi().then((users) => {
+              setUsuarios(users);
+            });
           }
         });
       }

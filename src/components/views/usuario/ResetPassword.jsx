@@ -39,10 +39,10 @@ const ResetPassword = (props) => {
             </Form.Text>
             <Col className='float-end mt-4 mb-4 d-flex'>    
           <Button variant="secondary" onClick={props.handleClose} className="m-1">
-            Close
+            Cerrar
           </Button>
-          <Button variant="primary" type='submit' className="m-1">
-            Save Changes
+          <Button variant="danger" type='submit' className="m-1">
+            Enviar
           </Button>
           </Col>
           </Form>

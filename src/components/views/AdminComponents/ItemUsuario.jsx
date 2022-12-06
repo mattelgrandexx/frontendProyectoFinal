@@ -1,16 +1,4 @@
-import { useEffect } from "react";
-import { consultarUserApi } from "../../helpers/queriesLogin";
-
-const ItemUsuario = (props) => {
-  
-
-  // useEffect(() => {
-  //   consultarUserApi().then(respuesta => {
-  //     props.setUsuarios(respuesta)
-  //   })
-  // }, [props.usuarios, props])
-  
-  
+const ItemUsuario = (props) => { 
     return (
         <tr>
           <td>{props._id}</td>
